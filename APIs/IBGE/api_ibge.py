@@ -434,16 +434,16 @@ def api_ibge():
     if 'df_metadados' not in st.session_state:
         carregar_dados()
 
-    # Verificar se 'df_metadados' não está vazio antes de selecionar códigos de tabela
-    if 'df_metadados' in st.session_state:
-        if not st.session_state['df_metadados'].empty:
-            codigos_tabelas_selecionados = list(st.session_state['df_metadados'].index)
-        else:
-            st.error("Os metadados não estão disponíveis. Verifique a fonte dos dados.")
-            return  # Encerra a execução caso os metadados não estejam disponíveis
+    # Verifique se 'df_metadados' está no session_state e inicialize se necessário
+    if 'df_metadados' not in st.session_state:
+        st.session_state['df_metadados'] = pd.DataFrame()
+
+    # Agora você pode acessar 'df_metadados' com segurança
+    if not st.session_state['df_metadados'].empty:
+        # Seu código para quando o DataFrame não estiver vazio
+        st.write("Dados de metadados disponíveis")
     else:
-        st.error("Os metadados não estão disponíveis. Verifique a fonte dos dados.")
-        return  # Encerra a execução caso os metadados não estejam disponíveis
+        st.write("Nenhum dado disponível")
     
     # Definir título e cabeçalho da aplicação
     st.title('API de Dados do IBGE')
