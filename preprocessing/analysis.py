@@ -11,11 +11,12 @@ def analysis_page():
         if df.index.name != 'data':
             df.set_index('data', inplace=True)
         
+        # Converte o índice para datetime (caso ainda não esteja)
         df.index = pd.to_datetime(df.index)
 
-        # Criar uma cópia para exibição, formatando o índice como 'dd/mm/aaaa'
+        # Agora formatamos o índice para 'dd/mm/aaaa' convertendo-o para uma string formatada
         df_display = df.copy()
-        df_display.index = df_display.index.strftime('%d/%m/%Y')
+        df_display.index = df_display.index.map(lambda x: x.strftime('%d/%m/%Y'))
 
         # Exibir o DataFrame completo com container_width
         st.subheader("Dados das Séries Selecionadas")
@@ -35,7 +36,17 @@ def analysis_page():
             # Coluna 1: Exibir os dados da time series para a coluna atual
             with col1:
                 st.write("**Dados**")
-                st.dataframe(df[[coluna]].copy(), use_container_width=True)
+
+                # Certificar que a coluna 'data' (se houver) também esteja no formato 'dd/mm/aaaa'
+                df_coluna_display = df[[coluna]].copy()
+                
+                # Se a coluna 'data' também contiver datas com horas, aplique o strftime nela
+                if pd.api.types.is_datetime64_any_dtype(df_coluna_display.index):
+                    df_coluna_display.index = df_coluna_display.index.map(lambda x: x.strftime('%d/%m/%Y'))
+                
+                # Exibir o DataFrame formatado
+                st.dataframe(df_coluna_display, use_container_width=True)
+
 
             # Coluna 2: Exibir estatísticas descritivas para a coluna atual
             with col2:

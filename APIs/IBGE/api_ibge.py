@@ -455,6 +455,7 @@ def api_ibge():
 
     # Divisão em tabs
     tab1, tab2, tab3 = st.tabs(['Tabela', 'Parâmetros', 'Dados'])
+    selecao_metadados = st.session_state['df_metadados'].iloc[selecao_metadados].index.tolist()
     with tab1:
         # Função para criar o dataframe selecionável e aplicar o filtro de códigos da tabela
         selecao_metadados = criar_dataframe_selecionavel(st.session_state['df_metadados'], 'Metadados das Tabelas', 'Selecione as Tabelas', 'df_metadados')
@@ -462,251 +463,251 @@ def api_ibge():
             codigos_metadados = st.session_state['df_metadados'].iloc[selecao_metadados].index.tolist()
             codigos_tabelas_selecionados = list(set(codigos_metadados))  # Não precisa usar interseção pois inicializa com os códigos selecionados
         
-        col1, col2, col3 = st.columns([4, 1, 1])
-        # Exibe o número total e filtrado de registros
-        col2.metric(label="Tabelas Filtradas", value=st.session_state['df_metadados_filtrado'])
-        aplicar_filtros = col2.button('Aplicar Filtros')
-        col3.metric(label="Tabelas Totais", value=st.session_state['df_metadados_total'])
-        resetar_filtros = col3.button('Resetar Filtros')
-        
-        if col1.toggle('Usar filtros avançados'):
-            with st.expander('Filtros', expanded=True):
-                col0, col1, col2, col3 = st.columns(4)
-                
-                # Filtro de Status
-                with col0:
-                    df_status_unico = st.session_state['df_metadados']['Status'].drop_duplicates().reset_index(drop=True)
-                    selecoes_status = criar_dataframe_selecionavel(df_status_unico, 'Status', 'Selecione o(s) Status', 'df_status', col0, hide_index=True)
-                    if selecoes_status:
-                        valores_selecionados_status = df_status_unico.iloc[selecoes_status].values
-                        codigos_tabelas_status = st.session_state['df_metadados'].loc[st.session_state['df_metadados']['Status'].isin(valores_selecionados_status)].index.tolist()
-                        codigos_tabelas_selecionados = list(set(codigos_tabelas_selecionados) & set(codigos_tabelas_status))
+            col1, col2, col3 = st.columns([4, 1, 1])
+            # Exibe o número total e filtrado de registros
+            col2.metric(label="Tabelas Filtradas", value=st.session_state['df_metadados_filtrado'])
+            aplicar_filtros = col2.button('Aplicar Filtros')
+            col3.metric(label="Tabelas Totais", value=st.session_state['df_metadados_total'])
+            resetar_filtros = col3.button('Resetar Filtros')
+            
+            if col1.toggle('Usar filtros avançados'):
+                with st.expander('Filtros', expanded=True):
+                    col0, col1, col2, col3 = st.columns(4)
+                    
+                    # Filtro de Status
+                    with col0:
+                        df_status_unico = st.session_state['df_metadados']['Status'].drop_duplicates().reset_index(drop=True)
+                        selecoes_status = criar_dataframe_selecionavel(df_status_unico, 'Status', 'Selecione o(s) Status', 'df_status', col0, hide_index=True)
+                        if selecoes_status:
+                            valores_selecionados_status = df_status_unico.iloc[selecoes_status].values
+                            codigos_tabelas_status = st.session_state['df_metadados'].loc[st.session_state['df_metadados']['Status'].isin(valores_selecionados_status)].index.tolist()
+                            codigos_tabelas_selecionados = list(set(codigos_tabelas_selecionados) & set(codigos_tabelas_status))
 
-                # Filtros de Assunto, Pesquisa e Fonte
-                col_assunto, col_pesquisa, col_fonte = st.columns(3)
+                    # Filtros de Assunto, Pesquisa e Fonte
+                    col_assunto, col_pesquisa, col_fonte = st.columns(3)
 
-                with col_assunto:
-                    df_assunto_unico = st.session_state['df_metadados'][['Assunto']].drop_duplicates().reset_index(drop=True)
-                    selecoes_assunto = criar_dataframe_selecionavel(df_assunto_unico, 'Assuntos', 'Selecione o(s) assunto(s).', 'df_assunto', col_assunto, hide_index=True)
-                    if selecoes_assunto:
-                        valores_selecionados_assunto = df_assunto_unico.iloc[selecoes_assunto]['Assunto'].tolist()
-                        codigos_tabelas_assunto = st.session_state['df_metadados'].loc[st.session_state['df_metadados']['Assunto'].isin(valores_selecionados_assunto)].index.tolist()
-                        codigos_tabelas_selecionados = list(set(codigos_tabelas_selecionados) & set(codigos_tabelas_assunto))
+                    with col_assunto:
+                        df_assunto_unico = st.session_state['df_metadados'][['Assunto']].drop_duplicates().reset_index(drop=True)
+                        selecoes_assunto = criar_dataframe_selecionavel(df_assunto_unico, 'Assuntos', 'Selecione o(s) assunto(s).', 'df_assunto', col_assunto, hide_index=True)
+                        if selecoes_assunto:
+                            valores_selecionados_assunto = df_assunto_unico.iloc[selecoes_assunto]['Assunto'].tolist()
+                            codigos_tabelas_assunto = st.session_state['df_metadados'].loc[st.session_state['df_metadados']['Assunto'].isin(valores_selecionados_assunto)].index.tolist()
+                            codigos_tabelas_selecionados = list(set(codigos_tabelas_selecionados) & set(codigos_tabelas_assunto))
 
-                with col_pesquisa:
-                    df_pesquisa_unico = st.session_state['df_metadados'][['Pesquisa']].drop_duplicates().reset_index(drop=True)
-                    selecoes_pesquisa = criar_dataframe_selecionavel(df_pesquisa_unico, 'Pesquisa', 'Selecione a(s) pesquisa(s).', 'df_pesquisa', col_pesquisa, hide_index=True)
-                    if selecoes_pesquisa:
-                        valores_selecionados_pesquisa = df_pesquisa_unico.iloc[selecoes_pesquisa]['Pesquisa'].tolist()
-                        codigos_tabelas_pesquisa = st.session_state['df_metadados'].loc[st.session_state['df_metadados']['Pesquisa'].isin(valores_selecionados_pesquisa)].index.tolist()
-                        codigos_tabelas_selecionados = list(set(codigos_tabelas_selecionados) & set(codigos_tabelas_pesquisa))
+                    with col_pesquisa:
+                        df_pesquisa_unico = st.session_state['df_metadados'][['Pesquisa']].drop_duplicates().reset_index(drop=True)
+                        selecoes_pesquisa = criar_dataframe_selecionavel(df_pesquisa_unico, 'Pesquisa', 'Selecione a(s) pesquisa(s).', 'df_pesquisa', col_pesquisa, hide_index=True)
+                        if selecoes_pesquisa:
+                            valores_selecionados_pesquisa = df_pesquisa_unico.iloc[selecoes_pesquisa]['Pesquisa'].tolist()
+                            codigos_tabelas_pesquisa = st.session_state['df_metadados'].loc[st.session_state['df_metadados']['Pesquisa'].isin(valores_selecionados_pesquisa)].index.tolist()
+                            codigos_tabelas_selecionados = list(set(codigos_tabelas_selecionados) & set(codigos_tabelas_pesquisa))
 
-                with col_fonte:
-                    df_fonte_unico = st.session_state['df_metadados'][['Fonte']].drop_duplicates().reset_index(drop=True)
-                    selecoes_fonte = criar_dataframe_selecionavel(df_fonte_unico, 'Fonte', 'Selecione a(s) fonte(s).', 'df_fonte', col_fonte, hide_index=True)
-                    if selecoes_fonte:
-                        valores_selecionados_fonte = df_fonte_unico.iloc[selecoes_fonte]['Fonte'].tolist()
-                        codigos_tabelas_fonte = st.session_state['df_metadados'].loc[st.session_state['df_metadados']['Fonte'].isin(valores_selecionados_fonte)].index.tolist()
-                        codigos_tabelas_selecionados = list(set(codigos_tabelas_selecionados) & set(codigos_tabelas_fonte))
+                    with col_fonte:
+                        df_fonte_unico = st.session_state['df_metadados'][['Fonte']].drop_duplicates().reset_index(drop=True)
+                        selecoes_fonte = criar_dataframe_selecionavel(df_fonte_unico, 'Fonte', 'Selecione a(s) fonte(s).', 'df_fonte', col_fonte, hide_index=True)
+                        if selecoes_fonte:
+                            valores_selecionados_fonte = df_fonte_unico.iloc[selecoes_fonte]['Fonte'].tolist()
+                            codigos_tabelas_fonte = st.session_state['df_metadados'].loc[st.session_state['df_metadados']['Fonte'].isin(valores_selecionados_fonte)].index.tolist()
+                            codigos_tabelas_selecionados = list(set(codigos_tabelas_selecionados) & set(codigos_tabelas_fonte))
 
-                # Filtros de Níveis, Periodicidade, e Períodos
-                col_niveis, col_periodicidade, col_periodos = st.columns(3)
+                    # Filtros de Níveis, Periodicidade, e Períodos
+                    col_niveis, col_periodicidade, col_periodos = st.columns(3)
 
-                with col_niveis:
-                    df_niveis = st.session_state['df_niveis'][st.session_state['df_niveis']['Código Nível'].isin(st.session_state['rel_tabelaXniveis'][st.session_state['rel_tabelaXniveis']['Código Tabela'].isin(st.session_state['df_metadados'].index)]['Código Nível'])]
-                    selecoes_niveis = criar_dataframe_selecionavel(df_niveis, 'Níveis Territoriais', 'Selecione o Nível Territorial', 'df_niveis', col_niveis, hide_index=True)
-                    if selecoes_niveis:
-                        valores_selecionados_niveis = df_niveis.iloc[selecoes_niveis][df_niveis.columns[0]].tolist()
-                        rel_niveis = st.session_state['rel_tabelaXniveis'][st.session_state['rel_tabelaXniveis']['Código Nível'].isin(valores_selecionados_niveis)]
-                        codigos_tabelas_niveis = rel_niveis['Código Tabela'].unique()
-                        codigos_tabelas_selecionados = list(set(codigos_tabelas_selecionados) & set(codigos_tabelas_niveis))
+                    with col_niveis:
+                        df_niveis = st.session_state['df_niveis'][st.session_state['df_niveis']['Código Nível'].isin(st.session_state['rel_tabelaXniveis'][st.session_state['rel_tabelaXniveis']['Código Tabela'].isin(st.session_state['df_metadados'].index)]['Código Nível'])]
+                        selecoes_niveis = criar_dataframe_selecionavel(df_niveis, 'Níveis Territoriais', 'Selecione o Nível Territorial', 'df_niveis', col_niveis, hide_index=True)
+                        if selecoes_niveis:
+                            valores_selecionados_niveis = df_niveis.iloc[selecoes_niveis][df_niveis.columns[0]].tolist()
+                            rel_niveis = st.session_state['rel_tabelaXniveis'][st.session_state['rel_tabelaXniveis']['Código Nível'].isin(valores_selecionados_niveis)]
+                            codigos_tabelas_niveis = rel_niveis['Código Tabela'].unique()
+                            codigos_tabelas_selecionados = list(set(codigos_tabelas_selecionados) & set(codigos_tabelas_niveis))
 
-                with col_periodicidade:
-                    df_periodicidade = st.session_state['df_periodicidade'][st.session_state['df_periodicidade']['Código Periodicidade'].isin(
-                        st.session_state['rel_tabelaXperiodicidade'][st.session_state['rel_tabelaXperiodicidade']['Código Tabela'].isin(
-                            st.session_state['df_metadados'].index)]['Código Periodicidade'])]
-                    selecoes_periodicidade = criar_dataframe_selecionavel(df_periodicidade, 'Periodicidade', 'Selecione a Periodicidade', 'df_periodicidade', col_periodicidade, hide_index=True)
-                    if selecoes_periodicidade:
-                        valores_selecionados_periodicidade = df_periodicidade.iloc[selecoes_periodicidade][df_periodicidade.columns[0]].tolist()
-                        rel_periodicidade = st.session_state['rel_tabelaXperiodicidade'][st.session_state['rel_tabelaXperiodicidade']['Código Periodicidade'].isin(valores_selecionados_periodicidade)]
-                        codigos_tabelas_periodicidade = rel_periodicidade['Código Tabela'].unique()
-                        codigos_tabelas_selecionados = list(set(codigos_tabelas_selecionados) & set(codigos_tabelas_periodicidade))
+                    with col_periodicidade:
+                        df_periodicidade = st.session_state['df_periodicidade'][st.session_state['df_periodicidade']['Código Periodicidade'].isin(
+                            st.session_state['rel_tabelaXperiodicidade'][st.session_state['rel_tabelaXperiodicidade']['Código Tabela'].isin(
+                                st.session_state['df_metadados'].index)]['Código Periodicidade'])]
+                        selecoes_periodicidade = criar_dataframe_selecionavel(df_periodicidade, 'Periodicidade', 'Selecione a Periodicidade', 'df_periodicidade', col_periodicidade, hide_index=True)
+                        if selecoes_periodicidade:
+                            valores_selecionados_periodicidade = df_periodicidade.iloc[selecoes_periodicidade][df_periodicidade.columns[0]].tolist()
+                            rel_periodicidade = st.session_state['rel_tabelaXperiodicidade'][st.session_state['rel_tabelaXperiodicidade']['Código Periodicidade'].isin(valores_selecionados_periodicidade)]
+                            codigos_tabelas_periodicidade = rel_periodicidade['Código Tabela'].unique()
+                            codigos_tabelas_selecionados = list(set(codigos_tabelas_selecionados) & set(codigos_tabelas_periodicidade))
 
-                with col_periodos:
-                    df_periodos = st.session_state['df_periodos'][st.session_state['df_periodos']['Código Período'].isin(
-                        st.session_state['rel_tabelaXperiodos'][st.session_state['rel_tabelaXperiodos']['Código Tabela'].isin(
-                            st.session_state['df_metadados'].index)]['Código Período'])]
-                    selecoes_periodos = criar_dataframe_selecionavel(df_periodos, 'Períodos', 'Selecione os Períodos', 'df_periodos', col_periodos, hide_index=True)
-                    if selecoes_periodos:
-                        valores_selecionados_periodos = df_periodos.iloc[selecoes_periodos][df_periodos.columns[0]].tolist()
-                        rel_periodos = st.session_state['rel_tabelaXperiodos'][st.session_state['rel_tabelaXperiodos']['Código Período'].isin(valores_selecionados_periodos)]
-                        codigos_tabelas_periodos = rel_periodos['Código Tabela'].unique()
-                        codigos_tabelas_selecionados = list(set(codigos_tabelas_selecionados) & set(codigos_tabelas_periodos))
+                    with col_periodos:
+                        df_periodos = st.session_state['df_periodos'][st.session_state['df_periodos']['Código Período'].isin(
+                            st.session_state['rel_tabelaXperiodos'][st.session_state['rel_tabelaXperiodos']['Código Tabela'].isin(
+                                st.session_state['df_metadados'].index)]['Código Período'])]
+                        selecoes_periodos = criar_dataframe_selecionavel(df_periodos, 'Períodos', 'Selecione os Períodos', 'df_periodos', col_periodos, hide_index=True)
+                        if selecoes_periodos:
+                            valores_selecionados_periodos = df_periodos.iloc[selecoes_periodos][df_periodos.columns[0]].tolist()
+                            rel_periodos = st.session_state['rel_tabelaXperiodos'][st.session_state['rel_tabelaXperiodos']['Código Período'].isin(valores_selecionados_periodos)]
+                            codigos_tabelas_periodos = rel_periodos['Código Tabela'].unique()
+                            codigos_tabelas_selecionados = list(set(codigos_tabelas_selecionados) & set(codigos_tabelas_periodos))
 
-                # Filtros de Variáveis, Classificações e Subclassificações
-                col_variaveis, col_classificacoes, col_subclassificacoes = st.columns(3)
+                    # Filtros de Variáveis, Classificações e Subclassificações
+                    col_variaveis, col_classificacoes, col_subclassificacoes = st.columns(3)
 
-                with col_variaveis:
-                    df_variaveis = st.session_state['df_variaveis'][st.session_state['df_variaveis']['Código Variável'].isin(
-                        st.session_state['rel_tabelaXvariaveis'][st.session_state['rel_tabelaXvariaveis']['Código Tabela'].isin(
-                            st.session_state['df_metadados'].index)]['Código Variável'])]
-                    selecoes_variaveis = criar_dataframe_selecionavel(df_variaveis, 'Variáveis', 'Selecione as Variáveis', 'df_variaveis', col_variaveis, hide_index=True)
-                    if selecoes_variaveis:
-                        valores_selecionados_variaveis = df_variaveis.iloc[selecoes_variaveis][df_variaveis.columns[0]].tolist()
-                        rel_variaveis = st.session_state['rel_tabelaXvariaveis'][st.session_state['rel_tabelaXvariaveis']['Código Variável'].isin(valores_selecionados_variaveis)]
-                        codigos_tabelas_variaveis = rel_variaveis['Código Tabela'].unique()
-                        codigos_tabelas_selecionados = list(set(codigos_tabelas_selecionados) & set(codigos_tabelas_variaveis))
+                    with col_variaveis:
+                        df_variaveis = st.session_state['df_variaveis'][st.session_state['df_variaveis']['Código Variável'].isin(
+                            st.session_state['rel_tabelaXvariaveis'][st.session_state['rel_tabelaXvariaveis']['Código Tabela'].isin(
+                                st.session_state['df_metadados'].index)]['Código Variável'])]
+                        selecoes_variaveis = criar_dataframe_selecionavel(df_variaveis, 'Variáveis', 'Selecione as Variáveis', 'df_variaveis', col_variaveis, hide_index=True)
+                        if selecoes_variaveis:
+                            valores_selecionados_variaveis = df_variaveis.iloc[selecoes_variaveis][df_variaveis.columns[0]].tolist()
+                            rel_variaveis = st.session_state['rel_tabelaXvariaveis'][st.session_state['rel_tabelaXvariaveis']['Código Variável'].isin(valores_selecionados_variaveis)]
+                            codigos_tabelas_variaveis = rel_variaveis['Código Tabela'].unique()
+                            codigos_tabelas_selecionados = list(set(codigos_tabelas_selecionados) & set(codigos_tabelas_variaveis))
 
-                with col_classificacoes:
-                    df_classificacoes = st.session_state['df_classificacoes'][st.session_state['df_classificacoes']['Código Classificação'].isin(
-                        st.session_state['rel_tabelaXclassificacoes'][st.session_state['rel_tabelaXclassificacoes']['Código Tabela'].isin(
-                            st.session_state['df_metadados'].index)]['Código Classificação'])]
-                    selecoes_classificacoes = criar_dataframe_selecionavel(df_classificacoes, 'Classificações', 'Selecione as Classificações', 'df_classificacoes', col_classificacoes, hide_index=True)
-                    if selecoes_classificacoes:
-                        valores_selecionados_classificacoes = df_classificacoes.iloc[selecoes_classificacoes][df_classificacoes.columns[0]].tolist()
-                        rel_classificacoes = st.session_state['rel_tabelaXclassificacoes'][st.session_state['rel_tabelaXclassificacoes']['Código Classificação'].isin(valores_selecionados_classificacoes)]
-                        codigos_tabelas_classificacoes = rel_classificacoes['Código Tabela'].unique()
-                        codigos_tabelas_selecionados = list(set(codigos_tabelas_selecionados) & set(codigos_tabelas_classificacoes))
+                    with col_classificacoes:
+                        df_classificacoes = st.session_state['df_classificacoes'][st.session_state['df_classificacoes']['Código Classificação'].isin(
+                            st.session_state['rel_tabelaXclassificacoes'][st.session_state['rel_tabelaXclassificacoes']['Código Tabela'].isin(
+                                st.session_state['df_metadados'].index)]['Código Classificação'])]
+                        selecoes_classificacoes = criar_dataframe_selecionavel(df_classificacoes, 'Classificações', 'Selecione as Classificações', 'df_classificacoes', col_classificacoes, hide_index=True)
+                        if selecoes_classificacoes:
+                            valores_selecionados_classificacoes = df_classificacoes.iloc[selecoes_classificacoes][df_classificacoes.columns[0]].tolist()
+                            rel_classificacoes = st.session_state['rel_tabelaXclassificacoes'][st.session_state['rel_tabelaXclassificacoes']['Código Classificação'].isin(valores_selecionados_classificacoes)]
+                            codigos_tabelas_classificacoes = rel_classificacoes['Código Tabela'].unique()
+                            codigos_tabelas_selecionados = list(set(codigos_tabelas_selecionados) & set(codigos_tabelas_classificacoes))
 
-                with col_subclassificacoes:
-                    df_subclassificacoes = st.session_state['df_subclassificacoes'][st.session_state['df_subclassificacoes']['Código Subclassificação'].isin(
-                        st.session_state['rel_tabelaXsubclassificacoes'][st.session_state['rel_tabelaXsubclassificacoes']['Código Tabela'].isin(
-                            st.session_state['df_metadados'].index)]['Código Subclassificação'])]
-                    selecoes_subclassificacoes = criar_dataframe_selecionavel(df_subclassificacoes, 'Subclassificações', 'Selecione as Subclassificações', 'df_subclassificacoes', col_subclassificacoes, hide_index=True)
-                    if selecoes_subclassificacoes:
-                        valores_selecionados_subclassificacoes = df_subclassificacoes.iloc[selecoes_subclassificacoes][df_subclassificacoes.columns[0]].tolist()
-                        rel_subclassificacoes = st.session_state['rel_tabelaXsubclassificacoes'][st.session_state['rel_tabelaXsubclassificacoes']['Código Subclassificação'].isin(valores_selecionados_subclassificacoes)]
-                        codigos_tabelas_subclassificacoes = rel_subclassificacoes['Código Tabela'].unique()
-                        codigos_tabelas_selecionados = list(set(codigos_tabelas_selecionados) & set(codigos_tabelas_subclassificacoes))
+                    with col_subclassificacoes:
+                        df_subclassificacoes = st.session_state['df_subclassificacoes'][st.session_state['df_subclassificacoes']['Código Subclassificação'].isin(
+                            st.session_state['rel_tabelaXsubclassificacoes'][st.session_state['rel_tabelaXsubclassificacoes']['Código Tabela'].isin(
+                                st.session_state['df_metadados'].index)]['Código Subclassificação'])]
+                        selecoes_subclassificacoes = criar_dataframe_selecionavel(df_subclassificacoes, 'Subclassificações', 'Selecione as Subclassificações', 'df_subclassificacoes', col_subclassificacoes, hide_index=True)
+                        if selecoes_subclassificacoes:
+                            valores_selecionados_subclassificacoes = df_subclassificacoes.iloc[selecoes_subclassificacoes][df_subclassificacoes.columns[0]].tolist()
+                            rel_subclassificacoes = st.session_state['rel_tabelaXsubclassificacoes'][st.session_state['rel_tabelaXsubclassificacoes']['Código Subclassificação'].isin(valores_selecionados_subclassificacoes)]
+                            codigos_tabelas_subclassificacoes = rel_subclassificacoes['Código Tabela'].unique()
+                            codigos_tabelas_selecionados = list(set(codigos_tabelas_selecionados) & set(codigos_tabelas_subclassificacoes))
 
-        if aplicar_filtros:
-            for key in ['df_metadados']:
-                aplicar_filtro_por_codigos_tabelas(key, codigos_tabelas_selecionados)
-                st.json({"Codigos Tabela Selecionados": codigos_tabelas_selecionados})
+            if aplicar_filtros:
+                for key in ['df_metadados']:
+                    aplicar_filtro_por_codigos_tabelas(key, codigos_tabelas_selecionados)
+                    st.json({"Codigos Tabela Selecionados": codigos_tabelas_selecionados})
+                    st.rerun()
+
+            # Botão para resetar filtros
+            if resetar_filtros:
+                carregar_dados()
+                st.session_state['dados_ibge_coletados'] = False
+                st.session_state['df_ibge_temp'] = pd.DataFrame()
+                st.session_state['df_metadados'] = {}
                 st.rerun()
 
-        # Botão para resetar filtros
-        if resetar_filtros:
-            carregar_dados()
-            st.session_state['dados_ibge_coletados'] = False
-            st.session_state['df_ibge_temp'] = pd.DataFrame()
-            st.session_state['df_metadados'] = {}
-            st.rerun()
+            # Mensagem final de seleção da tabela
+            if len(codigos_tabelas_selecionados) == 1:
+                codigo_tabela = codigos_tabelas_selecionados[0]
+                st.write(codigos_tabelas_selecionados)
+                st.session_state['codigo_tabela'] = codigo_tabela  # Armazenar o código da tabela no session_state
+                st.success(f'Tabela {codigo_tabela} selecionada. Clique na tab "Parâmetros"')
+            else:
+                st.warning('Por favor, selecione apenas uma tabela.')
+                
+        with tab2:
+            if len(codigos_tabelas_selecionados) == 1:
+                codigo_tabela = codigos_tabelas_selecionados[0]
+                st.success(f"Tabela {codigo_tabela} selecionada")
+                st.title("Especificar parâmetros da série temporal")
+                st.write("""
+                    Escolha uma variável, um nível territorial, uma localidade, e se aplicável, as classificações e subclassificações disponíveis.
+                    Uma série temporal será gerada, composta por data e o campo de valores. A coluna de valores terá como título a descrição 
+                    que vem na série temporal (normalmente o último campo), concatenado com a localidade escolhida.
+                    As datas serão formatadas no padrão dd/mm/aaaa, representando o último dia de cada período.
+                """)
 
-        # Mensagem final de seleção da tabela
-        if len(codigos_tabelas_selecionados) == 1:
-            codigo_tabela = codigos_tabelas_selecionados[0]
-            st.write(codigos_tabelas_selecionados)
-            st.session_state['codigo_tabela'] = codigo_tabela  # Armazenar o código da tabela no session_state
-            st.success(f'Tabela {codigo_tabela} selecionada. Clique na tab "Parâmetros"')
-        else:
-            st.warning('Por favor, selecione apenas uma tabela.')
-            
-    with tab2:
-        if len(codigos_tabelas_selecionados) == 1:
-            codigo_tabela = codigos_tabelas_selecionados[0]
-            st.success(f"Tabela {codigo_tabela} selecionada")
-            st.title("Especificar parâmetros da série temporal")
-            st.write("""
-                Escolha uma variável, um nível territorial, uma localidade, e se aplicável, as classificações e subclassificações disponíveis.
-                Uma série temporal será gerada, composta por data e o campo de valores. A coluna de valores terá como título a descrição 
-                que vem na série temporal (normalmente o último campo), concatenado com a localidade escolhida.
-                As datas serão formatadas no padrão dd/mm/aaaa, representando o último dia de cada período.
-            """)
+                # Passo 2: Seleção de variáveis da API da tabela e exibição em formato de DataFrame selecionável
+                variaveis = obter_variaveis(codigo_tabela)
+                df_variaveis = pd.DataFrame(variaveis)  # Convertendo variáveis para DataFrame
+                
+                # Utilizando a função de DataFrame selecionável
+                variavel_selecionada = criar_dataframe_selecionavel(df_variaveis, 'Variáveis', 'Selecione uma variável', 'variaveis')
+                
+                if variavel_selecionada:
+                    variavel_escolhida = df_variaveis.iloc[variavel_selecionada[0]]  # Seleção de uma única variável
+                    st.write(f'Variável selecionada: {variavel_escolhida["Nome Variável"]}')
 
-            # Passo 2: Seleção de variáveis da API da tabela e exibição em formato de DataFrame selecionável
-            variaveis = obter_variaveis(codigo_tabela)
-            df_variaveis = pd.DataFrame(variaveis)  # Convertendo variáveis para DataFrame
-            
-            # Utilizando a função de DataFrame selecionável
-            variavel_selecionada = criar_dataframe_selecionavel(df_variaveis, 'Variáveis', 'Selecione uma variável', 'variaveis')
-            
-            if variavel_selecionada:
-                variavel_escolhida = df_variaveis.iloc[variavel_selecionada[0]]  # Seleção de uma única variável
-                st.write(f'Variável selecionada: {variavel_escolhida["Nome Variável"]}')
+                    # Passo 3: Carregar classificações e subclassificações da API
+                    classificacoes = obter_classificacoes_subclassificacoes(codigo_tabela)
+                    selecoes_classificacoes = exibir_classificacoes_subclassificacoes(classificacoes)
 
-                # Passo 3: Carregar classificações e subclassificações da API
-                classificacoes = obter_classificacoes_subclassificacoes(codigo_tabela)
-                selecoes_classificacoes = exibir_classificacoes_subclassificacoes(classificacoes)
+                    # Seleção de nível territorial e localidade
+                    nivel, localidade, df_localidades = selecionar_niveis_localidades(codigo_tabela)
 
-                # Seleção de nível territorial e localidade
-                nivel, localidade, df_localidades = selecionar_niveis_localidades(codigo_tabela)
-
-                if nivel and localidade:
-                    
-                    st.write(f'Nível territorial selecionado: {nivel}')
-                    st.write(f'Localidade selecionada: {localidade}')
-                    st.session_state['parametros_ibge'] = {
-                        'codigo_tabela': codigo_tabela,
-                        'nome_tabela': st.session_state['df_metadados'].loc[codigo_tabela, 'Nome Tabela'],
-                        'variavel': df_variaveis.loc[variavel_selecionada, 'Nome Variável'].values[0].split(' - casas decimais')[0],
-                        'nivel': nivel,
-                        'localidade': df_localidades.loc[localidade, 'Nome'][0],
-                        }
-                    # Passo 5: Geração do link final e coleta de dados
-                    if st.button("Coletar dados"):
-                        st.session_state['df_ibge_temp'] = gerar_link_coletar_dados(codigo_tabela, variavel_escolhida, selecoes_classificacoes, nivel, localidade)
+                    if nivel and localidade:
                         
-                        if not st.session_state['df_ibge_temp'].empty:
-                            st.session_state['dados_ibge_coletados'] = True
-                            st.success('Dados coletados! Vá para a tab Dados')
-                        else:
-                            st.session_state['dados_ibge_coletados'] = False
-                            st.error('Falha ao coletar os dados.')
-                else:
-                    st.warning("Por favor, selecione um nível territorial e uma localidade.")
-            else:
-                st.warning("Por favor, selecione uma variável.")
-        else:
-            st.warning('Por favor, selecione uma tabela na tab "Tabela".')
-
-
-    with tab3:
-        if 'df_ibge_temp' in st.session_state and not st.session_state['df_ibge_temp'].empty:
-            st.success('Dados coletados!')
-            st.dataframe(st.session_state['df_ibge_temp'], use_container_width=True)
-
-            # Gerar a série temporal se ainda não foi gerada
-            if 'ts_ibge_temp' not in st.session_state:
-                st.session_state['ts_ibge_temp'] = gerar_timeserie(
-                    st.session_state['df_ibge_temp']
-                )
-
-            # Verificar se a série temporal foi gerada corretamente
-            if 'ts_ibge_temp' in st.session_state and not st.session_state['ts_ibge_temp'].empty:
-                ts_ibge_temp = st.session_state['ts_ibge_temp'].copy()
-
-                # Formatando o campo de data
-                ts_ibge_temp['data'] = ts_ibge_temp['data'].dt.strftime('%d/%m/%Y')
-                ts_ibge_temp.set_index('data', inplace=True)
-
-                st.subheader("Série Temporal Gerada")
-                st.dataframe(ts_ibge_temp, use_container_width=True)
-
-                # Adicionar a opção para normalizar os dados
-                normalizar = st.toggle("Normalizar Dados", value=False)
-                if normalizar:
-                    valores = (ts_ibge_temp.iloc[:, 0] - ts_ibge_temp.iloc[:, 0].min()) / (ts_ibge_temp.iloc[:, 0].max() - ts_ibge_temp.iloc[:, 0].min())
-                else:
-                    valores = ts_ibge_temp.copy()
-
-                # Exibir gráfico com a série temporal
-                st.line_chart(valores)
-
-                # Botão para enviar para pré-processamento
-                if st.button("Enviar para Pré-processamento"):
-                    if 'df_original' in st.session_state and not st.session_state['df_original'].empty:
-                        # Concatena a nova série com as séries existentes
-                        st.session_state['df_original'] = pd.concat([st.session_state['df_original'], ts_ibge_temp], axis=1)
+                        st.write(f'Nível territorial selecionado: {nivel}')
+                        st.write(f'Localidade selecionada: {localidade}')
+                        st.session_state['parametros_ibge'] = {
+                            'codigo_tabela': codigo_tabela,
+                            'nome_tabela': st.session_state['df_metadados'].loc[codigo_tabela, 'Nome Tabela'],
+                            'variavel': df_variaveis.loc[variavel_selecionada, 'Nome Variável'].values[0].split(' - casas decimais')[0],
+                            'nivel': nivel,
+                            'localidade': df_localidades.loc[localidade, 'Nome'][0],
+                            }
+                        # Passo 5: Geração do link final e coleta de dados
+                        if st.button("Coletar dados"):
+                            st.session_state['df_ibge_temp'] = gerar_link_coletar_dados(codigo_tabela, variavel_escolhida, selecoes_classificacoes, nivel, localidade)
+                            
+                            if not st.session_state['df_ibge_temp'].empty:
+                                st.session_state['dados_ibge_coletados'] = True
+                                st.success('Dados coletados! Vá para a tab Dados')
+                            else:
+                                st.session_state['dados_ibge_coletados'] = False
+                                st.error('Falha ao coletar os dados.')
                     else:
-                        # Se for a primeira série, apenas armazena
-                        st.session_state['df_original'] = ts_ibge_temp.copy()
-
-                    st.success("Dados enviados para pré-processamento com sucesso!")
+                        st.warning("Por favor, selecione um nível territorial e uma localidade.")
+                else:
+                    st.warning("Por favor, selecione uma variável.")
             else:
-                st.error("A série temporal ainda não foi gerada. Verifique os parâmetros.")
-        else:
-            st.warning('Dados não coletados. Certifique-se de selecionar uma tabela e especificar os parâmetros da consulta.')
+                st.warning('Por favor, selecione uma tabela na tab "Tabela".')
+
+
+        with tab3:
+            if 'df_ibge_temp' in st.session_state and not st.session_state['df_ibge_temp'].empty:
+                st.success('Dados coletados!')
+                st.dataframe(st.session_state['df_ibge_temp'], use_container_width=True)
+
+                # Gerar a série temporal se ainda não foi gerada
+                if 'ts_ibge_temp' not in st.session_state:
+                    st.session_state['ts_ibge_temp'] = gerar_timeserie(
+                        st.session_state['df_ibge_temp']
+                    )
+
+                # Verificar se a série temporal foi gerada corretamente
+                if 'ts_ibge_temp' in st.session_state and not st.session_state['ts_ibge_temp'].empty:
+                    ts_ibge_temp = st.session_state['ts_ibge_temp'].copy()
+
+                    # Formatando o campo de data
+                    ts_ibge_temp['data'] = ts_ibge_temp['data'].dt.strftime('%d/%m/%Y')
+                    ts_ibge_temp.set_index('data', inplace=True)
+
+                    st.subheader("Série Temporal Gerada")
+                    st.dataframe(ts_ibge_temp, use_container_width=True)
+
+                    # Adicionar a opção para normalizar os dados
+                    normalizar = st.toggle("Normalizar Dados", value=False)
+                    if normalizar:
+                        valores = (ts_ibge_temp.iloc[:, 0] - ts_ibge_temp.iloc[:, 0].min()) / (ts_ibge_temp.iloc[:, 0].max() - ts_ibge_temp.iloc[:, 0].min())
+                    else:
+                        valores = ts_ibge_temp.copy()
+
+                    # Exibir gráfico com a série temporal
+                    st.line_chart(valores)
+
+                    # Botão para enviar para pré-processamento
+                    if st.button("Enviar para Pré-processamento"):
+                        if 'df_original' in st.session_state and not st.session_state['df_original'].empty:
+                            # Concatena a nova série com as séries existentes
+                            st.session_state['df_original'] = pd.concat([st.session_state['df_original'], ts_ibge_temp], axis=1)
+                        else:
+                            # Se for a primeira série, apenas armazena
+                            st.session_state['df_original'] = ts_ibge_temp.copy()
+
+                        st.success("Dados enviados para pré-processamento com sucesso!")
+                else:
+                    st.error("A série temporal ainda não foi gerada. Verifique os parâmetros.")
+            else:
+                st.warning('Dados não coletados. Certifique-se de selecionar uma tabela e especificar os parâmetros da consulta.')
 
 if __name__ == '__main__':
     # Configurar layout wide

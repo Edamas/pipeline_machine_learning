@@ -30,7 +30,17 @@ def baixar_dados_serie(codigo):
 def api_page_bcb():
     st.title("API: Banco Central do Brasil")
 
-    metadados = os.path.join("APIs", "BANCO_CENTRAL", "BCB_metadata_active.csv")
+    # Caminho do arquivo CSV
+    metadados_path = os.path.join("APIs", "BANCO_CENTRAL", "BCB_metadata_active.csv")
+
+    # Tente carregar o CSV em um DataFrame
+    try:
+        metadados = pd.read_csv(metadados_path)
+        # Agora, dados_filtrados contém o DataFrame
+        dados_filtrados = metadados  # ou aplique filtros, se necessário
+    except FileNotFoundError:
+        st.error(f"Arquivo não encontrado: {metadados_path}")
+        dados_filtrados = pd.DataFrame()  # DataFrame vazio como fallback
 
     # Você pode adicionar filtros aqui se desejar
     dados_filtrados = metadados  # Usando todos os metadados sem filtros
@@ -73,6 +83,7 @@ def api_page_bcb():
                     # Verificar se as colunas 'data' e 'valor' existem
                     if 'data' in df_serie.columns and 'valor' in df_serie.columns:
                         # Renomear a coluna 'valor' para o nome da série
+                        df_serie['data'] = pd.to_datetime(df_serie['data'], format='%d/%m/%Y')  # Convertendo para datetime no formato desejado
                         df_serie.rename(columns={'valor': serie['nome']}, inplace=True)
                         df_serie = df_serie.set_index('data')
                     else:
@@ -130,7 +141,7 @@ def api_page_bcb():
         df_display = df_concatenado.copy()
 
         # Garantir que o índice é datetime e formatado corretamente (sem horário)
-        df_display.index = pd.to_datetime(df_display.index, errors='coerce').normalize()
+        df_display.index = pd.to_datetime(df_display.index, errors='coerce').strftime('%d/%m/%Y')
 
         st.dataframe(df_display)
 
