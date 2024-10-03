@@ -1,0 +1,57 @@
+Código Nível	Nome Nível
+1	Brasil
+2	Grande Região
+3	Unidade da Federação
+6	Município
+7	Região Metropolitana
+8	Mesorregião Geográfica
+9	Microrregião Geográfica
+10	Distrito
+11	Subdistrito
+13	Região Metropolitana e Subdivisão
+14	Região Integrada de Desenvolvimento
+15	Aglomeração Urbana
+17	Aglomerado Subnormal
+18	Área de Ponderação
+20	Área de Divulgação da Amostra para Aglomerados Subnormais
+21	Total dos municípios das capitais da Grande Região
+22	Total dos municípios das capitais
+23	Arranjo Populacional
+24	Região Geográfica Intermediária
+25	Região Geográfica Imediata
+29	Território de Identidade
+33	Concentração Urbana
+70	Recortes Metropolitanos
+71	Categoria Metropolitana
+72	Subcategoria Metropolitana
+101	País do Mercosul, Bolívia e Chile
+102	Bairro
+103	Total das áreas - POF
+110	Total das áreas - PME
+111	Unidade Federativa do Mercosul, Bolívia e Chile
+121	Região Hidrográfica
+122	Grande Região - PIMES
+123	Bioma
+124	Corpo d'água
+125	Terra Indígena por Unidade da Federação
+127	Núcleo de desertificação
+128	Praia
+129	Território da Cidadania
+130	Capital/não capital de Unidade da Federação
+131	Amazônia Legal
+132	Semiárido
+133	Semiárido de Unidade da Federação
+134	Amazônia Legal de Unidade da Federação
+145	Território Quilombola por Unidade da Federação
+151	Categoria da Aglomeração Urbana
+1011	Municípios Costeiros
+1013	Municípios de Faixa de Fronteira
+1100	Brasil, sem especificação de Unidade da Federação
+1101	Ignorado
+1102	Estrangeiro
+1103	Total
+1104	Unidade da Federação, sem especificação de Município
+1105	Área de influência - PNSB
+1124	Coordenação Regional da Funai
+1125	Terra Indígena
+1145	Território Quilombola

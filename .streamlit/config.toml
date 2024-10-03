@@ -1,0 +1,12 @@
+[server]
+headless = true
+port = 8501
+enableCORS = true  # Ative CORS, se necessário
+enableXsrfProtection = false  # Desative a proteção CSRF, se CORS for necessário
+
+[theme]
+primaryColor = "#4CAF50"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F0F2F6"
+textColor = "#000000"
+font = "sans serif"
