@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from echarts_plots import grafico_barras, grafico_linhas
 
 def analysis_page():
     st.title("Análise de Dados")
@@ -12,62 +13,66 @@ def analysis_page():
             df.set_index('data', inplace=True)
         
         # Converte o índice para datetime (caso ainda não esteja)
-        df.index = pd.to_datetime(df.index)
+        try:
+            df.index = pd.to_datetime(df.index, errors='coerce')
+            if df.index.hasnans:
+                st.warning("Algumas datas foram convertidas como NaT e serão removidas.")
+                df = df.dropna()  # Remove linhas onde a data não pôde ser convertida
+        except Exception as e:
+            st.error(f"Erro ao converter índice para datetime: {e}")
+            return
 
-        # Agora formatamos o índice para 'dd/mm/aaaa' convertendo-o para uma string formatada
+        # Formatar índice para 'dd/mm/aaaa' para exibição
         df_display = df.copy()
-        df_display.index = df_display.index.map(lambda x: x.strftime('%d/%m/%Y'))
+        df_display.index = df_display.index.strftime('%d/%m/%Y')
 
-        # Exibir o DataFrame completo com container_width
+        # Exibir o DataFrame completo
         st.subheader("Dados das Séries Selecionadas")
         st.dataframe(df_display, use_container_width=True)
 
         # Iterar sobre cada coluna de valor
         for coluna in df.columns:
-            # Adicionar um divisor para separar as análises das colunas
             st.divider()
-
-            # Subheader com o nome da coluna
             st.subheader(f"Análise da Coluna: {coluna}")
 
             # Criar três colunas (dados, estatística descritiva, gráfico)
             col1, col2, col3 = st.columns(3)
 
-            # Coluna 1: Exibir os dados da time series para a coluna atual
+            # Coluna 1: Exibir os dados da série temporal
             with col1:
                 st.write("**Dados**")
-
-                # Certificar que a coluna 'data' (se houver) também esteja no formato 'dd/mm/aaaa'
                 df_coluna_display = df[[coluna]].copy()
-                
-                # Se a coluna 'data' também contiver datas com horas, aplique o strftime nela
-                if pd.api.types.is_datetime64_any_dtype(df_coluna_display.index):
-                    df_coluna_display.index = df_coluna_display.index.map(lambda x: x.strftime('%d/%m/%Y'))
-                
-                # Exibir o DataFrame formatado
+                df_coluna_display.index = df_coluna_display.index.strftime('%d/%m/%Y')
                 st.dataframe(df_coluna_display, use_container_width=True)
 
-
-            # Coluna 2: Exibir estatísticas descritivas para a coluna atual
+            # Coluna 2: Exibir estatísticas descritivas
             with col2:
                 st.write("**Estatísticas Descritivas**")
                 st.dataframe(df[coluna].describe(), use_container_width=True)
 
-            # Coluna 3: Exibir gráfico para a coluna atual com toggle para normalização
+            # Coluna 3: Gráfico com toggle para normalização
             with col3:
                 st.write("**Gráfico**")
-
-                # Toggle para normalizar os dados
                 normalizar = st.toggle(f"Normalizar Dados ({coluna})", value=False)
-
+                
                 df_plot = df[[coluna]].copy()
+                df_plot[coluna] = df_plot[coluna].fillna(0)
 
                 if normalizar:
-                    # Normalizar os dados
-                    df_plot[coluna] = (df_plot[coluna] - df_plot[coluna].min()) / (df_plot[coluna].max() - df_plot[coluna].min())
+                    min_val = df_plot[coluna].min()
+                    max_val = df_plot[coluna].max()
+                    if max_val > min_val:
+                        df_plot[coluna] = (df_plot[coluna] - min_val) / (max_val - min_val)
 
-                # Exibir o gráfico de linha
-                st.line_chart(df_plot)
+                tipo_grafico = st.selectbox(f"Escolha o tipo de gráfico ({coluna})", ['Linha', 'Barra'], key=f"grafico_{coluna}")
+
+                try:
+                    if tipo_grafico == 'Linha':
+                        grafico_linhas(df_plot, coluna)
+                    elif tipo_grafico == 'Barra':
+                        grafico_barras(df_plot, coluna)
+                except Exception as e:
+                    st.error(f"Erro ao renderizar o gráfico: {e}")
 
     else:
         st.error("Nenhuma série foi carregada.")

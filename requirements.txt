@@ -5,3 +5,4 @@ streamlit
 yfinance
 matplotlib
 plotly
+streamlit-echarts==0.4.0
