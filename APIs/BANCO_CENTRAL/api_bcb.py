@@ -3,6 +3,7 @@
 import streamlit as st
 import pandas as pd
 import requests
+import os
 
 # Função para baixar dados com cache
 @st.cache_data(show_spinner=False)
@@ -29,7 +30,7 @@ def baixar_dados_serie(codigo):
 def api_page_bcb():
     st.title("API: Banco Central do Brasil")
 
-    metadados = pd.read_csv("APIs\BANCO_CENTRAL/BCB_metadata_active.csv")
+    metadados = os.path.join("APIs", "BANCO_CENTRAL", "BCB_metadata_active.csv")
 
     # Você pode adicionar filtros aqui se desejar
     dados_filtrados = metadados  # Usando todos os metadados sem filtros
