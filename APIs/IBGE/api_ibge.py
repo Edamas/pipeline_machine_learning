@@ -16,7 +16,8 @@ def api_ibge():
     
     # Carregar os dados do CSV
     csv_file = "APIs/IBGE/metadados_tabelas.csv"
-    df_metadados = pd.read_csv(csv_file, sep='\t', encoding='utf-8', index_col='Número')
+    df_metadados = pd.read_csv(csv_file, sep='\t', encoding='utf-8')
+    df_metadados.set_index('Número', inplace=True)
 
     # Definir o índice do DataFrame como o código da tabela
     df_metadados.index.name = 'Código Tabela'
@@ -44,10 +45,6 @@ def api_ibge():
         st.session_state['sel_cod_tab'] = selecao_metadados
     else:
         st.session_state['sel_cod_tab'] = []
-    
-    # Botão para aplicar filtros
-    if st.button("Aplicar Filtros"):
-        aplicar_filtros(st.session_state['df_metadados'])
     
     # Verifica se apenas uma tabela foi selecionada
     if len(st.session_state['sel_cod_tab']) == 1:
