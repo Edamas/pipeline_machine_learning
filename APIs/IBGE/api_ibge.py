@@ -66,7 +66,7 @@ def api_ibge():
         st.success(f"Tabela {codigo_tabela} selecionada")
 
         # Passo 2: Seleção de variáveis da API da tabela e exibição em formato de DataFrame selecionável
-        col1, col2, col3, col4, col5 = st.columns(5)
+        col1, col2, col3, col4 = st.columns(4)
         with col1:
             variaveis = st.session_state['df_metadados'].loc[codigo_tabela, 'Variáveis']
             if isinstance(variaveis, list) and len(variaveis) > 0:
@@ -91,6 +91,7 @@ def api_ibge():
             # Passo 3: Carregar classificações e subclassificações da API
             classificacoes = st.session_state['df_metadados'].loc[codigo_tabela, 'Classificações']
             if isinstance(classificacoes, list) and len(classificacoes) > 0:
+                nao_ha_classificacoes = False
                 classificacoes_dic = {}
                 for classificacao in classificacoes:
                     try:
@@ -113,6 +114,8 @@ def api_ibge():
                     if cod_subclassificacao_escolhida:
                         # Apenas adiciona se houver uma escolha válida
                         st.session_state['parametros_ibge']['classificacoes'].append([cod_classificacao_escolhida, cod_subclassificacao_escolhida[0]])
+            else:
+                nao_ha_classificacoes = True
 
         with col3:
             # Seleção de nível territorial e localidade - Usando apenas os níveis disponíveis
@@ -124,10 +127,13 @@ def api_ibge():
                     if isinstance(niveis_data, list) and len(niveis_data) > 0:
                         codigo_nivel_territorial, nome_nivel_territorial = ast.literal_eval(column)
                         niveis_territoriais.append({'Código do Nível Territorial': codigo_nivel_territorial, 'Nome do Nível Territorial': nome_nivel_territorial})
-            
+        
+        
+            # Inicializando a variável localidades_data como uma lista vazia antes de sua utilização
             localidades_data = []
-            nivel_selecionado = None
-            if niveis_territoriais:
+
+            # Bloco original onde a variável é utilizada
+            if isinstance(niveis_territoriais, list) and len(niveis_territoriais) > 0:
                 df_niveis = pd.DataFrame(niveis_territoriais).set_index('Código do Nível Territorial')
                 nivel_selecionado = criar_dataframe_selecionavel(df_niveis, 'Nível Territorial', 'Selecione um nível territorial', 'nivel_territorial')
                 if nivel_selecionado:
@@ -135,18 +141,21 @@ def api_ibge():
                     codigo_nivel_territorial = nivel_selecionado[0]
                     nivel = df_niveis.loc[codigo_nivel_territorial]
                     nome_nivel_territorial = nivel
-                    string_coluna = f'(\"{codigo_nivel_territorial}\", \"{nome_nivel_territorial.values[0]}\")'
-                    localidades_data = st.session_state['df_metadados'].loc[codigo_tabela, string_coluna]
-                    if isinstance(localidades_data, list):
+                    string_coluna = f'("{codigo_nivel_territorial[:2]}", "{nome_nivel_territorial.values[0]}")'
+                    
+                    # Inicializar localidades_data de forma segura para evitar erro
+                    if string_coluna in st.session_state['df_metadados'].columns:
+                        localidades_data = st.session_state['df_metadados'].loc[codigo_tabela, string_coluna]
                         localidades_data = [{'Código da Localidade': int(eval(localidade)[0]), 'Nome da Localidade': eval(localidade)[-1]} for localidade in localidades_data]
-                    with col4:
-                        if isinstance(localidades_data, list) and len(localidades_data) > 0:
-                            # localidades_data = [{'Código da Localidade': loc[0], 'Nome da Localidade': loc[1]} for loc in localidades_data]
-                            df_localidades = pd.DataFrame(localidades_data).set_index('Código da Localidade')
-                            localidade_selecionada = criar_dataframe_selecionavel(df_localidades, f'Localidades para `{nivel_selecionado[0]}: {nome_nivel_territorial["Nome do Nível Territorial"]}`', '', 'localidade')
-                            if localidade_selecionada:
-                                st.session_state['parametros_ibge']['localidade'] = localidade_selecionada[0]
-        with col5:
+
+            # Verificar e usar localidades_data
+            if isinstance(localidades_data, list) and len(localidades_data) > 0:
+                df_localidades = pd.DataFrame(localidades_data).set_index('Código da Localidade')
+                localidade_selecionada = criar_dataframe_selecionavel(df_localidades, f'Localidades para `{nivel_selecionado[0]}: {nome_nivel_territorial["Nome do Nível Territorial"]}`', '', 'localidade')
+                if localidade_selecionada:
+                    st.session_state['parametros_ibge']['localidade'] = localidade_selecionada[0]
+        
+        with col4:
             # Exibir seleção
             selecao = pd.DataFrame([st.session_state['parametros_ibge']]).T
             selecao.columns = ['Seleção']
@@ -163,7 +172,7 @@ def api_ibge():
         # Verificar se todos os parâmetros estão preenchidos e coletar os dados automaticamente
         if st.session_state['parametros_ibge']['codigo_tabela'] and \
             st.session_state['parametros_ibge']['variavel'] and \
-            st.session_state['parametros_ibge']['classificacoes'] and \
+            (st.session_state['parametros_ibge']['classificacoes'] or nao_ha_classificacoes) and \
             st.session_state['parametros_ibge']['nivel'] and \
             st.session_state['parametros_ibge']['localidade']:
             
