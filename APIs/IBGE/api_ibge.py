@@ -93,19 +93,26 @@ def api_ibge():
             if isinstance(classificacoes, list) and len(classificacoes) > 0:
                 classificacoes_dic = {}
                 for classificacao in classificacoes:
-                    ((cod_classificacao, nome_classificacao), (cod_subclassificacao, nome_subclassificacao)) = ast.literal_eval(classificacao)
-                    cod_classificacao = int(cod_classificacao)
-                    cod_subclassificacao = int(cod_subclassificacao)
-                    classificacao_str = f'{cod_classificacao}: {nome_classificacao}'
-                    if classificacao_str not in classificacoes_dic:
-                        classificacoes_dic[classificacao_str] = []
-                    classificacoes_dic[classificacao_str].append({'Código da Subclassificação': cod_subclassificacao, 'Nome da Subclassificação': nome_subclassificacao})
+                    try:
+                        ((cod_classificacao, nome_classificacao), (cod_subclassificacao, nome_subclassificacao)) = ast.literal_eval(classificacao)
+                        cod_classificacao = int(cod_classificacao)
+                        cod_subclassificacao = int(cod_subclassificacao)
+                        classificacao_str = f'{cod_classificacao}: {nome_classificacao}'
+                        if classificacao_str not in classificacoes_dic:
+                            classificacoes_dic[classificacao_str] = []
+                        classificacoes_dic[classificacao_str].append({'Código da Subclassificação': cod_subclassificacao, 'Nome da Subclassificação': nome_subclassificacao})
+                    except Exception as e:
+                        st.error(f"Erro ao processar a classificação: {classificacao} - {e}")
+                        continue
+
                 for classificacao in classificacoes_dic:
                     cod_classificacao_escolhida = int(classificacao.split(':')[0])
                     df_classificacao = pd.DataFrame.from_dict(classificacoes_dic[classificacao]).set_index('Código da Subclassificação')
                     cod_subclassificacao_escolhida = criar_dataframe_selecionavel(df_classificacao, f'Classificação: `{classificacao}`', f'', f'classificacoes_{cod_classificacao}')
-                    st.session_state['parametros_ibge']['classificacoes'].append([cod_classificacao_escolhida, cod_subclassificacao_escolhida[0]])
-        
+
+                    if cod_subclassificacao_escolhida:
+                        # Apenas adiciona se houver uma escolha válida
+                        st.session_state['parametros_ibge']['classificacoes'].append([cod_classificacao_escolhida, cod_subclassificacao_escolhida[0]])
 
         with col3:
             # Seleção de nível territorial e localidade - Usando apenas os níveis disponíveis
@@ -209,11 +216,7 @@ def api_ibge():
                 #
             else:
                 st.error('Erro na coleta dos dados.')
-        
-        
-    else:
-        st.warning('Por favor, selecione uma tabela na tab "Tabela".')
-        
+
 
 if __name__ == '__main__':
     # Configurar layout wide
