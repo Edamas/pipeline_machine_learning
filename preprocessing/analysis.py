@@ -33,7 +33,8 @@ def analysis_page():
         # Iterar sobre cada coluna de valor
         for coluna in df.columns:
             st.divider()
-            st.subheader(f"Análise da Coluna: {coluna}")
+            st.subheader(f"Análise da Coluna:")
+            st.markdown(f'`{coluna}`')
 
             # Criar três colunas (dados, estatística descritiva, gráfico)
             col1, col2, col3 = st.columns(3)
@@ -43,28 +44,33 @@ def analysis_page():
                 st.write("**Dados**")
                 df_coluna_display = df[[coluna]].copy()
                 df_coluna_display.index = df_coluna_display.index.strftime('%d/%m/%Y')
+                df_coluna_display.columns = ['Valor']
                 st.dataframe(df_coluna_display, use_container_width=True)
 
             # Coluna 2: Exibir estatísticas descritivas
             with col2:
                 st.write("**Estatísticas Descritivas**")
-                st.dataframe(df[coluna].describe(), use_container_width=True)
+                df_coluna_display.columns = ['Valor']
+                st.dataframe(df_coluna_display['Valor'].describe(), use_container_width=True)
 
             # Coluna 3: Gráfico com toggle para normalização
             with col3:
                 st.write("**Gráfico**")
-                normalizar = st.toggle(f"Normalizar Dados ({coluna})", value=False)
+                col_a, col_b = st.columns(2)
+                with col_a:
+                    normalizar = st.toggle(f"Normalizar Dados para a coluna de valor", value=False)
+                    
+                    df_plot = df[[coluna]].copy()
+                    df_plot[coluna] = df_plot[coluna].fillna(0)
+
+                    if normalizar:
+                        min_val = df_plot[coluna].min()
+                        max_val = df_plot[coluna].max()
+                        if max_val > min_val:
+                            df_plot[coluna] = (df_plot[coluna] - min_val) / (max_val - min_val)
                 
-                df_plot = df[[coluna]].copy()
-                df_plot[coluna] = df_plot[coluna].fillna(0)
-
-                if normalizar:
-                    min_val = df_plot[coluna].min()
-                    max_val = df_plot[coluna].max()
-                    if max_val > min_val:
-                        df_plot[coluna] = (df_plot[coluna] - min_val) / (max_val - min_val)
-
-                tipo_grafico = st.selectbox(f"Escolha o tipo de gráfico ({coluna})", ['Linha', 'Barra'], key=f"grafico_{coluna}")
+                with col_b:
+                    tipo_grafico = st.selectbox(f"Escolha o tipo de gráfico", ['Linha', 'Barra'], key=f"grafico_{coluna}")
 
                 try:
                     if tipo_grafico == 'Linha':

@@ -125,6 +125,8 @@ def api_ibge():
                         codigo_nivel_territorial, nome_nivel_territorial = ast.literal_eval(column)
                         niveis_territoriais.append({'Código do Nível Territorial': codigo_nivel_territorial, 'Nome do Nível Territorial': nome_nivel_territorial})
             
+            localidades_data = []
+            nivel_selecionado = None
             if niveis_territoriais:
                 df_niveis = pd.DataFrame(niveis_territoriais).set_index('Código do Nível Territorial')
                 nivel_selecionado = criar_dataframe_selecionavel(df_niveis, 'Nível Territorial', 'Selecione um nível territorial', 'nivel_territorial')
@@ -133,18 +135,17 @@ def api_ibge():
                     codigo_nivel_territorial = nivel_selecionado[0]
                     nivel = df_niveis.loc[codigo_nivel_territorial]
                     nome_nivel_territorial = nivel
-                    string_coluna = f'("{codigo_nivel_territorial[:2]}", "{nome_nivel_territorial.values[0]}")'
+                    string_coluna = f'(\"{codigo_nivel_territorial}\", \"{nome_nivel_territorial.values[0]}\")'
                     localidades_data = st.session_state['df_metadados'].loc[codigo_tabela, string_coluna]
-                    localidades_data = [{'Código da Localidade': int(eval(localidade)[0]), 'Nome da Localidade': eval(localidade)[-1]} for localidade in localidades_data]
-                with col4:
-                    if isinstance(localidades_data, list) and len(localidades_data) > 0:
-                        #localidades_data = [{'Código da Localidade': loc[0], 'Nome da Localidade': loc[1]} for loc in localidades_data]
-                        df_localidades = pd.DataFrame(localidades_data).set_index('Código da Localidade')
-                        localidade_selecionada = criar_dataframe_selecionavel(df_localidades, f'Localidades para `{nivel_selecionado[0]}: {nome_nivel_territorial['Nome do Nível Territorial']}`', '', 'localidade')
-                        if localidade_selecionada:
-                            st.session_state['parametros_ibge']['localidade'] = localidade_selecionada[0]
-
-        coletar = False
+                    if isinstance(localidades_data, list):
+                        localidades_data = [{'Código da Localidade': int(eval(localidade)[0]), 'Nome da Localidade': eval(localidade)[-1]} for localidade in localidades_data]
+                    with col4:
+                        if isinstance(localidades_data, list) and len(localidades_data) > 0:
+                            # localidades_data = [{'Código da Localidade': loc[0], 'Nome da Localidade': loc[1]} for loc in localidades_data]
+                            df_localidades = pd.DataFrame(localidades_data).set_index('Código da Localidade')
+                            localidade_selecionada = criar_dataframe_selecionavel(df_localidades, f'Localidades para `{nivel_selecionado[0]}: {nome_nivel_territorial["Nome do Nível Territorial"]}`', '', 'localidade')
+                            if localidade_selecionada:
+                                st.session_state['parametros_ibge']['localidade'] = localidade_selecionada[0]
         with col5:
             # Exibir seleção
             selecao = pd.DataFrame([st.session_state['parametros_ibge']]).T
@@ -159,64 +160,74 @@ def api_ibge():
             st.dataframe(selecao, use_container_width=True)
 
 
+        # Verificar se todos os parâmetros estão preenchidos e coletar os dados automaticamente
+        if st.session_state['parametros_ibge']['codigo_tabela'] and \
+            st.session_state['parametros_ibge']['variavel'] and \
+            st.session_state['parametros_ibge']['classificacoes'] and \
+            st.session_state['parametros_ibge']['nivel'] and \
+            st.session_state['parametros_ibge']['localidade']:
             
-        # Passo 5: Geração do link final e coleta de dados
-        url = gerar_link()
-        st.write('Link para os dados:')
-        st.write(url)
-        coletar = st.button("Coletar dados")
-        coletar = True
-        if coletar:
-            
-            
+            # Geração do link final e coleta de dados
+            url = gerar_link()
+            st.write('Link para os dados:')
+            st.write(url)
             st.write('')
+            st.session_state['df_ibge'] = pd.DataFrame()
             st.session_state['df_ibge'] = coletar_dados(url)
+            st.dataframe(st.session_state['df_ibge'])
+            
             if not st.session_state['df_ibge'].empty:
-                st.dataframe(st.session_state['df_ibge'])
-                st.success(f"Número de registros coletados: {len(st.session_state['df_ibge'])}")
-                ts = gerar_timeserie()
-                st.markdown(f'`{ts.columns[0]}`')
-                
-                # exibir a timeserie
-                st.dataframe(ts, use_container_width=True)
-                
-                df_display = ts.copy()
-                df_display.index = pd.to_datetime(df_display.index, format='%d/%m/%Y')
-                
-                # Converter o índice do DataFrame para datetime.datetime
-                df_display.index = pd.to_datetime(df_display.index, format='%d/%m/%Y').to_pydatetime()
-                
-                nome_variavel = df_display.columns[0]
-                
-                # normalização
-                if st.checkbox("Normalizar Dados", value=False):
-                    # Converter o índice para datetime
-                    df_display.iloc[:, 0] = (df_display.iloc[:, 0] - df_display.iloc[:, 0].min()) / (
-                        df_display.iloc[:, 0].max() - df_display.iloc[:, 0].min()
-                    )
-                    grafico_barras(df_display, nome_variavel, key=nome_variavel + '-' + ' ibge')
+                registros_validos = sum([valor.replace('.', '').isnumeric() for valor in st.session_state['df_ibge']['Valor']])
+                if not registros_validos:
+                    st.error('Nenhum dado numérico retornado para a série selecionada. Isso é comum para séries com valores baixos, por exemplo. Favor selecionar outra tabela e/ou outros parâmetros de consulta.')
                 else:
-                    grafico_barras(df_display, nome_variavel, key=nome_variavel + '-' + ' ibge')
-                
-                # enviar para pré-processamento
-                if st.button("Enviar para Pré-processamento"):
-                    # Verificar se já existe um DataFrame no pré-processamento
-                    if 'df_original' in st.session_state and not st.session_state['df_original'].empty:
-                        # Concatenar a nova série com as séries existentes
-                        st.session_state['df_original'] = pd.concat([st.session_state['df_original'], ts.copy()], axis=1)
+                    st.success(f"Número de registros válidos coletados: {registros_validos}")
+                    
+                    # Converta todas as colunas para numérico, exceto o índice
+                    nome_coluna_valor = st.session_state['df_ibge'].columns[0]
+                    st.session_state['df_ibge'][nome_coluna_valor] = pd.to_numeric(st.session_state['df_ibge'][nome_coluna_valor], errors='coerce')
+                    
+                    ts = gerar_timeserie()
+                    st.markdown(f'`{ts.columns[0]}`')
+                    
+                    # exibir a timeserie
+                    st.dataframe(ts, use_container_width=True)
+                    
+                    df_display = ts.copy()
+                    df_display.index = pd.to_datetime(df_display.index, format='%d/%m/%Y')
+                    
+                    # Converter o índice do DataFrame para datetime.datetime
+                    df_display.index = pd.to_datetime(df_display.index, format='%d/%m/%Y').to_pydatetime()
+                    
+                    nome_variavel = df_display.columns[0]
+                    
+                    # normalização
+                    if st.checkbox("Normalizar Dados", value=False):
+                        # Converter o índice para datetime
+                        df_display.iloc[:, 0] = (df_display.iloc[:, 0] - df_display.iloc[:, 0].min()) / (
+                            df_display.iloc[:, 0].max() - df_display.iloc[:, 0].min()
+                        )
+                        grafico_barras(df_display, nome_variavel, key=nome_variavel + '-' + ' ibge')
                     else:
-                        # Se for a primeira série, apenas armazena
-                        st.session_state['df_original'] = ts.copy()
+                        grafico_barras(df_display, nome_variavel, key=nome_variavel + '-' + ' ibge')
+                    
+                    # enviar para pré-processamento
+                    if st.button("Enviar para Pré-processamento"):
+                        # Verificar se já existe um DataFrame no pré-processamento
+                        if 'df_original' in st.session_state and not st.session_state['df_original'].empty:
+                            # Concatenar a nova série com as séries existentes
+                            st.session_state['df_original'] = pd.concat([st.session_state['df_original'], ts.copy()], axis=1)
+                        else:
+                            # Se for a primeira série, apenas armazena
+                            st.session_state['df_original'] = ts.copy()
 
-                    st.success("Dados enviados para pré-processamento com sucesso!")
+                        st.success("Dados enviados para pré-processamento com sucesso!")
 
-                    # Limpar df_concatenado para redefinir a página
-                    st.session_state.df_concatenado = None
+                        # Limpar df_concatenado para redefinir a página
+                        st.session_state.df_concatenado = None
 
-                #
             else:
                 st.error('Erro na coleta dos dados.')
-
 
 if __name__ == '__main__':
     # Configurar layout wide

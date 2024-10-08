@@ -6,7 +6,10 @@ import pandas as pd
 # Função para gerar série temporal
 def gerar_timeserie():
         df = st.session_state['df_ibge']
-        unidade = df['Unidade de Medida'].drop_duplicates()[0]
+        unidade = f" ({df['Unidade de Medida'].drop_duplicates()[0]}) - "
+        if unidade == ' () - ':
+            unidade = ' - '
+        
         variavel = df['Variável'].drop_duplicates()[0]
         for nivel in ['Brasil', 'Grande Região', 'Unidade da Federação', 'Município']:
             if nivel in df.columns:
@@ -14,7 +17,7 @@ def gerar_timeserie():
                 localidade = f'{localidade.name} - {localidade.values[0]}'
                 break
         
-        nome_coluna_valor = f'{variavel} ({unidade}), {localidade}'
+        nome_coluna_valor = f'{variavel}{unidade}{localidade}'
         
         # Prepara a série temporal
         timeserie_df = pd.DataFrame({

@@ -41,10 +41,10 @@ def coletar_dados(url):
 
             # Passar codigo_tabela para obter_nome_periodo
             nome_periodo = obter_nome_periodo(st.session_state['parametros_ibge']['codigo_tabela'])  # Passando o codigo_tabela
-
+            
             # Processar os dados, passando o nome do período
             df_dados = processar_dados(dados_json, nome_periodo)  # Passando nome_periodo
-
+            
             return df_dados
         else:
             st.error("Erro ao coletar dados.")
@@ -107,19 +107,6 @@ def processar_dados(response_json, nome_periodo):
         else:
             st.error("Formato de data desconhecido.")
             return pd.DataFrame()
-
-
-        
-        # Converte a coluna de valor para numérico, se existir
-        if 'Valor' in df_dados.columns:
-            df_dados['Valor'] = pd.to_numeric(df_dados['Valor'], errors='coerce')  # Converte valores para numérico
-        else:
-            st.error("Coluna 'Valor' não encontrada no JSON.")
-            return pd.DataFrame()
-
-        # Remover linhas com valores nulos nas colunas de data e valor
-        df_dados.dropna(subset=['data', 'Valor'], inplace=True)
-
         return df_dados
 
     else:
