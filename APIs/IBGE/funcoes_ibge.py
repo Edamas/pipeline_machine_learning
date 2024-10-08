@@ -25,7 +25,7 @@ def carregar_dados():
     for key, file in arquivos.items():
         file_path = os.path.join(base_dir, file)
         if key == 'df_metadados':
-            st.session_state[key] = pd.read_csv(file_path, sep='\t', index_col='Código Tabela', encoding='utf-8')
+            st.session_state[key] = pd.read_csv(file_path, sep='\t', index_col='Número', encoding='utf-8')
         else:
             st.session_state[key] = pd.read_csv(file_path, sep='\t', encoding='utf-8')
         
@@ -348,12 +348,7 @@ def obter_variaveis(codigo_tabela):
     return variaveis
 
 
-def gerar_link_coletar_dados(codigo_tabela, variavel, classificacoes, nivel, localidade):
-    url = construir_link_unico(codigo_tabela, variavel, classificacoes, nivel, localidade)
-    
-    st.write("Link Final Gerado:")
-    st.write(url)
-
+def coletar_dados(url):
     with st.spinner(f"Coletando dados da série temporal..."):
         # Coletar os dados do link gerado
         try:
@@ -367,6 +362,7 @@ def gerar_link_coletar_dados(codigo_tabela, variavel, classificacoes, nivel, loc
             dados_json = response.json()
 
             # Passar codigo_tabela para obter_nome_periodo
+            codigo_tabela = st.session_state['codigo_tabela']
             nome_periodo = obter_nome_periodo(codigo_tabela)  # Passando o codigo_tabela
 
             # Processar os dados, passando o nome do período
