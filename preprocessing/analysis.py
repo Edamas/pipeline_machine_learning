@@ -58,7 +58,7 @@ def analysis_page():
                 st.write("**Gráfico**")
                 col_a, col_b = st.columns(2)
                 with col_a:
-                    normalizar = st.toggle(f"Normalizar Dados para a coluna de valor", value=False)
+                    normalizar = st.toggle(f"Normalizar Dados para a coluna de valor", value=False, key=coluna)
                     
                     df_plot = df[[coluna]].copy()
                     df_plot[coluna] = df_plot[coluna].fillna(0)
