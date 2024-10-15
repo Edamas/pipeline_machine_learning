@@ -6,16 +6,23 @@ from echarts_plots import grafico_barras, grafico_linhas
 # Função para aplicar o preenchimento nos valores nulos
 def aplicar_preenchimento(df, metodos_preenchimento):
     for col, (metodo, valor_custom) in metodos_preenchimento.items():
-        if metodo == "Último valor válido":
-            df[col].ffill(inplace=True)
-        elif metodo == "Próximo valor":
-            df[col].bfill(inplace=True)
-        elif metodo == "Média entre anterior e próximo":
-            df[col].interpolate(method='linear', inplace=True)
-        elif metodo == "Preencher com zero":
+        if df[col].isnull().any():
+            if metodo == "Último valor válido":
+                df[col].ffill(inplace=True)
+            elif metodo == "Próximo valor":
+                df[col].bfill(inplace=True)
+            elif metodo == "Média entre anterior e próximo":
+                df[col].interpolate(method='linear', inplace=True)
+            elif metodo == "Preencher com zero":
+                df[col].fillna(0, inplace=True)
+            elif metodo == "Valor personalizado" and valor_custom is not None:
+                df[col].fillna(valor_custom, inplace=True)
+        
+        # Verificação adicional para garantir que não restam valores nulos
+        if df[col].isnull().any():
+            st.warning(f"A coluna '{col}' ainda possui valores nulos após aplicar o método '{metodo}'. Tentando preencher com zero.")
             df[col].fillna(0, inplace=True)
-        elif metodo == "Valor personalizado" and valor_custom is not None:
-            df[col].fillna(valor_custom, inplace=True)
+    
     return df
 
 # Função principal para manipulação de datas
@@ -24,18 +31,6 @@ def date_handling_page():
 
     if "df_original" in st.session_state and not st.session_state.df_original.empty:
         df = st.session_state.df_original.copy()
-
-        # Escolher a frequência desejada
-        st.subheader("Escolha a Frequência Desejada")
-        frequencia = st.radio("Frequência", ["Diário", "Quinzenal", "Mensal", "Semestral", "Anual", "Personalizado (em dias)"], index=4)
-        if frequencia == "Personalizado (em dias)":
-            dias_personalizado = st.number_input("Informe o intervalo em dias", min_value=1, value=30, step=1)
-        else:
-            dias_personalizado = None
-
-        # Aviso sobre a diminuição de frequência
-        if frequencia != "Diário":
-            st.warning("Diminuir a frequência (por exemplo, de anual para mensal) pode gerar distorções nos dados!")
 
         # Escolher método de preenchimento para cada coluna usando st.columns
         st.subheader("Método de Preenchimento dos valores nulos das Colunas")
@@ -62,14 +57,16 @@ def date_handling_page():
                 # Métricas de valores válidos
                 valores_atuais = df[col].count()
                 valores_originais = st.session_state.df_original[col].count()
-                st.metric(label=f"Valores Válidos ({col})", value=int(valores_atuais), delta=int(valores_atuais - valores_originais), help=f"Valores originais: {valores_originais}")
+                delta = int(valores_atuais - valores_originais)
+                st.metric(label=f"Valores Válidos ({col})", value=int(valores_atuais), delta=delta, help=f"Valores originais: {valores_originais}")
 
-        # Aplicar o preenchimento e remover valores nulos
+        # Aplicar o preenchimento e garantir que não haja valores nulos no DataFrame
         df = aplicar_preenchimento(df, metodos_preenchimento=metodos_selecionados)
-        df.dropna(inplace=True)
 
-        # Persistir o dataframe atualizado
-        if df.empty:
+        # Verificar se o DataFrame está vazio após o preenchimento
+        if df.isnull().any().any():
+            st.warning("Ainda existem valores nulos após o preenchimento. Por favor, revise os métodos selecionados.")
+        elif df.empty:
             st.warning("O DataFrame ficou vazio após o preenchimento dos valores nulos. Por favor, revise os métodos selecionados.")
         else:
             st.session_state['df_atualizado'] = df
@@ -82,6 +79,18 @@ def date_handling_page():
                 st.markdown(f"Data Mínima Comum: `{data_minima_comum.strftime('%d/%m/%Y')}`")
                 st.markdown(f"Data Máxima Comum: `{data_maxima_comum.strftime('%d/%m/%Y')}`")
                 st.markdown(f'Intervalo: `{(data_maxima_comum - data_minima_comum).days} dias`')
+
+                # Escolher a frequência desejada
+                st.subheader("Escolha a Frequência Desejada")
+                frequencia = st.radio("Frequência", ["Diário", "Quinzenal", "Mensal", "Semestral", "Anual", "Personalizado (em dias)"], index=4)
+                if frequencia == "Personalizado (em dias)":
+                    dias_personalizado = st.number_input("Informe o intervalo em dias", min_value=1, value=30, step=1)
+                else:
+                    dias_personalizado = None
+
+                # Aviso sobre a diminuição de frequência
+                if frequencia != "Diário":
+                    st.warning("Diminuir a frequência (por exemplo, de anual para mensal) pode gerar distorções nos dados!")
 
                 # Slider para definir intervalo de datas
                 st.subheader("Definir Intervalo de Datas")
@@ -98,6 +107,9 @@ def date_handling_page():
 
                     # Filtrar o DataFrame com base nas datas selecionadas
                     df_filtrado = df.loc[(df.index.date >= data_inicio) & (df.index.date <= data_fim)]
+
+                    # Garantir que não há valores nulos após o filtro
+                    df_filtrado.dropna(inplace=True)
 
                     # Mostrar dados filtrados
                     if df_filtrado.empty:
