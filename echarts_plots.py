@@ -1,107 +1,185 @@
 from streamlit_echarts import st_echarts
-import pandas as pd
-import streamlit as st
+from sklearn.linear_model import LinearRegression
 
 # Função para gerar gráfico de barras
-def grafico_barras(dataframe, valor_coluna, key=None):
-    # Verifique se o índice é datetime e converta para string formatada
-    if pd.api.types.is_datetime64_any_dtype(dataframe.index):
-        labels = dataframe.index.strftime('%d/%m/%Y').tolist()  # Converte para formato dd/mm/aaaa
-    else:
-        st.error("O índice não está em formato datetime.")
-        return  # Sai da função se o índice não for datetime
+def grafico_barras(dataframe, colunas, titulo="Gráfico de Barras", key=None):
+    if isinstance(colunas, str):
+        colunas = [colunas]
+    
+    colunas_existentes = [col for col in colunas if col in dataframe.columns]
+    
+    if not colunas_existentes:
+        raise KeyError(f"Nenhuma das colunas especificadas foi encontrada no DataFrame.\n"
+                       f"Colunas solicitadas: {colunas}\n"
+                       f"Colunas disponíveis: {dataframe.columns.tolist()}")
 
-    # Converte a coluna de valores para uma lista
-    valores = dataframe[valor_coluna].tolist()
-
-    # Prepare os dados para o gráfico
-    options = {
-        "xAxis": {"type": "category", "data": labels},  # Labels já são strings formatadas
-        "yAxis": {"type": "value"},
-        "series": [{"data": valores, "type": "bar"}],
-        "tooltip": {"trigger": "axis", "axisPointer": {"type": "shadow"}},
-        "title": {"text": "Gráfico de Barras", "left": "center"},
-        "toolbox": {"feature": {"saveAsImage": {}}},
-    }
-
-    # Tente renderizar o gráfico, lidando com possíveis erros
-    try:
-        st_echarts(options=options, height="500px", key=key)
-    except Exception as e:
-        st.error(f"Erro ao renderizar gráfico: {e}")
-
-
-# Função para gerar gráfico de linhas
-def grafico_linhas(dataframe, valor_coluna):
-    if not pd.api.types.is_datetime64_any_dtype(dataframe.index):
-        dataframe.index = pd.to_datetime(dataframe.index)
+    data = []
+    for coluna in colunas_existentes:
+        data.append({"name": coluna, "type": "bar", "data": dataframe[coluna].dropna().tolist()})
 
     labels = dataframe.index.strftime('%d/%m/%Y').tolist()
-    valores = dataframe[valor_coluna].tolist()
 
     options = {
-        "xAxis": {"type": "category", "data": labels},
-        "yAxis": {"type": "value"},
-        "series": [{"data": valores, "type": "line"}],
-        "tooltip": {"trigger": "axis", "axisPointer": {"type": "cross"}},
-        "title": {"text": "Gráfico de Linhas", "left": "center"},
+        "title": {"text": titulo, "left": "center"},
+        "xAxis": {
+            "type": "category",
+            "data": labels,
+            "name": "Data",
+            "nameLocation": "middle",
+            "nameGap": 25
+        },
+        "yAxis": {
+            "type": "value",
+            "name": "Valores",
+            "nameLocation": "middle",
+            "nameRotate": 90,
+            "nameGap": 50
+        },
+        "series": data,
+        "tooltip": {
+            "trigger": "axis",
+            "axisPointer": {"type": "shadow"}
+        },
         "toolbox": {"feature": {"saveAsImage": {}}},
+        "legend": {
+            "show": True,
+            "orient": "top",
+            "right": "-5%",
+            "top": "middle",
+            "itemGap": 10,
+            "textStyle": {"overflow": "truncate", "width": 150}
+        }
     }
-    st_echarts(options=options, height="500px")
 
+    st_echarts(options=options, height="500px", key=key)
 
-# Função para gerar scatterplot
-def grafico_scatterplot(dataframe, valor_coluna):
-    labels = dataframe.index.tolist()
-    valores = dataframe[valor_coluna].tolist()
+# Função para gerar gráfico de linhas
+def grafico_linhas(dataframe, colunas, titulo="Gráfico de Linhas", key=None):
+    if isinstance(colunas, str):
+        colunas = [colunas]
+
+    colunas_existentes = [col for col in colunas if col in dataframe.columns]
+    
+    if not colunas_existentes:
+        raise KeyError(
+            f"Nenhuma das colunas especificadas foi encontrada no DataFrame.\n"
+            f"Colunas solicitadas: {colunas}\n"
+            f"Colunas disponíveis: {dataframe.columns.tolist()}")
+
+    data = []
+    for coluna in colunas_existentes:
+        data.append({"name": coluna, "type": "line", "data": dataframe[coluna].dropna().tolist()})
+
+    labels = dataframe.index.strftime('%d/%m/%Y').tolist()
 
     options = {
-        "xAxis": {"type": "category", "data": labels},
-        "yAxis": {"type": "value"},
-        "series": [{"data": valores, "type": "scatter"}],
-        "tooltip": {"trigger": "item"},
-        "title": {"text": "Scatterplot", "left": "center"},
+        "title": {"text": titulo, "left": "center"},
+        "xAxis": {
+            "type": "category",
+            "data": labels,
+            "name": "Data",
+            "nameLocation": "middle",
+            "nameGap": 25
+        },
+        "yAxis": {
+            "type": "value",
+            "name": "Valores",
+            "nameLocation": "middle",
+            "nameRotate": 90,
+            "nameGap": 50
+        },
+        "series": data,
+        "tooltip": {
+            "trigger": "axis",
+            "axisPointer": {"type": "cross"}
+        },
         "toolbox": {"feature": {"saveAsImage": {}}},
+        "legend": {
+            "show": True,
+            "orient": "top",
+            "right": "-5%",
+            "top": "middle",
+            "itemGap": 10,
+            "textStyle": {"overflow": "truncate", "width": 150}
+        }
     }
-    st_echarts(options=options, height="500px")
 
+    st_echarts(options=options, height="500px", key=key)
 
-# Função para gerar gráfico de candlestick
-def grafico_candlestick(dataframe, open_col, close_col, low_col, high_col):
-    labels = dataframe.index.tolist()
-    dados_candlestick = [
-        [dataframe[open_col][i], dataframe[close_col][i], dataframe[low_col][i], dataframe[high_col][i]]
-        for i in range(len(dataframe))
-    ]
+# Função para gerar gráfico de scatterplot com linha de regressão
+def grafico_scatterplot(dataframe, coluna_x, coluna_y, titulo="Scatterplot de Correlação", key=None):
+    if coluna_x not in dataframe.columns or coluna_y not in dataframe.columns:
+        raise KeyError(
+            f"Colunas '{coluna_x}' e/ou '{coluna_y}' não foram encontradas no DataFrame.\n"
+            f"Colunas disponíveis: {dataframe.columns.tolist()}")
 
+    x = dataframe[coluna_x].dropna().values.reshape(-1, 1)
+    y = dataframe[coluna_y].dropna().values.reshape(-1, 1)
+
+    # Ajuste da regressão linear
+    reg = LinearRegression().fit(x, y)
+    y_pred = reg.predict(x).flatten()
+    r2 = reg.score(x, y)
+
+    # Definir os limites dos eixos com base nos valores dos pontos
+    x_min, x_max = x.min(), x.max()
+    y_min, y_max = y.min(), y.max()
+
+    # Opções do gráfico
     options = {
-        "xAxis": {"type": "category", "data": labels},
-        "yAxis": {"type": "value"},
-        "series": [{"data": dados_candlestick, "type": "candlestick"}],
-        "tooltip": {"trigger": "axis", "axisPointer": {"type": "cross"}},
-        "title": {"text": "Gráfico Candlestick", "left": "center"},
-        "toolbox": {"feature": {"saveAsImage": {}}},
-    }
-    st_echarts(options=options, height="500px")
-
-
-# Função para gerar violin plot
-def grafico_violin(dataframe, valor_coluna):
-    valores = dataframe[valor_coluna].tolist()
-
-    options = {
-        "xAxis": {"type": "category", "data": ["Distribuição"]},
-        "yAxis": {"type": "value"},
+        "title": {"text": titulo, "left": "center"},
+        "xAxis": {
+            "type": "value",
+            "name": coluna_x,
+            "min": x_min,
+            "max": x_max,
+            "nameLocation": "middle",
+            "nameGap": 25
+        },
+        "yAxis": {
+            "type": "value",
+            "name": coluna_y,
+            "min": y_min,
+            "max": y_max,
+            "nameLocation": "middle",
+            "nameRotate": 90,
+            "nameGap": 50
+        },
         "series": [
             {
-                "data": valores,
-                "type": "boxplot",
-                "boxWidth": [7, 50],  # Violin width
-                "tooltip": {"formatter": "{b}: {c}"},
+                "type": "scatter",
+                "name": "Pontos",
+                "data": [[float(x[i][0]), float(y[i][0])] for i in range(len(x))],
+                "symbolSize": 5,
+                "emphasis": {"focus": "series"},
+                "tooltip": {
+                    "formatter": "function(params) { return '(' + params.value[0].toFixed(4) + ', ' + params.value[1].toFixed(4) + ')'; }"
+                },
+            },
+            {
+                "type": "line",
+                "name": "Linha de Regressão",
+                "data": [[float(x_min), float(reg.predict([[x_min]])[0][0])], [float(x_max), float(reg.predict([[x_max]])[0][0])]],
+                "lineStyle": {"type": "solid", "color": "red", "width": 1},
+                "label": {
+                    "show": True,
+                    "formatter": f"y = {reg.coef_[0][0]:.4f}x + {reg.intercept_[0]:.4f}\nR² = {r2:.4f}",
+                    "position": "end",
+                },
             }
         ],
-        "title": {"text": "Violin Plot", "left": "center"},
-        "tooltip": {"trigger": "item"},
+        "tooltip": {
+            "trigger": "item",
+        },
         "toolbox": {"feature": {"saveAsImage": {}}},
+        "legend": {
+            "show": True,
+            "orient": "top",
+            "right": "-5%",
+            "top": "middle",
+            "itemGap": 10,
+            "textStyle": {"overflow": "truncate", "width": 150}
+        }
     }
-    st_echarts(options=options, height="500px")
+
+    st_echarts(options=options, height="500px", key=key)

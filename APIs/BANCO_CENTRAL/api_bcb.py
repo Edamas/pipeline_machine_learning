@@ -4,6 +4,7 @@ import streamlit as st
 import pandas as pd
 import requests
 import os
+from APIs.send_to_analysis import send_to_analysis
 
 # Função para baixar dados com cache
 @st.cache_data(show_spinner=False)
@@ -21,7 +22,7 @@ def baixar_dados_serie(codigo):
         if df.empty:
             return None, "Erro: DataFrame vazio"
         # Converter 'data' para datetime no formato 'dd/mm/aaaa'
-        df['data'] = pd.to_datetime(df['data'], format='%d/%m/%Y')
+        df['data'] = pd.to_datetime(df['data'], format='%d/%m/%Y', dayfirst=True)
         df['valor'] = pd.to_numeric(df['valor'], errors='coerce')
         return df, "Sucesso"
     except Exception as e:
@@ -36,16 +37,11 @@ def api_page_bcb():
     # Tente carregar o CSV em um DataFrame
     try:
         metadados = pd.read_csv(metadados_path)
-        # Agora, dados_filtrados contém o DataFrame
-        dados_filtrados = metadados  # ou aplique filtros, se necessário
+        dados_filtrados = metadados
     except FileNotFoundError:
         st.error(f"Arquivo não encontrado: {metadados_path}")
         dados_filtrados = pd.DataFrame()  # DataFrame vazio como fallback
 
-    # Você pode adicionar filtros aqui se desejar
-    dados_filtrados = metadados  # Usando todos os metadados sem filtros
-
-    # Nunca mais mude esse trecho:
     event = st.dataframe(dados_filtrados, selection_mode="multi-row", on_select="rerun")
     selected_rows = event.selection.get('rows', []) if event.selection else []
 
@@ -72,7 +68,6 @@ def api_page_bcb():
         progresso_barra = st.progress(0)
         with st.spinner("Baixando dados das séries selecionadas..."):
             for serie in series_selecionadas:
-                # Limpar cache para garantir que os dados sejam recarregados
                 baixar_dados_serie.clear()
                 df_serie, status = baixar_dados_serie(serie["codigo"])
                 progresso += 1
@@ -83,15 +78,13 @@ def api_page_bcb():
                     # Verificar se as colunas 'data' e 'valor' existem
                     if 'data' in df_serie.columns and 'valor' in df_serie.columns:
                         # Renomear a coluna 'valor' para o nome da série
-                        df_serie['data'] = pd.to_datetime(df_serie['data'], format='%d/%m/%Y')  # Convertendo para datetime no formato desejado
                         df_serie.rename(columns={'valor': serie['nome']}, inplace=True)
                         df_serie = df_serie.set_index('data')
                     else:
                         st.error(f"Série {serie['codigo']} - {serie['nome']} não possui as colunas necessárias. Favor carregar novamente.")
-                        continue  # Pular para a próxima série
+                        continue
 
                     num_registros = df_serie.shape[0]
-                    # Exibir mensagem de sucesso imediatamente
                     st.success(f"Série {serie['codigo']} - {serie['nome']} carregada com sucesso. Registros: {num_registros}")
 
                     # Concatenar as séries usando merge
@@ -141,22 +134,20 @@ def api_page_bcb():
         df_display = df_concatenado.copy()
 
         # Garantir que o índice é datetime e formatado corretamente (sem horário)
-        df_display.index = pd.to_datetime(df_display.index, errors='coerce').strftime('%d/%m/%Y')
+        df_display.index = pd.to_datetime(df_display.index, errors='coerce', dayfirst=True).strftime('%d/%m/%Y')
 
         st.dataframe(df_display)
 
-        # Botão para enviar para pré-processamento
-        if st.button("Enviar para Pré-processamento"):
-            # Verificar se já existe um DataFrame no pré-processamento
-            if 'df_original' in st.session_state and not st.session_state['df_original'].empty:
-                # Concatenar a nova série com as séries existentes
-                st.session_state['df_original'] = pd.concat([st.session_state['df_original'], st.session_state['df_concatenado']], axis=1)
-            else:
-                # Se for a primeira série, apenas armazena
-                st.session_state['df_original'] = st.session_state['df_concatenado'].copy()
+        if 'enviar_para_analise_bcb' not in st.session_state:
+            st.session_state.enviar_para_analise_bcb = False
 
-            st.success("Dados enviados para pré-processamento com sucesso!")
+        if st.button("Enviar para Análise", key="enviar_para_analise_unico_bcb"):
+            st.session_state.enviar_para_analise_bcb = True
 
-            # Limpar df_concatenado para redefinir a página
-            st.session_state.df_concatenado = None
+        if st.session_state.enviar_para_analise_bcb:
+            sucesso = send_to_analysis(df_concatenado)
 
+
+if __name__ == '__main__':
+    st.set_page_config(layout="wide")
+    api_page_bcb()

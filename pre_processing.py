@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from preprocessing.null_handling import tratar_nulos
 from preprocessing.normalization import normalizar
-from preprocessing.date_handling import preencher_datas_faltantes
+#from preprocessing.date_handling import preencher_datas_faltantes
 from preprocessing.column_calculations import calcular_novas_colunas
 
 def pre_processing_page(df_series):

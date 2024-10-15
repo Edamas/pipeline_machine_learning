@@ -8,6 +8,7 @@ from preprocessing.analysis import analysis_page
 from preprocessing.date_handling import date_handling_page
 from preprocessing.value_handling import value_handling_page
 from pre_processing import pre_processing_page
+from correlation import correlation_page
 
 def get_pages():
     return {
@@ -18,12 +19,13 @@ def get_pages():
             st.Page(api_page_world_bank, title="API: World Bank"),
             st.Page(api_page_noaa, title="API: NOAA"),
         ],
-        "Análise": [
-            st.Page(analysis_page, title="Análise de Dados"),
-        ],
         "Pré-Processamento": [
             st.Page(date_handling_page, title="Manipulação de Datas"),
             st.Page(value_handling_page, title="Manipulação de Valores"),
             st.Page(pre_processing_page, title="Pré-Processamento de Dados")
-        ]
+        ],
+        "Análise": [
+            st.Page(analysis_page, title="Análise de Dados"),
+            st.Page(correlation_page, title="Correlações"),
+        ],
     }
