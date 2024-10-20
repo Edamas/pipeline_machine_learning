@@ -2,17 +2,16 @@ import requests, os
 from bs4 import BeautifulSoup
 import streamlit as st
 import pandas as pd
-import time 
 
 # Função para carregar os dados dos arquivos CSV e metadados
 def carregar_dados():
-    base_dir = os.path.join('APIs', 'IBGE')  # Diretório base para os arquivos
+    base_dir = os.path.join('inputs', 'IBGE')  # Diretório base para os arquivos
     arquivos = {
         'df_metadados': 'metadados_tabelas.csv',
         'df_niveis': 'niveis_geograficos.csv',
         'df_periodicidade': 'periodicidade.csv',
         'df_periodos': 'periodos.csv',
-        'df_classificacoes': 'classificacoes.csv',
+        #'df_classificacoes': 'classificacoes.csv',
         'df_subclassificacoes': 'subclassificacoes.csv',
         'df_variaveis': 'variaveis.csv',
         'rel_tabelaXniveis': 'tabela_x_niveis.csv',

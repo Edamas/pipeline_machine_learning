@@ -3,14 +3,14 @@ import streamlit as st
 import pandas as pd
 import ast
 from echarts_plots import grafico_barras
-from APIs.IBGE.df_selecionavel import criar_dataframe_selecionavel
-from APIs.IBGE.gerar_link_coletar_dados import gerar_link, coletar_dados
-from APIs.IBGE.timeserie import gerar_timeserie
-from APIs.send_to_analysis import send_to_analysis
+from inputs.IBGE.df_selecionavel import criar_dataframe_selecionavel
+from inputs.IBGE.gerar_link_coletar_dados import gerar_link, coletar_dados
+from inputs.IBGE.timeserie import gerar_timeserie
+from inputs.send_to_analysis import send_to_analysis
 
 @st.cache_data
 def carregar_metadados():
-    csv_file = "APIs/IBGE/metadados_tabelas.csv"
+    csv_file = "inputs/IBGE/metadados_tabelas.csv"
     df_metadados = pd.read_csv(csv_file, sep='\t', encoding='utf-8')
     df_metadados.set_index('Número', inplace=True)
     df_metadados.index.name = 'Código Tabela'
@@ -166,27 +166,28 @@ def api_ibge():
             if not st.session_state['df_ibge'].empty:
                 st.session_state['df_ibge']['Valor'] = pd.to_numeric(st.session_state['df_ibge']['Valor'], errors='coerce')
                 st.session_state['df_ibge'].dropna(subset=['Valor'], inplace=True)
-                st.dataframe(st.session_state['df_ibge'])
+                #st.dataframe(st.session_state['df_ibge'])
 
                 registros_validos = st.session_state['df_ibge']['Valor'].count()
                 if registros_validos == 0:
                     st.error('Nenhum dado numérico retornado para a série selecionada.')
                 else:
                     st.write(f"Número de registros válidos coletados: {registros_validos}")
-
                     # Gerar timesérie e exibir gráfico
                     ts = gerar_timeserie()
-                    ts.columns = [col.replace('Brasil - Brasil', '- Brasil') for col in ts.columns]
+                    ts.columns = [col.replace('Brasil - Brasil', 'Brasil') for col in ts.columns]
                     st.header(ts.columns[0])
-                    st.dataframe(ts, use_container_width=True)
+                    col_table, col_graph = st.columns(2)
+                    with col_table:
+                        st.dataframe(ts, use_container_width=True, height=500)
                     df_display = ts.copy()
                     df_display.index = pd.to_datetime(df_display.index, errors='coerce', dayfirst=True)
-
                     nome_variavel = df_display.columns[0]
-                    if st.checkbox("Normalizar Dados", value=False):
-                        df_display.iloc[:, 0] = (df_display.iloc[:, 0] - df_display.iloc[:, 0].min()) / (df_display.iloc[:, 0].max() - df_display.iloc[:, 0].min())
+                    with col_graph:
+                        if st.checkbox("Normalizar Dados", value=False):
+                            df_display.iloc[:, 0] = (df_display.iloc[:, 0] - df_display.iloc[:, 0].min()) / (df_display.iloc[:, 0].max() - df_display.iloc[:, 0].min())
 
-                    grafico_barras(df_display, colunas=[nome_variavel], key=nome_variavel + '-' + 'ibge')
+                        grafico_barras(df_display, colunas=[nome_variavel], key=nome_variavel + '-' + 'ibge')
 
                     # Adicione uma chave ao session_state para gerenciar o envio
                     if 'enviar_para_analise_ibge' not in st.session_state:

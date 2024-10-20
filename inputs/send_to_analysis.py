@@ -76,11 +76,18 @@ def send_to_analysis(dataframe):
         if not handle_duplicate_columns(dataframe):
             return False
 
-        # Concatenar a nova série com as séries existentes, garantindo que não haja datas duplicadas
-        st.session_state['df_original'] = pd.concat([existing_analysis_df, dataframe], axis=1)
-        st.session_state['df_original'].index = pd.to_datetime(st.session_state['df_original'].index, errors='coerce', dayfirst=True)
-        st.session_state['df_original'] = st.session_state['df_original'][~st.session_state['df_original'].index.duplicated(keep='first')]
-        st.session_state['df_original'] = st.session_state['df_original'].sort_index().dropna(how='all')
+        # Concatenar a nova série com as séries existentes, combinando índices e mantendo valores únicos
+        combined_df = pd.concat([existing_analysis_df, dataframe], axis=1)
+        combined_df.index = pd.to_datetime(combined_df.index, errors='coerce', dayfirst=True)
+        combined_df = combined_df.sort_index()
+
+        # Para índices duplicados, manter valores únicos e somar quando apropriado
+        combined_df = combined_df.groupby(combined_df.index).sum(min_count=1)
+
+        # Garantir que não haja repetição de índices
+        combined_df = combined_df[~combined_df.index.duplicated(keep='first')]
+
+        st.session_state['df_original'] = combined_df
 
         # Mensagem de sucesso
         st.success("Dados enviados para análise com sucesso!")

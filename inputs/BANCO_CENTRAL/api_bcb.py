@@ -4,7 +4,7 @@ import streamlit as st
 import pandas as pd
 import requests
 import os
-from APIs.send_to_analysis import send_to_analysis
+from inputs.send_to_analysis import send_to_analysis
 
 # Função para baixar dados com cache
 @st.cache_data(show_spinner=False)
@@ -32,7 +32,7 @@ def api_page_bcb():
     st.title("API: Banco Central do Brasil")
 
     # Caminho do arquivo CSV
-    metadados_path = os.path.join("APIs", "BANCO_CENTRAL", "BCB_metadata_active.csv")
+    metadados_path = os.path.join("inputs", "BANCO_CENTRAL", "BCB_metadata_active.csv")
 
     # Tente carregar o CSV em um DataFrame
     try:

@@ -31,7 +31,7 @@ def analysis_page():
 
         # Exibir o DataFrame completo
         st.subheader("Dados das Séries Selecionadas")
-        st.dataframe(df_display, use_container_width=True)
+        st.dataframe(df_display, use_container_width=True, height=300)
 
         # Iterar sobre cada coluna de valor
         for coluna in df.columns:
@@ -49,13 +49,13 @@ def analysis_page():
                     df_coluna_display = df[[coluna]].copy()
                     df_coluna_display.index = df_coluna_display.index.strftime('%d/%m/%Y')
                     df_coluna_display.columns = ['Valor']
-                    st.dataframe(df_coluna_display, use_container_width=True)
+                    st.dataframe(df_coluna_display, use_container_width=True, height=560)
 
                 # Coluna 2: Exibir estatísticas descritivas
                 with col2:
                     st.write("**Estatísticas Descritivas**")
                     df_coluna_display.columns = ['Valor']
-                    st.dataframe(df_coluna_display['Valor'].describe(), use_container_width=True)
+                    st.dataframe(df_coluna_display['Valor'].describe(), use_container_width=True, height=560)
 
                 # Coluna 3: Gráfico com toggle para normalização
                 with col3:
