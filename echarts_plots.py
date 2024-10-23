@@ -110,9 +110,6 @@ def grafico_linhas(dataframe, colunas, titulo="Gráfico de Linhas", key=None):
     st_echarts(options=options, height="500px", key=key)
 
 
-
-def grafico_scatterplot(dataframe, coluna_x, coluna_y, titulo="Gráfico de Dispersão", x_min_plot=None, x_max_plot=None, y_min_plot=None, y_max_plot=None, reg=None, r2=None, valor_x=None, valor_y_previsto=None, key=None):
-    pass
 def grafico_scatterplot(
                     dataframe,
                     coluna_x,

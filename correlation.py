@@ -49,20 +49,15 @@ def correlation_page():
                     entrada = col_input.container(border=True, height=150)
                     entrada.markdown(f"Informe o valor de entrada para prever `{coluna_y}`:")
                     valor_x = entrada.slider('', float(x_min_plot), float(x_max_plot), step=(x_max - x_min) / 10000, value = np.average(x), key=f"slider_{coluna_x}_{coluna_y}")
-                    if r2 >= 3/4:
-                        delta = 'Muito alta'
+                    delta = r2 ** 0.5
+                    if delta >= 0.5:
                         delta_color = 'normal'
-                    elif 1/2 <= r2 < 3/4:
-                        delta = 'Alta'
-                        delta_color = 'off'
-                    elif 1/4 <= r2 < 1/2:
-                        delta = 'Baixa'
+                    elif -0.5 < delta < 0.5:
                         delta_color = 'off'
                     else:
-                        delta = 'Muito baixa'
-                        delta_color = 'inverse'
+                        delta_color = 'normal'
                     determ = col_output.container(border=True, height=150)
-                    determ.metric(label=f'Índice de Determinância (R²)', value=r2, delta=delta, delta_color=delta_color)
+                    determ.metric(label=f'Índice de Determinância (R²) e Coeficiente de Correlação (R)', value=r2, delta=delta, delta_color=delta_color)
                     
                     valor_y_previsto = reg.predict([[valor_x]])[0]
                     x_selec = col_input.container(border=True, height=100)
