@@ -1,8 +1,7 @@
 import streamlit as st
 import pandas as pd
-from io import StringIO
 import hashlib
-from inputs.send_to_analysis import send_to_analysis
+from inputs.funcoes_user_input import exibir_instrucoes, get_str, get_excel
 
 @st.cache_data(show_spinner=False)
 def load_file(file):
@@ -17,67 +16,39 @@ def load_file(file):
 def user_input():
     st.title('Entrada de Série Temporal pelo Usuário')
 
-    # Instruções para o usuário
-    with st.expander('Instruções', False):
-        col_data, col_valor = st.columns(2)
-        with col_data:
-            st.markdown('''
-                A primeira coluna do arquivo deve conter apenas datas.
-                O formato de data deve ser consistente para todos os registros.
-                Formatos aceitos incluem:
-                - `dd/mm/aa`, `dd-mm-aa`
-                - `dd/mm/aaaa`, `dd-mm-aaaa`
-                - `mm/aaaa`, `mm/aa`
-                - `aaaa`
-            ''')
-        with col_valor:
-            st.markdown('''
-                A segunda coluna deve conter valores numéricos. Tipos de valores aceitos incluem:
-                - Identificadores de milhares, como `1.000` ou `1,000`
-                - Separadores de vírgula para decimais, como `1.234,56`
-                - Notação científica, como `1e6` para representar `1000000`
-                - Números negativos, como `-1234,56`
-                Se houver mais de uma coluna de valores, você será solicitado a escolher qual utilizar.
-            ''')
-
-    # Carregar arquivo
-    file = st.file_uploader('Envie o arquivo (xls, xlsx, csv, tsv)', ['xls', 'xlsx', 'csv', 'tsv'], accept_multiple_files=False)
+    # Exibir instruções
+    exibir_instrucoes()
+    col0, col1, col2 = st.columns(3)
+    
+    with col0:
+        # Carregar arquivo
+        file = st.file_uploader('Envie o arquivo (xls, xlsx, csv, tsv, txt)', ['xls', 'xlsx', 'csv', 'tsv', 'txt'], accept_multiple_files=False)
+    
+    with col1:
+        st.write(' ')
+        st.write(' ')
+        if file:
+            file_hash, content = load_file(file)
+            nome = file.name
+            extensao = nome.split('.')[-1].lower()
+            st.success(f'`{nome}` carregado')
+        else:
+            st.warning('Nenhum arquivo carregado')
     if file:
-        file_hash, content = load_file(file)
-        nome = file.name
-        extensao = nome.split('.')[-1].lower()
-        st.success(f'`{nome}` carregado')
-        st.write(f'Tipo: `{extensao}`')
-
-        # Tratamento para arquivos CSV ou TSV
-        if extensao in ['tsv', 'csv']:
-            # Identificar separador automaticamente
-            content = StringIO('\n'.join([line for line in content.decode("utf-8").splitlines() if line.strip()]))
-            sep = ',' if extensao == 'csv' else '\t'
-            try:
-                df = pd.read_csv(content, sep=sep, thousands=',', quotechar='"', engine='python').dropna(how='all')
-                st.write('Arquivo carregado com sucesso!')
-            except Exception as e:
-                st.error(f'Erro ao ler o arquivo: {e}')
-                return
-
-        # Tratamento para arquivos Excel
-        elif extensao in ['xls', 'xlsx']:
-            try:
-                xls = pd.ExcelFile(file)
-                sheets = xls.sheet_names
-                if len(sheets) == 1:
-                    sheet = sheets[0]
-                else:
-                    sheet = st.radio('Escolha a planilha a ser carregada:', sheets, key=file_hash)
-                df = pd.read_excel(xls, sheet_name=sheet)
-                st.write('Planilha carregada com sucesso!')
-            except Exception as e:
-                st.error(f'Erro ao ler o arquivo Excel: {e}')
-                return
-
+        # Tratamento para arquivos de texto
+        if extensao in ['xls', 'xlsx']:
+            with col2:
+                st.write(' ')
+                st.write(' ')
+                df = get_excel(file)
+        else:
+            with col2:
+                st.write(' ')
+                st.write(' ')
+                df = get_str(file, extensao)
+    
         # Verificar e converter campo de data
-        if df.empty:
+        if df is None or df.empty:
             st.error('O DataFrame está vazio. Verifique o arquivo enviado.')
             return
 
@@ -148,13 +119,13 @@ def user_input():
         st.dataframe(df, use_container_width=True)
 
         # Botão para enviar para análise
-        if st.button('Enviar para análise', key=f"enviar_{file_hash}"):
+        enviar = st.button('Enviar para análise', key=f"enviar_{nome}")
+        if enviar:
+            from inputs.send_to_analysis import send_to_analysis
             if send_to_analysis(df):
                 st.success('Série temporal adicionada para análise com sucesso!')
             else:
                 st.error('Erro ao enviar a série temporal para análise.')
-    else:
-        st.warning('Nenhum arquivo carregado.')
 
 # Execução do programa
 if __name__ == '__main__':

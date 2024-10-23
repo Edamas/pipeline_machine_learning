@@ -1,3 +1,4 @@
+import streamlit as st
 from streamlit_echarts import st_echarts
 from sklearn.linear_model import LinearRegression
 
@@ -57,7 +58,8 @@ def grafico_barras(dataframe, colunas, titulo="Gráfico de Barras", key=None):
 def grafico_linhas(dataframe, colunas, titulo="Gráfico de Linhas", key=None):
     if isinstance(colunas, str):
         colunas = [colunas]
-
+    
+    
     colunas_existentes = [col for col in colunas if col in dataframe.columns]
     
     if not colunas_existentes:
@@ -71,7 +73,8 @@ def grafico_linhas(dataframe, colunas, titulo="Gráfico de Linhas", key=None):
         data.append({"name": coluna, "type": "line", "data": dataframe[coluna].dropna().tolist()})
 
     labels = dataframe.index.strftime('%d/%m/%Y').tolist()
-
+    
+    
     options = {
         "title": {"text": titulo, "left": "center"},
         "xAxis": {
@@ -106,41 +109,47 @@ def grafico_linhas(dataframe, colunas, titulo="Gráfico de Linhas", key=None):
 
     st_echarts(options=options, height="500px", key=key)
 
-# Função para gerar gráfico de scatterplot com linha de regressão
-def grafico_scatterplot(dataframe, coluna_x, coluna_y, titulo="Scatterplot de Correlação", key=None):
-    if coluna_x not in dataframe.columns or coluna_y not in dataframe.columns:
-        raise KeyError(
-            f"Colunas '{coluna_x}' e/ou '{coluna_y}' não foram encontradas no DataFrame.\n"
-            f"Colunas disponíveis: {dataframe.columns.tolist()}")
 
-    x = dataframe[coluna_x].dropna().values.reshape(-1, 1)
-    y = dataframe[coluna_y].dropna().values.reshape(-1, 1)
 
-    # Ajuste da regressão linear
-    reg = LinearRegression().fit(x, y)
-    y_pred = reg.predict(x).flatten()
-    r2 = reg.score(x, y)
-
-    # Definir os limites dos eixos com base nos valores dos pontos
-    x_min, x_max = x.min(), x.max()
-    y_min, y_max = y.min(), y.max()
-
+def grafico_scatterplot(dataframe, coluna_x, coluna_y, titulo="Gráfico de Dispersão", x_min_plot=None, x_max_plot=None, y_min_plot=None, y_max_plot=None, reg=None, r2=None, valor_x=None, valor_y_previsto=None, key=None):
+    pass
+def grafico_scatterplot(
+                    dataframe,
+                    coluna_x,
+                    coluna_y,
+                    titulo,
+                    key,
+                    x_min_plot,
+                    x_max_plot,
+                    y_min_plot,
+                    y_max_plot,
+                    reg,
+                    ponto_selecionado,
+                    valor_x,
+                    valor_y_previsto,
+                ):
     # Opções do gráfico
+    x = dataframe[coluna_x].values.reshape(-1, 1).tolist()
+    y = dataframe[coluna_y].values.reshape(-1, 1).tolist()
+
+    r2 = reg.score(x, y)
+    scatter_data = dataframe.values.tolist()
+    regression_data = [[float(x_min_plot), float(reg.predict([[x_min_plot]])[0][0])], [float(x_max_plot), float(reg.predict([[x_max_plot]])[0][0])]]
     options = {
         "title": {"text": titulo, "left": "center"},
         "xAxis": {
             "type": "value",
             "name": coluna_x,
-            "min": x_min,
-            "max": x_max,
+            "min": float(x_min_plot),
+            "max": float(x_max_plot),
             "nameLocation": "middle",
-            "nameGap": 25
+            "nameGap": 35
         },
         "yAxis": {
             "type": "value",
             "name": coluna_y,
-            "min": y_min,
-            "max": y_max,
+            "min": float(y_min_plot),
+            "max": float(y_max_plot),
             "nameLocation": "middle",
             "nameRotate": 90,
             "nameGap": 50
@@ -149,22 +158,34 @@ def grafico_scatterplot(dataframe, coluna_x, coluna_y, titulo="Scatterplot de Co
             {
                 "type": "scatter",
                 "name": "Pontos",
-                "data": [[float(x[i][0]), float(y[i][0])] for i in range(len(x))],
+                "data": scatter_data,
                 "symbolSize": 5,
+                "itemStyle": {"opacity": 0.75},
                 "emphasis": {"focus": "series"},
                 "tooltip": {
-                    "formatter": "function(params) { return '(' + params.value[0].toFixed(4) + ', ' + params.value[1].toFixed(4) + ')'; }"
+                    "formatter": "function(params) { return '(' + params.value[0].toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ', ' + params.value[1].toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ')'; }"
                 },
             },
             {
                 "type": "line",
                 "name": "Linha de Regressão",
-                "data": [[float(x_min), float(reg.predict([[x_min]])[0][0])], [float(x_max), float(reg.predict([[x_max]])[0][0])]],
-                "lineStyle": {"type": "solid", "color": "red", "width": 1},
+                "data": regression_data,
+                "lineStyle": {"type": "solid", "color": "green", "width": 1},
                 "label": {
                     "show": True,
                     "formatter": f"y = {reg.coef_[0][0]:.4f}x + {reg.intercept_[0]:.4f}\nR² = {r2:.4f}",
                     "position": "end",
+                },
+            },
+            {
+                "type": "scatter",
+                "name": "Ponto Selecionado",
+                "data": [[valor_x, valor_y_previsto[0]]] if valor_x is not None and valor_y_previsto is not None else [],
+                "symbolSize": 20,
+                "itemStyle": {"color": "red", "opacity": 0.75},
+                "label": {
+                    "show": True,
+                    "position": "top",
                 },
             }
         ],
@@ -176,10 +197,11 @@ def grafico_scatterplot(dataframe, coluna_x, coluna_y, titulo="Scatterplot de Co
             "show": True,
             "orient": "top",
             "right": "-5%",
-            "top": "middle",
+            "top": "4%",
             "itemGap": 10,
             "textStyle": {"overflow": "truncate", "width": 150}
         }
     }
 
-    st_echarts(options=options, height="500px", key=key)
+    # Gráfico
+    st_echarts(options=options, height="500px", key=f"echarts_{key}_{coluna_x}_{coluna_y}")
