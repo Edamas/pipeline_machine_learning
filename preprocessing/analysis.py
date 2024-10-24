@@ -38,7 +38,16 @@ def analysis_page():
             # Verificar se a coluna possui algum valor não nulo
             if df[coluna].notna().any():
                 st.divider()
-                st.subheader(f"Análise da Coluna: `{coluna}`")
+                col1, col2 = st.columns(2)
+                col1.subheader(f"`{coluna}`")
+                if col2.button(f'Apagar coluna `{coluna}`'):
+                    df = df.drop(columns=coluna)
+                    st.session_state['df_original'] = df
+                    if coluna not in st.session_state['df_original']:
+                        st.success(f'A coluna {coluna} foi removida da tabela')
+                        st.rerun()
+                    else:
+                        st.error(f'A coluna {coluna} não pôde ser removida da tabela')
 
                 # Criar três colunas (dados, estatística descritiva, gráfico)
                 col1, col2, col3 = st.columns(3)

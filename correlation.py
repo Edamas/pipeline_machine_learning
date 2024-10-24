@@ -8,17 +8,17 @@ from sklearn.linear_model import LinearRegression
 def correlation_page():
     st.title("Correlação, Scatterplots, Linha de Regressão e Previsão")
 
-    if "df_atualizado" in st.session_state and not st.session_state.df_atualizado.empty:
-        df = st.session_state.df_atualizado.copy()
+    if "df_original" in st.session_state and not st.session_state.df_original.empty:
+        df = st.session_state.df_original.copy()
 
         # Selecione as colunas para visualizar a correlação
         st.header("Selecione as Séries para Análise de Correlação")
         colunas_disponiveis = df.columns.tolist()
         col_input, col_output = st.columns(2)
-        col_input.subheader('Eixo x')
+        col_input.subheader('Eixo :red[x]')
         coluna_x = col_input.radio("", colunas_disponiveis, key="coluna_x", horizontal=False)
         colunas_disponiveis_y = [col for col in colunas_disponiveis if col != coluna_x]
-        col_output.subheader('Eixo y')
+        col_output.subheader('Eixo :blue[y]')
         coluna_y = col_output.radio("", colunas_disponiveis_y, key="coluna_y", horizontal=False)
 
         # Scatterplot de correlação para o par de colunas selecionado
@@ -43,11 +43,11 @@ def correlation_page():
                 ponto_selecionado = []
                 if coluna_x and coluna_y:
                     col_input, col_output = st.columns(2)
-                    col_input.subheader(f'`{coluna_x}`')
-                    col_output.subheader(f'`{coluna_y}`')
+                    col_input.subheader(f':red[{coluna_x}] (*input*)')
+                    col_output.subheader(f':blue[{coluna_y}] (*output*)')
                     
                     entrada = col_input.container(border=True, height=150)
-                    entrada.markdown(f"Informe o valor de entrada para prever `{coluna_y}`:")
+                    entrada.markdown(f"Informe o valor de entrada para o eixo :red[x] (*input*) :red[{coluna_x}]:")
                     valor_x = entrada.slider('', float(x_min_plot), float(x_max_plot), step=(x_max - x_min) / 10000, value = np.average(x), key=f"slider_{coluna_x}_{coluna_y}")
                     delta = r2 ** 0.5
                     if delta >= 0.5:
@@ -57,8 +57,11 @@ def correlation_page():
                     else:
                         delta_color = 'normal'
                     determ = col_output.container(border=True, height=150)
-                    determ.metric(label=f'Índice de Determinância (R²) e Coeficiente de Correlação (R)', value=r2, delta=delta, delta_color=delta_color)
-                    
+                    determ.metric(label=f'Índice de Determinância (**R²**) e Coeficiente de Correlação (**R**)', value=r2, delta=delta, delta_color=delta_color)
+                    if reg.intercept_[0] >= 0:
+                        determ.markdown(f"##### Fórmula: y = `{reg.coef_[0][0]:,}x` + `{reg.intercept_[0]:,}`")
+                    else:
+                        determ.markdown(f'##### Fórmula: :blue[y] = `{reg.coef_[0][0]:,}`:red[x]  `{reg.intercept_[0]:,}`')
                     valor_y_previsto = reg.predict([[valor_x]])[0]
                     x_selec = col_input.container(border=True, height=100)
                     x_selec.metric(label=f"Valor Selecionado para `{coluna_x}`", value=f"{valor_x:,}")
