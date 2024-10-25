@@ -16,12 +16,9 @@ def inicializar_estado():
     if data_min_comum is None or data_max_comum is None:
         st.error("Verifique se as séries possuem um intervalo de datas comum.")
 
-    # Inicializando chaves gerais apenas se ainda não existirem
     chaves_gerais = {
         "slider_min": st.session_state['df_original'].index.min().date(),
         "slider_max": st.session_state['df_original'].index.max().date(),
-        "slider_valor_min": data_min_comum.date(),
-        "slider_valor_max": data_max_comum.date(),
         "data_minima_comum": data_min_comum,
         "data_maxima_comum": data_max_comum,
     }
@@ -29,17 +26,19 @@ def inicializar_estado():
         if chave not in st.session_state:
             st.session_state[chave] = valor_padrao
 
-    # Inicializando df_temp como uma cópia de df_original apenas se ainda não existir
+    if "slider_valor_min" not in st.session_state:
+        st.session_state["slider_valor_min"] = data_min_comum.date()
+    if "slider_valor_max" not in st.session_state:
+        st.session_state["slider_valor_max"] = data_max_comum.date()
+
     if 'df_temp' not in st.session_state:
         st.session_state['df_temp'] = st.session_state['df_original'].copy()
 
-    # Definindo a referência padrão
     referencia_default = st.session_state['df_original'].loc[data_min_comum:data_max_comum].count().idxmin()
 
-    # Inicializando as chaves para cada coluna apenas se ainda não existirem
     for col in st.session_state.df_original.columns:
         chaves_coluna = {
-            f"referencia": referencia_default,
+            "referencia": referencia_default,
             f"normalizar_{col}": False,
             f"usar_serie_{col}": True,
             f"enviar_{col}": True,
@@ -91,31 +90,31 @@ def botoes():
 # Função para atualizar o df_temp no session_state com base no slider
 def atualizar_df_temp():
     referencia = st.session_state['referencia']
-    data_min = st.session_state["slider_valor_min"]
-    data_max = st.session_state["slider_valor_max"]
-    
-    # Filtrar o df_original pelo intervalo do slider
+    data_min = pd.to_datetime(st.session_state["date_slider"][0])
+    data_max = pd.to_datetime(st.session_state["date_slider"][1])
+
     df_filtrado = st.session_state["df_original"].copy()
+    df_filtrado.index = pd.to_datetime(df_filtrado.index)
     df_filtrado = df_filtrado.sort_index(ascending=True)
     df_filtrado = df_filtrado.loc[data_min:data_max]
-    
-    # Obter as colunas selecionadas
+
+    if df_filtrado.empty:
+        st.warning("O intervalo selecionado não contém dados.")
+        st.session_state["df_temp"] = pd.DataFrame()
+        return
+
     colunas = df_filtrado.columns
     colunas_para_exibir = [col for col in colunas if st.session_state.get(f"usar_serie_{col}", True)]
-    
-    # Índices não-nulos da série de referência após o filtro
+
     indices_coluna = df_filtrado[referencia].dropna().index
-    
-    # Inicializar df_temp com os índices da referência
+
     df_temp = pd.DataFrame(index=indices_coluna)
-    
+
     for col in colunas_para_exibir:
         metodo = st.session_state.get(f"preenchimento_{col}", "Último valor válido")
-        # Realinhar a coluna para os índices da referência
         coluna = df_filtrado[col]
         df_col_temp = coluna.reindex(indices_coluna).copy()
-        
-        # Preenchimento dos valores nulos conforme o método escolhido
+
         if col != referencia:
             for idx in indices_coluna:
                 if pd.isna(df_col_temp.loc[idx]):
@@ -130,21 +129,18 @@ def atualizar_df_temp():
                     elif metodo == "Preencher com zero":
                         df_col_temp.loc[idx] = 0
         else:
-            # Para a coluna de referência, remover valores nulos
             df_col_temp = df_col_temp.dropna()
-        # Atualizar o df_temp com a coluna processada
         df_temp[col] = df_col_temp
 
-    # Aplicar normalização se necessário
     for col in colunas_para_exibir:
         if st.session_state.get(f"normalizar_{col}", False):
             min_val = df_temp[col].min()
             max_val = df_temp[col].max()
             if max_val != min_val:
                 df_temp[col] = (df_temp[col] - min_val) / (max_val - min_val)
-    
-    # Atualizar o df_temp no session_state
+
     st.session_state["df_temp"] = df_temp
+
 
 def nomes_series():
     cols_list = st.session_state['df_original'].columns.tolist()
@@ -325,21 +321,26 @@ def slider():
     # Função para renderizar o slider de seleção de datas
     data_min = st.session_state["slider_min"]
     data_max = st.session_state["slider_max"]
-    if "date_slider" not in st.session_state:
-        st.session_state["date_slider"] = (st.session_state["slider_valor_min"], st.session_state["slider_valor_max"])
-    valores = st.slider(
+
+    # Converter para datetime.date se necessário
+    if isinstance(data_min, pd.Timestamp):
+        data_min = data_min.date()
+    if isinstance(data_max, pd.Timestamp):
+        data_max = data_max.date()
+
+    slider_key = "date_slider"
+
+    # Renderizar o slider com on_change
+    st.slider(
         "Selecione o intervalo de datas:",
         min_value=data_min,
         max_value=data_max,
-        value=st.session_state["date_slider"],
-        key="date_slider",
+        value=(st.session_state["slider_valor_min"], st.session_state["slider_valor_max"]),
+        key=slider_key,
+        on_change=atualizar_df_temp,
     )
-    if valores != st.session_state["date_slider"]:
-        st.session_state["date_slider"] = valores
-        st.session_state["slider_valor_min"], st.session_state["slider_valor_max"] = valores
-        atualizar_df_temp()
 
-# Função principal para manipulação de datas
+
 def date_handling_page():
     st.title("Manipulação de Datas")
     
