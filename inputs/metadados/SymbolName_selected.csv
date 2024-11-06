@@ -1,0 +1,1685 @@
+Símbolo	Nome	Tipo de Ativo
+USDBRL=X	USD/BRL	CURRENCY
+EURBRL=X	EUR/BRL	CURRENCY
+GBPBRL=X	GBP/BRL	CURRENCY
+JPYBRL=X	JPY/BRL	CURRENCY
+CADBRL=X	CAD/BRL	CURRENCY
+AUDBRL=X	AUD/BRL	CURRENCY
+CHFBRL=X	CHF/BRL	CURRENCY
+MXNBRL=X	MXN/BRL	CURRENCY
+HKDBRL=X	HKD/BRL	CURRENCY
+ZN=F	10-Year T-Note Futures,Dec-2024	FUTURE
+^IRX	13 WEEK TREASURY BILL	INDEX
+UVIX	VS TR 2x Long VIX Futures ETF	ETF
+MMMC34.SA	3M          DRN	EQUITY
+MMM	3M Company	EQUITY
+ABTT34.SA	Abbott Laboratories	EQUITY
+ABBV34.SA	ABBVIE      DRN	EQUITY
+ACNB34.SA	ACCENTURE   DRN	EQUITY
+ADBE34.SA	ADOBE INC   DRN	EQUITY
+ADBE	Adobe Inc.	EQUITY
+A1AP34.SA	Advance Auto Parts, Inc.	EQUITY
+A1MD34.SA	Advanced Micro Devices, Inc.	EQUITY
+A1EG34.SA	AEGON LTD   DRN	EQUITY
+AERI3.SA	Aeris Indústria e Comércio de Equipamentos para Geração de Energia S.A.	EQUITY
+AESB3.SA	AES Brasil Energia S.A.	EQUITY
+RBED11.SA	Aesapar Fundo de Investimento Imobiliário - FII	EQUITY
+AFHI11.SA	Af Invest Cri Fundo De Investimento Imobiliario – Recebiveis Imobiliarios	EQUITY
+AFLT3.SA	Afluente Transmissão de Energia Elétrica S.A.	EQUITY
+A2FY34.SA	AFYA LTD    DRN	EQUITY
+A1GI34.SA	Agilent Technologies, Inc.	EQUITY
+AGXY3.SA	AgroGalaxy Participações S.A.	EQUITY
+A1PD34.SA	Air Products and Chemicals, Inc.	EQUITY
+AIRB34.SA	AIRBNB      DRN	EQUITY
+A1KA34.SA	Akamai Technologies, Inc.	EQUITY
+A1LB34.SA	Albemarle Corporation	EQUITY
+A2LC34.SA	ALCON INC   DRN	EQUITY
+A1RE34.SA	Alexandria Real Estate Equities, Inc.	EQUITY
+RPAD3.SA	Alfa Holdings S.A.	EQUITY
+RPAD6.SA	Alfa Holdings S.A.	EQUITY
+ALZC11.SA	Alianza Crédito Imobiliário Fundo De Investimento Imobiliário	EQUITY
+ALZM11.SA	Alianza Fofii Fundo De Investimento Imobiliario	EQUITY
+ALZR11.SA	Alianza Trust Renda Imobiliaria Fundo Investimento Imobiliario	EQUITY
+BABA34.SA	Alibaba Group Holding Limited	EQUITY
+^AORD	ALL ORDINARIES [XAO]	INDEX
+AALR3.SA	Alliança Saúde e Participações S.A.	EQUITY
+ALLD3.SA	ALLIED      ON      NM	EQUITY
+ALOS3.SA	ALLOS       ON      NM	EQUITY
+ALPK3.SA	Allpark Empreendimentos, Participações e Serviços S.A.	EQUITY
+EXCO32.SA	Almacenes Éxito S.A.	EQUITY
+A1LN34.SA	Alnylam Pharmaceuticals, Inc.	EQUITY
+ALPA4.SA	ALPARGATAS  PN      N1	EQUITY
+ALPA3.SA	ALPARGATAS  ON      N1	EQUITY
+GOGL35.SA	ALPHABET    DRN C	EQUITY
+GOGL34.SA	ALPHABET    DRN A	EQUITY
+GOOG	Alphabet Inc.	EQUITY
+AVLL3.SA	ALPHAVILLE  ON      NM	EQUITY
+MOOO34.SA	Altria Group, Inc.	EQUITY
+ALUP11.SA	Alupar Investimento S.A.	EQUITY
+ALUP4.SA	Alupar Investimento S.A.	EQUITY
+ALUP3.SA	Alupar Investimento S.A.	EQUITY
+AMZN	Amazon.com, Inc.	EQUITY
+AMZO34.SA	Amazon.com, Inc.	EQUITY
+A2MB34.SA	AMBARELLA INDRN	EQUITY
+ABEV3.SA	AMBEV S/A   ON	EQUITY
+AMBP3.SA	Ambipar Participações e Empreendimentos S.A.	EQUITY
+A1CR34.SA	AMCOR PLC   DRN	EQUITY
+AALL34.SA	American Airlines Group Inc.	EQUITY
+AAL	American Airlines Group, Inc.	EQUITY
+A1EP34.SA	American Electric Power Company, Inc.	EQUITY
+AXPB34.SA	American Express Company	EQUITY
+AIGB34.SA	American International Group, Inc.	EQUITY
+T1OW34.SA	American Tower Corporation	EQUITY
+A1WK34.SA	American Water Works Company, Inc.	EQUITY
+AMER3.SA	AMERICANAS  ON      NM	EQUITY
+A1MP34.SA	Ameriprise Financial, Inc.	EQUITY
+A1ME34.SA	AMETEK INC  DRN	EQUITY
+AMGN34.SA	AMGEN       DRN	EQUITY
+A1PH34.SA	Amphenol Corporation	EQUITY
+ABUD34.SA	Anheuser-Busch InBev SA/NV	EQUITY
+ANIM3.SA	ANIMA       ON      NM	EQUITY
+N2LY34.SA	Annaly Capital Management, Inc.	EQUITY
+A1ON34.SA	AON PLC     DRN ED	EQUITY
+A1PA34.SA	APA CORP    DRN	EQUITY
+A1IV34.SA	Apartment Investment and Management Company	EQUITY
+AAPL34.SA	APPLE       DRN	EQUITY
+AAPL	Apple Inc.	EQUITY
+A1MT34.SA	Applied Materials, Inc.	EQUITY
+ARMT34.SA	ArcelorMittal S.A.	EQUITY
+A1DM34.SA	Archer-Daniels-Midland Company	EQUITY
+A2RE34.SA	Ares Management Corporation	EQUITY
+A1RG34.SA	ARGENX SE   DRN	EQUITY
+A1NE34.SA	Arista Networks, Inc.	EQUITY
+ARML3.SA	Armac Locação, Logística e Serviços S.A.	EQUITY
+A2RR34.SA	Arrowhead Pharmaceuticals, Inc.	EQUITY
+ARXD11.SA	Arx Dover Recebiveis Fundo De Investimento Imobiliario	EQUITY
+ASRF11.SA	Asa Retrofits I Fundo De Investimento Imobiliario	EQUITY
+A1SN34.SA	Ascendis Pharma A/S	EQUITY
+ASML34.SA	ASML HOLD   DRN ED	EQUITY
+A1SU34.SA	ASSURANT INCDRN	EQUITY
+A1ZN34.SA	ASTRAZENECA DRN	EQUITY
+ATTB34.SA	ATT INC     DRN	EQUITY
+CRFB3.SA	CARREFOUR BRON      NM	EQUITY
+T1AM34.SA	Atlassian Corporation	EQUITY
+ATMP3.SA	ATMA Participações S.A.	EQUITY
+ATOM3.SA	Atom Empreendimentos e Participações S.A.	EQUITY
+AUDUSD=X	AUD/USD	CURRENCY
+AURA33.SA	Aura Minerals Inc.	EQUITY
+AURE3.SA	AUREN       ON      NM	EQUITY
+^XDA	Australian Dollar Currency Index	INDEX
+A1UT34.SA	AUTODESK INCDRN	EQUITY
+ADSK	Autodesk, Inc.	EQUITY
+A1TH34.SA	AUTOHOME INCDRN	EQUITY
+ADPR34.SA	Automatic Data Processing, Inc.	EQUITY
+AIEC11.SA	Autonomy Edifícios Corporativos Fundo de Investimento Imobiliario	EQUITY
+AZOI34.SA	AUTOZONE INCDRN	EQUITY
+A1VB34.SA	AvalonBay Communities, Inc.	EQUITY
+A2XO34.SA	Axon Enterprise, Inc.	EQUITY
+AZIN11.SA	Az Quest Infra-Yield Ii Fundo De Investimento Em Participacoes Em Infraestrutura	EQUITY
+AAZQ11.SA	Az Quest Sole Fundo De Investimento Nas Cadeias Produtivas Do Agronegocio - Fiagro - Imobiliario	EQUITY
+AZEV3.SA	Azevedo & Travassos S.A.	EQUITY
+AZEV4.SA	Azevedo & Travassos S.A.	EQUITY
+AZUL4.SA	AZUL        PN      N2	EQUITY
+AZZA3.SA	AZZAS 2154  ON      NM	EQUITY
+BMMT11.SA	B - Index Morningstar Brasil Momento Fundo	EQUITY
+B3SA3.SA	B3 S.A. - Brasil, Bolsa, Balcão	EQUITY
+BAHI3.SA	BAHEMA      ON      MA	EQUITY
+BIDU34.SA	BAIDU INC   DRN	EQUITY
+B1LL34.SA	Ball Corporation	EQUITY
+ABCB4.SA	ABC BRASIL  PN      N2	EQUITY
+BILB34.SA	Banco Bilbao Vizcaya Argentaria, S.A.	EQUITY
+BMGB4.SA	BANCO BMG   PN      N1	EQUITY
+BBDC3.SA	BRADESCO    ON      N1	EQUITY
+BBDC4.SA	BRADESCO    PN      N1	EQUITY
+BPAC5.SA	BTGP BANCO  PNA     N2	EQUITY
+BPAC3.SA	BTGP BANCO  ON      N2	EQUITY
+BPAC11.SA	BTGP BANCO  UNT     N2	EQUITY
+BAZA3.SA	Banco da Amazônia S.A.	EQUITY
+BBAS3.SA	BRASIL      ON      NM	EQUITY
+BGIP4.SA	Banco do Estado de Sergipe S.A.	EQUITY
+BRSR5.SA	Banco do Estado do Rio Grande do Sul S.A.	EQUITY
+BRSR3.SA	Banco do Estado do Rio Grande do Sul S.A.	EQUITY
+BRSR6.SA	Banco do Estado do Rio Grande do Sul S.A.	EQUITY
+BNBR3.SA	Banco do Nordeste do Brasil S.A.	EQUITY
+BMIN4.SA	Banco Mercantil de Investimentos S.A.	EQUITY
+BMEB4.SA	Banco Mercantil do Brasil S.A.	EQUITY
+BMEB3.SA	Banco Mercantil do Brasil S.A.	EQUITY
+BPAN4.SA	BANCO PAN   PN      N1	EQUITY
+PINE3.SA	PINE        ON      N2	EQUITY
+PINE4.SA	PINE        PN      N2	EQUITY
+SANB11.SA	Banco Santander (Brasil) S.A.	EQUITY
+SANB3.SA	Banco Santander (Brasil) S.A.	EQUITY
+SANB4.SA	Banco Santander (Brasil) S.A.	EQUITY
+BCSA34.SA	Banco Santander, S.A.	EQUITY
+B1SA34.SA	Banco Santander-Chile	EQUITY
+C2OL34.SA	Bancolombia S.A.	EQUITY
+BCRI11.SA	Banestes Recebiveis Imobiliarios Fundo Investimento Imobiliario FII	EQUITY
+BEES4.SA	Banestes S.A - Banco do Estado do Espírito Santo	EQUITY
+BEES3.SA	Banestes S.A - Banco do Estado do Espírito Santo	EQUITY
+BOAC34.SA	Bank of America Corporation	EQUITY
+BAC	Bank of America Corporation	EQUITY
+BNFS11.SA	Banrisul N Front Fund Investment IMO FII Fund	EQUITY
+B1CS34.SA	BARCLAYS PLCDRN	EQUITY
+B1BW34.SA	Bath & Body Works, Inc.	EQUITY
+BALM4.SA	BAUMER      PN	EQUITY
+BALM3.SA	BAUMER      ON	EQUITY
+B1AX34.SA	Baxter International Inc.	EQUITY
+AGRI11.SA	Bb Etf Iagro Ffs B3 Fundo De Indice	EQUITY
+BBOV11.SA	Bb Etf Ibovespa Fundo De Indice	EQUITY
+DVER11.SA	Bb Etf Indice Diversidade B3 Investimento Sustentavel Fundo De Indice	EQUITY
+BBOI11.SA	Bb Etf Indice Futuro De Boi Gordo B3 Fundo De Indice	EQUITY
+CORN11.SA	Bb Etf Indice Futuro De Milho B3 Fundo De Indice	EQUITY
+BBSD11.SA	BB ETF S&P Dividendos Brasil Fundo de Indice	EQUITY
+BBGO11.SA	Bb Fundo De Investimento De Credito Fiagro-Imobiliario	EQUITY
+BBFI11.SA	BB Fundo De Investimento Imobiliario Progressivo	EQUITY
+BBFO11.SA	BB Fundos De Fundos - Fundo De Investimento Imobiliario	EQUITY
+BBIG11.SA	Bb Premium Malls Fundo De Investimento Imobiliário De Responsabilidade Limitada	EQUITY
+TVRI11.SA	BB Progressivo II Fundo de Investimento Imobiliário - FII	EQUITY
+BBRC11.SA	BB Renda Corporativa Fundo de Investimento Imobiliário - FII	EQUITY
+RNDP11.SA	BB Renda de Papéis Imobiliários Fundo de Investimento Imobiliário - FII	EQUITY
+BBSE3.SA	BB Seguridade Participações S.A.	EQUITY
+B1GN34.SA	BEIGENE LTD DRN	EQUITY
+^BFX	BEL 20	INDEX
+BMOB3.SA	Bemobi Mobile Tech S.A.	EQUITY
+BERK34.SA	Berkshire Hathaway Inc.	EQUITY
+B2YN34.SA	Beyond Meat, Inc.	EQUITY
+BMKS3.SA	Bicicletas Monark S.A.	EQUITY
+B1IL34.SA	BILIBILI INCDRN	EQUITY
+B2HI34.SA	BILL Holdings, Inc.	EQUITY
+BNB-USD	BNB USD	CRYPTOCURRENCY
+BREW11.SA	B-Index Morningstar Brasil Pesos Iguais Fundo De Indice	EQUITY
+BCIC11.SA	B-Index Morningstar Setores Ciclicos Brasil Fundo De Indice	EQUITY
+BIIB34.SA	BIOGEN      DRN	EQUITY
+B1MR34.SA	BioMarin Pharmaceutical Inc.	EQUITY
+BIOM3.SA	BIOMM       ON      MA	EQUITY
+B1NT34.SA	BIONTECH SE DRN	EQUITY
+T1CH34.SA	Bio-Techne Corporation	EQUITY
+BTC-USD	Bitcoin USD	CRYPTOCURRENCY
+BSGO39.SA	BKR 0 3M TRSDRE ED	EQUITY
+BHEW39.SA	BKR CH JAPANDRE	EQUITY
+BFAL39.SA	BKR FLL ANGLDRE ED	EQUITY
+BEPP39.SA	BKR MSCI JPNDRE	EQUITY
+BUTL39.SA	BlackRock Institutional Trust Company NA	EQUITY
+BPIC39.SA	BlackRock Institutional Trust Company NA	EQUITY
+BIXC39.SA	BlackRock Institutional Trust Company NA	EQUITY
+BVEG39.SA	BlackRock Institutional Trust Company NA	EQUITY
+BKSA39.SA	BlackRock Institutional Trust Company NA	EQUITY
+BLAK34.SA	BLACKROCK   DRN	EQUITY
+BLK	BlackRock, Inc.	EQUITY
+BLAU3.SA	BLAU        ON      NM	EQUITY
+S2QU34.SA	BLOCK INC.  DRN	EQUITY
+BLCA11.SA	Bluemacaw Catuai Triple A Fundo De Investimento Imobiliario	EQUITY
+BLMG11.SA	Bluemacaw Logastica Fundo De Investimento ImobiliaRio	EQUITY
+BLMO11.SA	Bluemacaw Office Fund Ii - Fundo De Investimento Imobiliario	EQUITY
+0XDX.L	EasyETF - BNP Paribas Easy Euro Stoxx 50 UCITS ETF	ETF
+0ZV4.IL	BNP PARIBAS EASY FTSE EPRA EURO	ETF
+SOJA3.SA	Boa Safra Sementes S.A.	EQUITY
+BODB11.SA	Bocaina Infra- Fundo de Investimento em Cotas de Fundos Incentivados de Investimento em	EQUITY
+BA	Boeing Company (The)	EQUITY
+BOBR4.SA	BOMBRIL     PN	EQUITY
+BKNG34.SA	Booking Holdings Inc.	EQUITY
+B1WA34.SA	BORGWARNER IDRN	EQUITY
+B1SX34.SA	Boston Scientific Corporation	EQUITY
+B1PP34.SA	BP PLC      DRN	EQUITY
+BRBI11.SA	BR Advisory Partners Participações S.A.	EQUITY
+BCIA11.SA	Bradesco Carteira Imobiliaria Ativa Fundos de Investimento Imobiliario	EQUITY
+BRAP4.SA	BRADESPAR   PN      N1	EQUITY
+BRAP3.SA	BRADESPAR   ON      N1	EQUITY
+AGRO3.SA	BrasilAgro - Companhia Brasileira de Propriedades Agrícolas	EQUITY
+BRKM5.SA	BRASKEM     PNA     N1	EQUITY
+BRKM6.SA	BRASKEM     PNB     N1	EQUITY
+BRKM3.SA	BRASKEM     ON      N1	EQUITY
+CARE11.SA	Brazilian Graveyard Death Care Services Fundo Investimento Imobiliario - Fii	EQUITY
+BSLI3.SA	BRB - Banco de Brasília S.A.	EQUITY
+BSLI4.SA	BRB - Banco de Brasília S.A.	EQUITY
+A1LL34.SA	Bread Financial Holdings, Inc.	EQUITY
+BZ=F	Brent Crude Oil Last Day Financ	FUTURE
+BRCO11.SA	Bresco - Fundo De Investimento Imobiliario	EQUITY
+BRFS3.SA	BRF SA      ON      NM	EQUITY
+BIME11.SA	Brio Multiestrategia - Fundo De Investimento Imobiliario	EQUITY
+BRIM11.SA	Brio Real Estate II - Fundo De Investimento Imobiliario - FII	EQUITY
+BRIP11.SA	Brio Real Estate III - Fundo De Investimento Imobiliario	EQUITY
+BRIT3.SA	Brisanet Participações S.A.	EQUITY
+BMYB34.SA	Bristol-Myers Squibb Company	EQUITY
+B1TI34.SA	British American Tobacco p.l.c.	EQUITY
+^XDB	British Pound Currency Index	INDEX
+BRLEUR=X	BRL/EUR	CURRENCY
+BRLUSD=X	BRL/USD	CURRENCY
+AVGO34.SA	BROADCOM INCDRN	EQUITY
+AVGO	Broadcom Inc.	EQUITY
+B1AM34.SA	Brookfield Corporation	EQUITY
+B1FC34.SA	Brown-Forman Corporation	EQUITY
+BROF11.SA	Brpr Corporate Offices Fundo De Investimento Imobiliario	EQUITY
+B2RK34.SA	Bruker Corporation	EQUITY
+BTAG11.SA	Btg Pactual Credito Agrocola Fundo De Investimento Em Cotas Fiagro Direitos Creditorios	EQUITY
+BDIF11.SA	Btg Pactual Divida Infra FICF Incentivados De Investimento Em Infraestrutura Renda Fixa Credito Priv	EQUITY
+ESGB11.SA	Btg Pactual Esg Fundo De Indice S P Brazil Esg	EQUITY
+BTLG11.SA	BTG Pactual Logística Fundo de Investimento Imobiliário	EQUITY
+SPXB11.SA	Btg Pactual S&P 500 Fundo De Indice	EQUITY
+GENB11.SA	Btg Pactual S&P B3 Ingenius Fundo De Indice	EQUITY
+SMAB11.SA	Btg Pactual Smll B3 Fundo De Indice	EQUITY
+DEBB11.SA	BTG Pactual Teva Debentures Di Fundo De Indice	EQUITY
+BTWR11.SA	Btowers Fundo Investimento Imobiliario	EQUITY
+SPYI11.SA	Buena Vista Us High Income Etf Fundo De Indice Neos U.S Equity High Income Index	EQUITY
+B2MB34.SA	BUMBLE INC  DRN	EQUITY
+B2UR34.SA	Burlington Stores, Inc.	EQUITY
+BOXP34.SA	BXP INC     DRN	EQUITY
+CEAB3.SA	CEA MODAS   ON      NM	EQUITY
+C1HR34.SA	C.H. Robinson Worldwide, Inc.	EQUITY
+C1AB34.SA	CABLE ONE INDRN	EQUITY
+^FCHI	CAC 40	INDEX
+C2AC34.SA	CACI International Inc	EQUITY
+C1DN34.SA	Cadence Design Systems, Inc.	EQUITY
+C2ZR34.SA	Caesars Entertainment, Inc.	EQUITY
+XBOV11.SA	CAIXA ETF Ibovespa Fundo de Índice - Cotas Fund	EQUITY
+CRFF11.SA	Caixa Rio Bravo Fundo De Fundos De Investimento Imobiliario II-Cotas	EQUITY
+CXSE3.SA	Caixa Seguridade Participações S.A.	EQUITY
+CAMB3.SA	CAMBUCI     ON	EQUITY
+CAML3.SA	CAMIL       ON      NM	EQUITY
+CNIC34.SA	Canadian National Railway Company	EQUITY
+CPRL34.SA	Canadian Pacific Kansas City Limited	EQUITY
+CCME11.SA	Canuma Capital Multiestrategia Fundo De Investimento Imobiliario	EQUITY
+00937B.TWO	CAPITAL ICE ESG 20+ Year BBB Us Corporate ETF	ETF
+CAON34.SA	Capital One Financial Corporation	EQUITY
+00643.TW	CAPITAL SZSE SME 100 INDEX EXCHANGE TRADED FUND	ETF
+00919.TW	Capital Tip Customized Taiwan Select High Dividend ETF	ETF
+00946.TW	CAPITAL Tip Customized Taiwan Tech High Dividend And Growth ETF	ETF
+00927.TW	CAPITAL INV TRUST CORP-TIP CSTM TW SEMICONDUCTOR DIV YIELD ETF	ETF
+CPTR11.SA	Capitania Agro Strategies - Fiagro - Imobiliario Fund	EQUITY
+CPTI11.SA	Capitania Infra Fic Fi Infra Rf Cp	EQUITY
+AJFI11.SA	Capitania Malls Fundo De Investimento Imobiliario	EQUITY
+CPOF11.SA	Capitania Office Properties FII - Fundo De Investimento Imobiliario	EQUITY
+CPFF11.SA	Capitania Reit FOF - Fundo De Investimento Imobiliario	EQUITY
+CPSH11.SA	Capitania Shoppings Fundo De Investimento Imobiliario	EQUITY
+CAPH34.SA	Capri Holdings Limited	EQUITY
+C1CL34.SA	Carnival Corporation & plc	EQUITY
+CRIN34.SA	CARTERS INC DRN	EQUITY
+CBOP11.SA	Castello Branco Off Park Fund In Im	EQUITY
+CATP34.SA	Caterpillar Inc.	EQUITY
+CAT	Caterpillar, Inc.	EQUITY
+00830.TW	CATHAY SECS INV TRUST CO LTD PH	ETF
+00878.TW	Cathay Sustainability High Dividend ETF	ETF
+00664R.TW	CATHAY SECS INV TRUST CO LTD TA	ETF
+00881.TW	CATHAY SECS INV TRUST CO LTD TA	ETF
+00922.TW	Cathay MSCI Taiwan Leaders 50 Select ETF	ETF
+00933B.TWO	Cathay US Corporate 10+ Years Banking ETF	ETF
+00687B.TWO	CATHAY SECS INV TRUST CO LTD BB	ETF
+00688L.TW	Cathay US Treasury 20+ YR Lev 2X ETF	ETF
+C1BO34.SA	Cboe Global Markets, Inc.	EQUITY
+^TNX	CBOE Interest Rate 10 Year T No	INDEX
+^BUK100P	Cboe UK 100	INDEX
+^VIX	CBOE Volatility Index	INDEX
+CCRO3.SA	CCR SA      ON      NM	EQUITY
+C1DW34.SA	CDW CORP    DRN	EQUITY
+C1NS34.SA	Celanese Corporation	EQUITY
+MAPT4.SA	Cemepe Investimentos S.A.	EQUITY
+C1NC34.SA	Centene Corporation	EQUITY
+ELET6.SA	Centrais Elétricas Brasileiras S.A. - Eletrobrás	EQUITY
+ELET3.SA	Centrais Elétricas Brasileiras S.A. - Eletrobrás	EQUITY
+CLSC3.SA	Centrais Elétricas de Santa Catarina S.A.	EQUITY
+CLSC4.SA	Centrais Elétricas de Santa Catarina S.A.	EQUITY
+C2RN34.SA	CERENCE INC DRN	EQUITY
+C2HP34.SA	ChargePoint Holdings, Inc.	EQUITY
+CHCM34.SA	Charter Communications, Inc.	EQUITY
+CHVX34.SA	Chevron Corporation	EQUITY
+CVX	Chevron Corporation	EQUITY
+C1MG34.SA	Chipotle Mexican Grill, Inc.	EQUITY
+C1BL34.SA	CHUBB LTD   DRN	EQUITY
+FESA4.SA	Cia de Ferro Ligas da Bahia S.A. - FERBASA	EQUITY
+FESA3.SA	Cia de Ferro Ligas da Bahia S.A. - FERBASA	EQUITY
+CJCT11.SA	Cidade Jardim Continental Tower Fundo De Investimento Imobiliario	EQUITY
+C1TA34.SA	Cintas Corporation	EQUITY
+CSCO34.SA	Cisco Systems, Inc.	EQUITY
+CSCO	Cisco Systems, Inc.	EQUITY
+CTGP34.SA	CITIGROUP   DRN ED	EQUITY
+C	Citigroup, Inc.	EQUITY
+C1FG34.SA	Citizens Financial Group, Inc.	EQUITY
+CLIN11.SA	Clave Indices De Precos Fundo De Investimento Imobiliario	EQUITY
+CLSA3.SA	CLEARSALE   ON      NM	EQUITY
+N2ET34.SA	Cloudflare, Inc.	EQUITY
+CLOV34.SA	Clover Health Investments, Corp.	EQUITY
+VVEO3.SA	VIVEO       ON      NM	EQUITY
+KO	Coca-Cola Company (The)	EQUITY
+C2CA34.SA	Coca-Cola FEMSA, S.A.B. de C.V.	EQUITY
+COGN3.SA	COGNA ON    ON      NM	EQUITY
+CTSH34.SA	Cognizant Technology Solutions Corporation	EQUITY
+C2OI34.SA	Coinbase Global, Inc.	EQUITY
+EURO11.SA	Coinvalores Dtvm Ltda.	EQUITY
+COLG34.SA	Colgate-Palmolive Company	EQUITY
+CL	Colgate-Palmolive Company	EQUITY
+CMCS34.SA	Comcast Corporation	EQUITY
+CBAV3.SA	Companhia Brasileira de Alumínio	EQUITY
+PCAR3.SA	Companhia Brasileira De Distribuicao	EQUITY
+CEEB5.SA	Companhia de Eletricidade do Estado da Bahia - COELBA	EQUITY
+CEEB3.SA	Companhia de Eletricidade do Estado da Bahia - COELBA	EQUITY
+CEDO4.SA	Companhia de Fiação e Tecidos Cedro e Cachoeira S.A.	EQUITY
+CGAS3.SA	Companhia de Gás de São Paulo - COMGÁS	EQUITY
+CGAS5.SA	Companhia de Gás de São Paulo - COMGÁS	EQUITY
+PEAB3.SA	Companhia de Participações Aliança da Bahia	EQUITY
+PEAB4.SA	Companhia de Participações Aliança da Bahia	EQUITY
+SBSP3.SA	Companhia de Saneamento Básico do Estado de São Paulo - SABESP	EQUITY
+CSMG3.SA	Companhia de Saneamento de Minas Gerais	EQUITY
+SAPR11.SA	Companhia de Saneamento do Paraná - SANEPAR	EQUITY
+SAPR4.SA	Companhia de Saneamento do Paraná - SANEPAR	EQUITY
+SAPR3.SA	Companhia de Saneamento do Paraná - SANEPAR	EQUITY
+CEBR5.SA	Companhia Energética de Brasília - CEB	EQUITY
+CEBR3.SA	Companhia Energética de Brasília - CEB	EQUITY
+CEBR6.SA	Companhia Energética de Brasília - CEB	EQUITY
+CMIG4.SA	Companhia Energética de Minas Gerais - CEMIG	EQUITY
+CMIG3.SA	Companhia Energética de Minas Gerais - CEMIG	EQUITY
+COCE5.SA	Companhia Energética do Ceará - COELCE	EQUITY
+HBTS5.SA	Companhia Habitasul de Participações	EQUITY
+CPLE6.SA	Companhia Paranaense de Energia - COPEL	EQUITY
+CPLE3.SA	Companhia Paranaense de Energia - COPEL	EQUITY
+CPLE5.SA	Companhia Paranaense de Energia - COPEL	EQUITY
+CSNA3.SA	Companhia Siderúrgica Nacional	EQUITY
+CTSA3.SA	Companhia Tecidos Santanense Ltda.	EQUITY
+CTSA4.SA	Companhia Tecidos Santanense Ltda.	EQUITY
+COPH34.SA	COPHILLIPS  DRN	EQUITY
+STZB34.SA	Constellation Brands, Inc.	EQUITY
+TEND3.SA	TENDA       ON      NM	EQUITY
+C1PR34.SA	COPART INC  DRN	EQUITY
+ASMT11.SA	Core Metropolis Fundo De Investimento Imobiliario	EQUITY
+G1LW34.SA	Corning Incorporated	EQUITY
+C1TV34.SA	CORTEVA INC DRN	EQUITY
+CSAN3.SA	COSAN       ON      NM	EQUITY
+C1GP34.SA	CoStar Group, Inc.	EQUITY
+COWC34.SA	Costco Wholesale Corporation	EQUITY
+COTY34.SA	COTY INC    DRN	EQUITY
+C2PR34.SA	Cousins Properties Incorporated	EQUITY
+CPFE3.SA	CPFL ENERGIAON      NM	EQUITY
+B2AP34.SA	CREDICORP LTDRN	EQUITY
+C1RH34.SA	CRH PLC     DRN	EQUITY
+C2RS34.SA	CRISPR Therapeutics AG	EQUITY
+C2RW34.SA	CrowdStrike Holdings, Inc.	EQUITY
+C1CI34.SA	Crown Castle Inc.	EQUITY
+CL=F	Crude Oil Dec 24	FUTURE
+CSED3.SA	Cruzeiro do Sul Educacional S.A.	EQUITY
+HGFF11.SA	CSHG Imobiliario Fof - Fundo De Investimento Imobiliario - Fii	EQUITY
+HGPO11.SA	Cshg Jhsf Prime Offices Fundo De Investimento Imobiliario	EQUITY
+HGLG11.SA	Cshg Logistica - Fundo De Investimento Imobiliario	EQUITY
+HGRE11.SA	CSHG Real Estate - Fundo de Investimento Imobiliario - FII	EQUITY
+HGCR11.SA	CSHG Recebiveis Imobiliarios BC Fundo de Investimento Imobiliario - FII	EQUITY
+HGRU11.SA	CSHG Renda Urbana Fundo Investimento Imobilirio - FII	EQUITY
+CMIN3.SA	CSNMINERACAOON      N2	EQUITY
+7500.HK	CSOP Leveraged and Inverse Series - CSOP Hang Seng Index Daily (-2x) Inverse Product	ETF
+7200.HK	CSOP Leveraged and Inverse Series - CSOP Hang Seng Index Daily (2x) Leveraged Product	ETF
+7552.HK	CSOP Leveraged and Inverse Series - CSOP Hang Seng TECH Index Daily (-2x) Inverse Product	ETF
+7226.HK	CSOP Leveraged and Inverse Series - CSOP Hang Seng TECH Index Daily (2x) Leveraged Product	ETF
+CSUD3.SA	CSU DIGITAL ON      NM	EQUITY
+CSXC34.SA	CSX CORP    DRN	EQUITY
+00753L.TW	CTBC BANK CO LTD CHINATRUST CTB	ETF
+00882.TW	CTBC Hang Seng China High Dividend Yield ETF	ETF
+00934.TW	CTBC TIP Customized Taiwan Growth and High Dividend ETF	ETF
+00795B.TWO	CTBC U.S. Treasury 20+ Year Bond ETF	ETF
+TRPL4.SA	CTEEP - Companhia de Transmissão de Energia Elétrica Paulista S.A.	EQUITY
+TRPL3.SA	CTEEP - Companhia de Transmissão de Energia Elétrica Paulista S.A.	EQUITY
+CURY3.SA	Cury Construtora e Incorporadora S.A.	EQUITY
+CVCB3.SA	CVC Brasil Operadora e Agência de Viagens S.A.	EQUITY
+CVSH34.SA	CVS Health Corporation	EQUITY
+CXRI11.SA	CXFI - Caixa Rio Bravo Fundo Fundos	EQUITY
+CYRE3.SA	Cyrela Brazil Realty S.A. Empreendimentos e Participações	EQUITY
+CYCR11.SA	Cyrela Credito - Fundo De Investimento Imobiliario	EQUITY
+D1HI34.SA	D.R. Horton, Inc.	EQUITY
+DMVF3.SA	d1000 Varejo Farma Participações S.A.	EQUITY
+DHER34.SA	Danaher Corporation	EQUITY
+D1DG34.SA	DATADOG INC DRN	EQUITY
+DVAI34.SA	DAVITA INC  DRN	EQUITY
+^GDAXI	DAX                           P	INDEX
+DEEC34.SA	DEERE CO    DRN	EQUITY
+D1EL34.SA	Dell Technologies Inc.	EQUITY
+DELL	Dell Technologies Inc.	EQUITY
+DEAI34.SA	Delta Air Lines, Inc.	EQUITY
+DESK3.SA	DESKTOP     ON      NM	EQUITY
+DBAG34.SA	Deutsche Bank Aktiengesellschaft	EQUITY
+DCRA11.SA	Devant Fundo De Investimento Nas Cadeias Produtivas Agroindustriais - Fiagro-Imobiliario	EQUITY
+DPRO11.SA	Devant Properties Fundo De Investimento Imobiliario	EQUITY
+DEVA11.SA	Devant Recebiveis Imobiliarios Fundo De Investimento Imobiliario	EQUITY
+D1VN34.SA	Devon Energy Corporation	EQUITY
+DXCO3.SA	DEXCO       ON      NM	EQUITY
+D1EX34.SA	DEXCOM INC  DRN	EQUITY
+DEXP3.SA	Dexxos Participações S.A.	EQUITY
+DEXP4.SA	Dexxos Participações S.A.	EQUITY
+DEOP34.SA	DIAGEO PL   DRN	EQUITY
+DASA3.SA	Diagnósticos da América S.A.	EQUITY
+D2KS34.SA	DICK'S Sporting Goods, Inc.	EQUITY
+PNVL3.SA	Dimed S.A. Distribuidora de Medicamentos	EQUITY
+DIRR3.SA	Direcional Engenharia S.A.	EQUITY
+TMF	Direxion Daily 20+ Year Treasury Bull 3X Shares	ETF
+YANG	Direxion Daily FTSE China Bear 3X Shares	ETF
+DUST	Direxion Daily Gold Miners Index Bear 2X Shares	ETF
+SPXS	Direxion Daily S&P 500 Bear 3X Shares	ETF
+LABD	Direxion Daily S&P Biotech Bear 3X Shares	ETF
+SOXS	Direxion Daily Semiconductor Bear 3X Shares	ETF
+SOXL	Direxion Daily Semiconductor Bull 3X Shares	ETF
+TZA	Direxion Daily Small Cap Bear 3X Shares	ETF
+TECS	Direxion Daily Technology Bear 3X Shares	ETF
+TSLL	Direxion Daily TSLA Bull 2X Shares	ETF
+D1OC34.SA	DOCUSIGN INCDRN	EQUITY
+DOHL3.SA	DOHLER      ON	EQUITY
+DOHL4.SA	DOHLER      PN	EQUITY
+DGCO34.SA	Dollar General Corporation	EQUITY
+D1OM34.SA	Dominion Energy, Inc.	EQUITY
+D2PZ34.SA	Domino's Pizza, Inc.	EQUITY
+RMAI11.SA	Domo Fundo de Investimento Imobiliário - FII	EQUITY
+D2AS34.SA	DOORDASH INCDRN	EQUITY
+DOTZ3.SA	DOTZ SA     ON      NM	EQUITY
+D1OW34.SA	DOW INC     DRN	EQUITY
+^DJI	Dow Jones Industrial Average	INDEX
+D2OC34.SA	DOXIMITY INCDRN	EQUITY
+R1DY34.SA	Dr. Reddy's Laboratories Limited	EQUITY
+D2KN34.SA	DRAFTKINGS  DRN	EQUITY
+DUKB34.SA	Duke Energy Corporation	EQUITY
+DD	DuPont de Nemours, Inc.	EQUITY
+D2TC34.SA	DYNATRACE INDRN	EQUITY
+E1TN34.SA	Eaton Corporation plc	EQUITY
+EBAY34.SA	EBAY        DRN	EQUITY
+EBAY	eBay Inc.	EQUITY
+EGAF11.SA	Ecoagro I Fundo De Investimento Nas Cadeias Produtivas Agroindustriais Fiagro Imobiliario	EQUITY
+E1CL34.SA	ECOLAB INC  DRN	EQUITY
+E1CO34.SA	ECOPETROL SADRN	EQUITY
+ECOR3.SA	EcoRodovias Infraestrutura e Logística S.A.	EQUITY
+E1IX34.SA	Edison International	EQUITY
+E1WL34.SA	Edwards Lifesciences Corporation	EQUITY
+E2ST34.SA	ELASTIC NV  DRN	EQUITY
+EALT3.SA	Electro Aço Altona S.A.	EQUITY
+EALT4.SA	Electro Aço Altona S.A.	EQUITY
+EAIN34.SA	Electronic Arts Inc.	EQUITY
+EA	Electronic Arts Inc.	EQUITY
+EKTR4.SA	ELEKTRO     PN  ED	EQUITY
+ELMD3.SA	ELETROMIDIA ON      NM	EQUITY
+E1LV34.SA	Elevance Health, Inc.	EQUITY
+LILY34.SA	Eli Lilly and Company	EQUITY
+LLY	Eli Lilly and Company	EQUITY
+EPAR3.SA	Embpar Participacoes S.A.	EQUITY
+EMBR3.SA	EMBRAER     ON      NM	EQUITY
+E1MR34.SA	Emerson Electric Co.	EQUITY
+PGMN3.SA	Empreendimentos Pague Menos S.A.	EQUITY
+EMAE4.SA	Empresa Metropolitana de Águas e Energia S.A.	EQUITY
+EMAE3.SA	Empresa Metropolitana de Águas e Energia S.A.	EQUITY
+ENDD11.SA	Endurance Debt Fundo De Investimento Em Participacoes Em Infraestrutura	EQUITY
+ENMT4.SA	Energisa Mato Grosso - Distribuidora de Energia S/A	EQUITY
+ENGI3.SA	ENERGISA    ON      N2	EQUITY
+ENGI4.SA	ENERGISA    PN      N2	EQUITY
+ENGI11.SA	ENERGISA    UNT     N2	EQUITY
+EGYR11.SA	Energy Resort Fundo De Investimento Imobiliario	EQUITY
+ENEV3.SA	ENEVA       ON      NM	EQUITY
+EGIE3.SA	Engie Brasil Energia S.A.	EQUITY
+ENJU3.SA	ENJOEI      ON      NM	EQUITY
+E2NP34.SA	Enphase Energy, Inc.	EQUITY
+E2NT34.SA	ENTEGRIS INCDRN ED	EQUITY
+E1OG34.SA	EOG Resources, Inc.	EQUITY
+E2PA34.SA	EPAM Systems, Inc.	EQUITY
+EQIR11.SA	Eqi Recebiveis Imobiliarios Fundo De Investimento Imobiliario	EQUITY
+EQTL3.SA	Equatorial Energia S.A.	EQUITY
+EQMA3B.SA	Equatorial Maranhão Distribuidora de Energia S.A.	EQUITY
+EQPA3.SA	Equatorial Pará Distribuidora de Energia S.A.	EQUITY
+EQIX34.SA	EQUINIX INC DRN	EQUITY
+E1QN34.SA	EQUINOR ASA DRN	EQUITY
+E1QR34.SA	Equity Residential	EQUITY
+E1SS34.SA	Essex Property Trust, Inc.	EQUITY
+^STOXX50E	EURO STOXX 50                 I	INDEX
+ETER3.SA	ETERNIT     ON      NM	EQUITY
+BOVB11.SA	ETF Bradesco Ibovespa Fundo De Indice	EQUITY
+IMBB11.SA	Etf Bradesco Ima-B Fundo De Indice	EQUITY
+B5MB11.SA	ETF Bradesco Ima-B5 Plus Fundo De Indice	EQUITY
+NVDQ	T-Rex 2X Inverse NVIDIA Daily Target ETF	ETF
+TRIG11.SA	Etf Trigono Teva Acoes Micro Cap / Small Cap Fundo De Indice	EQUITY
+ETH-USD	Ethereum USD	CRYPTOCURRENCY
+E2TS34.SA	ETSY INC    DRN	EQUITY
+EUCA3.SA	Eucatex S.A. Indústria e Comércio	EQUITY
+EUCA4.SA	Eucatex S.A. Indústria e Comércio	EQUITY
+EURCAD=X	EUR/CAD	CURRENCY
+EURCHF=X	EUR/CHF	CURRENCY
+EURGBP=X	EUR/GBP	CURRENCY
+EURHUF=X	EUR/HUF	CURRENCY
+EURJPY=X	EUR/JPY	CURRENCY
+EURSEK=X	EUR/SEK	CURRENCY
+EURUSD=X	EUR/USD	CURRENCY
+^XDE	Euro Currency Index	INDEX
+E2EF34.SA	Euronet Worldwide, Inc.	EQUITY
+^N100	Euronext 100 Index	INDEX
+ERPA11.SA	Europa 105 Fundo Investimento Imobiliario	EQUITY
+EVEN3.SA	Even Construtora e Incorporadora S.A.	EQUITY
+KEVE11.SA	Even II Kinea Fundo De Investimento Imobiliario	EQUITY
+E1VR34.SA	EVERGY INC  DRN	EQUITY
+EVTC31.SA	EVERTEC INC DR1 ED	EQUITY
+E2XA34.SA	Exact Sciences Corporation	EQUITY
+BAUH4.SA	Excelsior Alimentos S.A.	EQUITY
+E2XE34.SA	EXELIXIS INCDRN	EQUITY
+E1XC34.SA	Exelon Corporation	EQUITY
+EXES11.SA	Exes Fundo De Investimento Imobiliario	EQUITY
+EXGR34.SA	Expedia Group, Inc.	EQUITY
+E1XR34.SA	Extra Space Storage Inc.	EQUITY
+EXXO34.SA	Exxon Mobil Corporation	EQUITY
+XOM	Exxon Mobil Corporation	EQUITY
+EZTC3.SA	EZTEC Empreendimentos e Participações S.A.	EQUITY
+F2IC34.SA	Fair Isaac Corporation	EQUITY
+FLCR11.SA	Faria Lima Capital Recebiveis Imobiliarios I FII	EQUITY
+F1SL34.SA	FASTLY INC  DRN	EQUITY
+VRTA11.SA	Fator Veritá Fundo de Investimento Imobiliário - FII	EQUITY
+HTMX11.SA	FD Invest Imob Hotel Maxinvest	EQUITY
+NCHB11.SA	FDO INV IMOB - FII Nextcap Recebiveis Imobiliarios	EQUITY
+SHPH11.SA	FDO INV Imob Shopping Patio Higienopolis	EQUITY
+FDXB34.SA	FedEx Corporation	EQUITY
+FHER3.SA	Fertilizantes Heringer S.A.	EQUITY
+FZDA11.SA	FIAGRO 051  CI	EQUITY
+AAGR11.SA	FIAGRO AAGR CI	EQUITY
+NEXG11.SA	FIAGRO NEXG CI	EQUITY
+RZEO11.SA	FIAGRO RZEO CI	EQUITY
+FIEI3.SA	Fica Empreendimentos Imobiliarios S.A	EQUITY
+F1NI34.SA	Fidelity National Information Services, Inc.	EQUITY
+FSMP.L	Fidelity Sustainable Global Corporate Bond Paris-Aligned Multifactor UCITS ETF GBP Hedged	MUTUALFUND
+ABCP11.SA	FII ABC Plaza Shopping Fund	EQUITY
+AROA11.SA	FII AROA    CI	EQUITY
+BICE11.SA	FII BRIO CRECI	EQUITY
+BTAL11.SA	FII Btg Pactual Agro Logistica	EQUITY
+ICRI11.SA	FII CI IPCA CI  ER	EQUITY
+DAMA11.SA	FII DAMA    CI	EQUITY
+DAMT11.SA	FII DIAMANTECI	EQUITY
+HGBL11.SA	FII HGBL    CI  ERS	EQUITY
+ISCJ11.SA	FII ISCJ    CI  EA	EQUITY
+KNUQ11.SA	FII KINEA UNCI  ER	EQUITY
+MCEM11.SA	FII MCEM    CI	EQUITY
+SMRE11.SA	FII SMRE    CI  ER	EQUITY
+VSHO11.SA	FII Votorantim shopping	EQUITY
+VRTM11.SA	FII VRTM    CI  ER	EQUITY
+ZAVC11.SA	FII ZAVIT C CI	EQUITY
+FNOR11.SA	FINOR       CI *	EQUITY
+KNOX11.SA	Fip Knox Debt Infraestrutura	EQUITY
+FSLR34.SA	First Solar, Inc.	EQUITY
+F1IS34.SA	FISERV INC  DRN	EQUITY
+F2VR34.SA	Fiverr International Ltd.	EQUITY
+FLRY3.SA	FLEURY      ON      NM	EQUITY
+F1MC34.SA	FMC CORP    DRN	EQUITY
+JCCJ11.SA	FOF JHSF Capital Fundo De Investimento Imobiliario	EQUITY
+FMXB34.SA	Fomento Económico Mexicano, S.A.B. de C.V.	EQUITY
+FDMO34.SA	Ford Motor Company	EQUITY
+F	Ford Motor Company	EQUITY
+F1TN34.SA	FORTINET INCDRN	EQUITY
+F1TV34.SA	Fortive Corporation	EQUITY
+F2NV34.SA	Franco-Nevada Corporation	EQUITY
+FRAS3.SA	FRAS,LE     ON      N1	EQUITY
+FCXO34.SA	Freeport-McMoRan Inc.	EQUITY
+FMSC34.SA	Fresenius Medical Care AG	EQUITY
+0P0001CRHZ.SA	FTGF ClearBridge Infrastructure Value Fund	MUTUALFUND
+0P0001CRHX.SA	FTGF ClearBridge US Large Cap Growth Fund	MUTUALFUND
+0P0001MNY0.SA	FTGF MC European Uncons PR BRL Acc	MUTUALFUND
+0P0001CRI0.SA	FTGF Royce US Small Cap Opportunity Fund	MUTUALFUND
+^FTSE	FTSE 100	INDEX
+^KLSE	FTSE Bursa Malaysia KLCI	INDEX
+006208.TW	FUBON ASSET MANAGEMENT CO LTD F	ETF
+00665L.TW	Fubon Hang Seng H-Share Leveraged Index ETF	ETF
+00671R.TW	Fubon NASDAQ-100 -1X Inverse Index ETF	ETF
+00676R.TW	Fubon TAIEX Daily -1X Inverse ETF	ETF
+00650L.TW	Fuh Hwa Daily Hang Seng Leveraged 2X ETF	ETF
+00712.TW	FUH HWA SECURITIES INVESTMENT T	ETF
+00929.TW	Fuh Hwa Taiwan Technology Dividend Highlight ETF	ETF
+CXCE11.SA	Fundo de Investimento Caixa Cedae	EQUITY
+BLUR11.SA	Fundo De Investimento Imobiliario - Blue Recebiveis Imobiliarios	EQUITY
+DVFF11.SA	Fundo De Investimento Imobiliario - Devant Fundo De Fundos Imobiliarios	EQUITY
+ANCR11.SA	Fundo de Investimento Imobiliário - FII Ancar IC	EQUITY
+FAED11.SA	Fundo de Investimento Imobiliário - FII Anhanguera Educacional	EQUITY
+BPFF11.SA	Fundo de Investimento Imobiliário - FII Brasil Plural Absoluto Fundo de Fundos	EQUITY
+BRCR11.SA	Fundo de Investimento Imobiliário - FII BTG Pactual Corporate Office Fund	EQUITY
+EDGA11.SA	Fundo de Investimento Imobiliario - FII Edificio Galeria	EQUITY
+FLRP11.SA	Fundo de Investimento Imobiliário - FII Floripa Shopping	EQUITY
+HCRI11.SA	Fundo de Investimento Imobiliário - FII Hospital da Criança	EQUITY
+RECT11.SA	Fundo De Investimento Imobiliario - FII UBS Office	EQUITY
+SPXS11.SA	Fundo De Investimento Imobiliario - Spx Syn Multiestrategia	EQUITY
+LVBI11.SA	Fundo De Investimento Imobiliario - VBI Logistico - Cota Fund	EQUITY
+APXM11.SA	Fundo De Investimento Imobiliario Apex Malls - FII	EQUITY
+FATN11.SA	Fundo De Investimento Imobiliario Athena I	EQUITY
+ARRI11.SA	Fundo De Investimento Imobiliario Atrio Reit Recebiveis Imobiliarios	EQUITY
+BARI11.SA	Fundo De Investimento Imobiliario Barigui Rendimentos Imobiliario I Fii	EQUITY
+CNES11.SA	Fundo De Investimento Imobiliario Bm Cenesp - Fii - Inicio De Negociacao	EQUITY
+BPML11.SA	Fundo De Investimento Imobiliario BTG Pactual Shoppings	EQUITY
+BTRA11.SA	Fundo De Investimento Imobiliario Btg Pactual Terras Agricolas	EQUITY
+CXAG11.SA	Fundo De Investimento Imobiliario Caixa Agencias	EQUITY
+CXCI11.SA	Fundo De Investimento Imobiliario Caixa Carteira Imobiliaria	EQUITY
+CXCO11.SA	Fundo De Investimento Imobiliario Caixa Imoveis Corporativos	EQUITY
+CXTL11.SA	Fundo De Investimento Imobiliário Caixa Trx Logística Renda	EQUITY
+FCFL11.SA	Fundo De Investimento Imobiliario Campus Faria Lima - Inicio De Negociacao	EQUITY
+IBCR11.SA	Fundo De Investimento Imobiliario De Cri Integral Brei	EQUITY
+IDGR11.SA	Fundo De Investimento Imobiliario De Unidades Autonomas II	EQUITY
+FAMB11.SA	Fundo de Investimento Imobiliario Edificio Almirante Barroso	EQUITY
+EDFO11.SA	Fundo de Investimento Imobiliário Edifício Ourinvest	EQUITY
+CEOC11.SA	Fundo de Investimento Imobiliário FII CEO Cyrela Fund	EQUITY
+FIGS11.SA	Fundo de Investimento Imobiliário General Shopping Ativo e Renda - FII	EQUITY
+GAME11.SA	Fundo De Investimento Imobiliario Guardian Multiestrategia Imobiliaria I	EQUITY
+HBCR11.SA	Fundo De Investimento Imobiliario Hbc Renda Urbana	EQUITY
+HCTR11.SA	Fundo De Investimento Imobiliario Hectare Ce	EQUITY
+HUCG11.SA	Fundo De Investimento Imobiliario Hospital Unimed Campina Grande	EQUITY
+HOSI11.SA	Fundo De Investimento Imobiliario Housi	EQUITY
+MCHY11.SA	Fundo De Investimento Imobiliario Maua Capital High Yield - FII	EQUITY
+MCCI11.SA	Fundo De Investimento Imobiliario Maua Capital Recebiveis Imobiliarios	EQUITY
+RBOP11.SA	Fundo De Investimento Imobiliário Mercantil Do Brasil-fii -Inicio	EQUITY
+MINT11.SA	Fundo De Investimento Imobiliario Mint Educacional	EQUITY
+MGHT11.SA	Fundo De Investimento Imobiliario Mogno Hoteis	EQUITY
+VVMR11.SA	Fundo De Investimento ImobiliaRio Multi Renda Urbana	EQUITY
+NVHO11.SA	Fundo De Investimento Imobiliario Novo Horizonte	EQUITY
+WTSP11.SA	Fundo De Investimento Imobiliario Ourinvest Re I	EQUITY
+PABY11.SA	Fundo de Investimento Imobiliário Panamby	EQUITY
+PRSV11.SA	Fundo de Investimento Imobiliário Presidente Vargas	EQUITY
+FPAB11.SA	Fundo de Investimento Imobiliário Projeto Água Branca	EQUITY
+RFOF11.SA	Fundo De Investimento Imobiliario RB Capital I Fundo De Fundos	EQUITY
+RELG11.SA	Fundo De Investimento Imobiliario Rec Logistaca	EQUITY
+RCRB11.SA	Fundo de Investimento Imobiliário Rio Bravo Renda Corporativa	EQUITY
+BMLC11.SA	Fundo de Investimento Imobiliário Rio Bravo Renda Corporativa	EQUITY
+RNGO11.SA	Fundo de Investimento Imobiliário Rio Negro	EQUITY
+RZTR11.SA	Fundo De Investimento Imobiliario Riza Terrax	EQUITY
+FISC11.SA	Fundo De Investimento Imobiliário SC  401	EQUITY
+SNEL11.SA	Fundo De Investimento Imobiliario Suno Energias Limpas	EQUITY
+CVBI11.SA	Fundo De Investimento Imobiliario VBI Credito	EQUITY
+PVBI11.SA	Fundo De Investimento ImobiliarRio Vbi Prime Properties	EQUITY
+JGPX11.SA	Fundo De Investimento Nas Cadeias Produtivas Agroindustriais Jgp Credito Fiagro Imobiliario	EQUITY
+RZAG11.SA	Fundo De Investimento Nas Cadeias Produtivas Agroindustriais Riza Agro - Fiagro - Imobiliario	EQUITY
+NVRP11.SA	Fundo De Investimento Participacoes Nova Raposo	EQUITY
+MAXR11.SA	Fundo De Investimentos Imobiliarios - Max Ret	EQUITY
+BTCI11.SA	Fundo Infestimento Imobiliario Btg Pactual Credito Imobiliario	EQUITY
+RBVA11.SA	Fundo Invest Imobiliario Agencias Caixa - FII Fund	EQUITY
+CTXT11.SA	Fundo Invest Imobiliario Centro Textil Internacional - Cotas Fund	EQUITY
+WPLZ11.SA	Fundo Investec IMB Shopping West Plaza Fund	EQUITY
+RBRR11.SA	Fundo Investimento Imobiliario - FII RBR Rendimento High Grade	EQUITY
+RECR11.SA	Fundo Investimento Imobiliario Fii Ubs (Br) Recebveis Imobiliarios	EQUITY
+GTWR11.SA	Fundo Investimento Imobiliario Green Towers	EQUITY
+HUSC11.SA	Fundo Investimento Imobiliario Hospital Unimed Sul Capixaba	EQUITY
+IRDM11.SA	Fundo Investimento Imobiliario Iridium Recebiveis Imobiliarios	EQUITY
+FPNG11.SA	Fundo Investimento Imobiliario Pedra Negra Renda Imobiliaria	EQUITY
+RBRF11.SA	Fundo Investimento Imobiliario Rbr Alpha Fundos De Fundos	EQUITY
+RBRP11.SA	Fundo Investimento Imobiliario Rbr Properties Fii	EQUITY
+TGAR11.SA	Fundo Investimento Imobiliario TG Ativo Real	EQUITY
+VTLT11.SA	Fundo Investimento Imobiliario Votorantim Logistica	EQUITY
+RBRY11.SA	Fundo Investimeto Imobiliario Rbr Private Credito Imobiliario	EQUITY
+FMOF11.SA	Fundos de Investimento Imobiliário Memorial Office Of Cotas	EQUITY
+FVPQ11.SA	FVPQ - Fii V Parque	EQUITY
+G2DI33.SA	G2D Investments, Ltd.	EQUITY
+GFSA3.SA	GAFISA      ON      NM	EQUITY
+G1LP34.SA	GALAPAGOS NVDRN	EQUITY
+GCRA11.SA	Galapagos Recebiveis Do Agronegocio Fiagro Imobiliario	EQUITY
+GCRI11.SA	Galapagos Recebiveis Imobiliarios Fundo De Investimento Imobiliario	EQUITY
+G1AR34.SA	GARTNER INC DRN	EQUITY
+GZIT11.SA	Gazit Malls Fundo De Investimento Imobiliario	EQUITY
+GBPJPY=X	GBP/JPY	CURRENCY
+GBPUSD=X	GBP/USD	CURRENCY
+G1DS34.SA	GDS Holdings Limited	EQUITY
+S1YM34.SA	Gen Digital Inc.	EQUITY
+GDBR34.SA	General Dynamics Corporation	EQUITY
+GEOO34.SA	General Electric Company	EQUITY
+GMCO34.SA	General Motors Company	EQUITY
+GM	General Motors Company	EQUITY
+GSFI11.SA	General Shopping E Outlets Do Brasil Fundo De Investimento Imobiliario FII	EQUITY
+GLOG11.SA	Genial Logistica Fundo De Investimento Imobiliario	EQUITY
+GPRK34.SA	GEOPARK LTD DRN	EQUITY
+GOAU4.SA	Metalurgica Gerdau S.A.	EQUITY
+GGBR4.SA	GERDAU      PN      N1	EQUITY
+GGBR3.SA	GERDAU      ON      N1	EQUITY
+NINJ3.SA	GETNINJAS   ON      NM	EQUITY
+GGRC11.SA	Ggr Covipe Renda Fundo Investimento Imobiliario	EQUITY
+GILD34.SA	Gilead Sciences, Inc.	EQUITY
+BURA39.SA	GX URANIUM  DRE	EQUITY
+BOTZ39.SA	GX ROBOTC AIDRE	EQUITY
+BSIL39.SA	GX SILVER MNDRE	EQUITY
+BEDC39.SA	GX TLMEDC DHDRE	EQUITY
+BDVD39.SA	GX SUPDIV USDRE	EQUITY
+BCPX39.SA	GX COPPER MNDRE	EQUITY
+BBUG39.SA	GX CYBERSECTDRE	EQUITY
+BPVE39.SA	GX INFRA DEVDRE	EQUITY
+BCHQ39.SA	GX MSCICHINADRE	EQUITY
+BLPA39.SA	GX MLP ETF  DRE	EQUITY
+BLBT39.SA	GX LITHIUM BDRE	EQUITY
+BHER39.SA	GX GAMES SPTDRE	EQUITY
+BQYL39.SA	GX NASDAQ100DRE	EQUITY
+G1LL34.SA	GLOBE LIFE IDRN	EQUITY
+GOLL4.SA	Gol Linhas Aéreas Inteligentes S.A.	EQUITY
+G1FI34.SA	Gold Fields Limited	EQUITY
+GC=F	Gold Dec 24	FUTURE
+GS	Goldman Sachs Group, Inc. (The)	EQUITY
+GOOGL	Alphabet Inc.	EQUITY
+GPRO34.SA	GOPRO       DRN	EQUITY
+GPIV33.SA	GP Investments, Ltd.	EQUITY
+GGPS3.SA	GPS Participações e Empreendimentos S.A.	EQUITY
+CONL	GraniteShares 2x Long COIN Daily ETF	ETF
+NVD	Graniteshares 2x Short NVDA Daily ETF	ETF
+CGRA3.SA	Grazziotin S.A.	EQUITY
+CGRA4.SA	Grazziotin S.A.	EQUITY
+GRND3.SA	GRENDENE    ON      NM	EQUITY
+P2CF34.SA	Grupo Aeroportuario del Pacífico, S.A.B. de C.V.	EQUITY
+BHIA3.SA	CASAS BAHIA ON      NM	EQUITY
+GMAT3.SA	GRUPO MATEUSON      NM	EQUITY
+NTCO3.SA	Natura &Co Holding S.A.	EQUITY
+RCFA11.SA	Grupo Rcfa Fundo De Investimento	EQUITY
+SBFG3.SA	GRUPO SBF   ON      NM	EQUITY
+G1SK34.SA	GSK PLC     DRN	EQUITY
+GUAR3.SA	Guararapes Confecções S.A.	EQUITY
+GARE11.SA	Guardian Logistica Fundo De Investimento Imobiliario	EQUITY
+G2WR34.SA	Guidewire Software, Inc.	EQUITY
+H1TH34.SA	H World Group Limited	EQUITY
+HABT11.SA	Habitat Ii - Fundo De Investimento Imobiliario	EQUITY
+HAGA3.SA	HAGA S/A Indústria e Comércio	EQUITY
+HAGA4.SA	HAGA S/A Indústria e Comércio	EQUITY
+HALI34.SA	Halliburton Company	EQUITY
+^HSI	HANG SENG INDEX	INDEX
+HAPV3.SA	Hapvida Participações e Investimentos S.A.	EQUITY
+H1OG34.SA	Harley-Davidson, Inc.	EQUITY
+H1AS34.SA	HASBRO INC  DRN	EQUITY
+META11.SA	Hashdex Crypto Metaverse Fundo De Indice	EQUITY
+HASH11.SA	Hashdex Nasdaq Crypto Index Fundo De Indice	EQUITY
+ETHE11.SA	Hashdex Nasdaq Ethereum Reference Price Fundo De Indice	EQUITY
+WEB311.SA	Hashdex Smart Contract Platforms Fundo De Indice	EQUITY
+HBRE3.SA	HBR Realty Empreendimentos Imobiliários S.A.	EQUITY
+H1CA34.SA	HCA Healthcare, Inc.	EQUITY
+H1DB34.SA	HDFC Bank Limited	EQUITY
+P1EA34.SA	Healthpeak Properties, Inc.	EQUITY
+HCHG11.SA	Hectare Recebiveis High Grade Fundo De Investimento Imobiliario  Fii	EQUITY
+HCST11.SA	Hectare Student Housing I - Fundo De Investimento Em Participacoes Multiestrategia	EQUITY
+HAAA11.SA	Hedge Aaa Fundo De Investimento Imobiliario	EQUITY
+HGBS11.SA	HEDGE Brasil Shopping Fundo de Investimento Imobiliário	EQUITY
+HLOG11.SA	Hedge Logistica Fundo Investimento Imobiliario	EQUITY
+HOFC11.SA	Hedge Office Income Fundo De Investimento Imobiliario	EQUITY
+HPDP11.SA	Hedge Real Estate I Fundo De Investimento Imobliario	EQUITY
+HRDF11.SA	Hedge Realty Development Fundo Investimento Imobiliario FII	EQUITY
+HREC11.SA	Hedge Recebiveis Fundo De Investimento Imobiliario	EQUITY
+HFOF11.SA	Hedge Top Fofii 3 Fundo Investimento Imobilirio	EQUITY
+H1EI34.SA	HEICO Corporation	EQUITY
+HBOR3.SA	Helbor Empreendimentos S.A.	EQUITY
+HETA4.SA	Hercules S.A - Fábrica de Talheres	EQUITY
+H1PE34.SA	Hewlett Packard Enterprise Company	EQUITY
+H1FC34.SA	HF Sinclair Corporation	EQUITY
+HGIC11.SA	Hgi Creditos Imobiliarios Fundo De Investimento	EQUITY
+HBSA3.SA	Hidrovias do Brasil S.A.	EQUITY
+HGAG11.SA	High Fundo De Investimento Agro - Fiagro - Imobiliario	EQUITY
+H1LT34.SA	Hilton Worldwide Holdings Inc.	EQUITY
+HOND34.SA	Honda Motor Co., Ltd.	EQUITY
+H1RL34.SA	Hormel Foods Corporation	EQUITY
+MATD3.SA	Hospital Mater Dei S.A.	EQUITY
+NSLU11.SA	Hospital Nossa Senhora De Lourde Fund	EQUITY
+H1ST34.SA	Host Hotels & Resorts, Inc.	EQUITY
+HOOT4.SA	Hotéis Othon S.A.	EQUITY
+ARNC34.SA	Howmet Aerospace Inc.	EQUITY
+HPQB34.SA	HP COMPANY  DRN	EQUITY
+HPQ	HP Inc.	EQUITY
+H1SB34.SA	HSBC Holdings plc	EQUITY
+HSAF11.SA	Hsi Ativos Financeiros Fundos Investimentos Imoliarios	EQUITY
+HSLG11.SA	Hsi Logistica Fundo De Investimento Imobiliario	EQUITY
+HSML11.SA	Hsi Malls Fundo De Investimento Imobiliario	EQUITY
+HSRE11.SA	Hsi Renda Imobiliario - Fundo De Investimento Imobiliario	EQUITY
+HTEK11.SA	Htek - It Now Morningstar Xt Us Healthcare Fundo De Indice	EQUITY
+H2UB34.SA	HUBSPOT INC DRN	EQUITY
+H1UM34.SA	HUMANA INC  DRN	EQUITY
+H1II34.SA	Huntington Ingalls Industries, Inc.	EQUITY
+HYPE3.SA	HYPERA      ON      NM	EQUITY
+I1AC34.SA	IAC INTERACTDRN	EQUITY
+^BVSP	IBOVESPA	INDEX
+^IBX50	IBRX 50	INDEX
+I1BN34.SA	ICICI Bank Limited	EQUITY
+I1DX34.SA	IDEXX Laboratories, Inc.	EQUITY
+^JKSE	IDX COMPOSITE	INDEX
+ITIP11.SA	Ifi D Inter Fundo De Investimento Imobiliario	EQUITY
+ITIT11.SA	Ifi E Inter Fundo De Investimento Imobiliario	EQUITY
+IGTI4.SA	IGUATEMI S.APN      N1	EQUITY
+IGTI3.SA	IGUATEMI S.AON      N1	EQUITY
+IGTI11.SA	IGUATEMI S.AUNT     N1	EQUITY
+I1LM34.SA	ILLUMINA INCDRN	EQUITY
+BTSG11.SA	Imob IV Fundo De Investimento Imobiliario	EQUITY
+INEP3.SA	Inepar S.A. Indústria e Construções	EQUITY
+INEP4.SA	Inepar S.A. Indústria e Construções	EQUITY
+I1FO34.SA	INFOSYS LTD DRN ED	EQUITY
+IFCM3.SA	Infracommerce CXaaS S.A.	EQUITY
+INGG34.SA	ING GROEP   DRN	EQUITY
+ITLC34.SA	Intel Corporation	EQUITY
+INTC	Intel Corporation	EQUITY
+INTB3.SA	Intelbras S.A. - Indústria de Telecomunicação Eletrônica Brasileira	EQUITY
+INBR32.SA	Inter & Co, Inc.	EQUITY
+IAAG11.SA	Inter Amerra - Fiagro - Imobiliario	EQUITY
+GURU11.SA	Inter Eqi Teva Etf Grandes Gurus Do Mercado Fundo De Indice	EQUITY
+INLG11.SA	Inter Logistico Fundo De Investimento Imobiliario - FII	EQUITY
+INRD11.SA	Inter Residence Fundo DE Investimento Imobiliario FII	EQUITY
+BICR11.SA	Inter Titulos Imobiliarios Fundo De Investimento Imobiliario	EQUITY
+I1CE34.SA	Intercontinental Exchange, Inc.	EQUITY
+IBMB34.SA	International Business Machines Corporation	EQUITY
+MEAL3.SA	International Meal Company Alimentação S.A.	EQUITY
+I1PC34.SA	International Paper Company	EQUITY
+I1SR34.SA	Intuitive Surgical, Inc.	EQUITY
+I1VZ34.SA	INVESCO LTD DRN	EQUITY
+QQQ	Invesco QQQ Trust, Series 1	ETF
+USDB11.SA	Investo Bloomberg Us Bond Etf Fundo De Investimento De indice  Investimento No Exterior	EQUITY
+PEVC11.SA	Investo Bluestar Top 10 Us Listed Alternative Asset Managers Etf FII Investimento No Exterior	EQUITY
+CHIP11.SA	Investo Etf Bluestar 5G Communications Index Fundo De Indice - Investimento No Exterior	EQUITY
+USTK11.SA	Investo ETF MSCI US Technology Fundo De Investimento De Indice – Investimento No Exterior	EQUITY
+SVAL11.SA	Investo ETF S&P Smallcap 600 Value Fundo De Investimento De Indice - Investimento No Exterior	EQUITY
+WRLD11.SA	Investo Ftse Global Equities Etf Fundo De Investimento De Indice Investimento Exterior	EQUITY
+BXPO11.SA	Investo Marketvector Brazil Global Exposure Etf – Fundo De Investimento De Indice	EQUITY
+SCVB11.SA	Investo Marketvector Brazil Small Cap Value Etf - Fundo De Investimento De Andice	EQUITY
+NTNS11.SA	Investo Teva Tesouro Ipca+ 0 A 4 Anos Etf - Fundo De Investimento De Indice	EQUITY
+LFTS11.SA	Investo Teva Tesouro Selic Etf - Fundo De Investimento De Indice	EQUITY
+NFTS11.SA	Investo Vaneck Etf Crypto Compare Media & Entertainment Leaders Fundo De Indice - Investi No Ext	EQUITY
+I2NV34.SA	Invitation Homes Inc.	EQUITY
+MYPK3.SA	IOCHP,MAXIONON      NM	EQUITY
+^MXX	S&P/BMV IPC	INDEX
+I1QY34.SA	IQIYI INC   DRN	EQUITY
+I1QV34.SA	IQVIA Holdings Inc.	EQUITY
+RANI3.SA	Irani Papel e Embalagem S.A.	EQUITY
+IRBR3.SA	IRB-Brasil Resseguros S.A.	EQUITY
+IRIM11.SA	Iridium Fundo De Investimento Imobiliario	EQUITY
+I1RM34.SA	Iron Mountain Incorporated	EQUITY
+TLT	iShares 20+ Year Treasury Bond ETF	ETF
+IEF	iShares 7-10 Year Treasury Bond ETF	ETF
+IBIT	iShares Bitcoin Trust ETF	ETF
+FXI	iShares China Large-Cap ETF	ETF
+BIVB39.SA	Ishares Core S&P 500 Etf	EQUITY
+BIJR39.SA	Ishares Core S&P Small-Cap Etf	EQUITY
+BITO39.SA	Ishares Core S&P Total Us Stock Market Etf	EQUITY
+BOVA11.SA	iShares Ibovespa Index Fund	EQUITY
+BXTC39.SA	Ishares Exponential Technologies ETF	EQUITY
+FM.MX	ISHARES INC MSCI FRONTIER AND S	INDEX
+BIXJ39.SA	Ishares Global Healthcare Etf	EQUITY
+BIGF39.SA	Ishares Global Infrastructure Etf	EQUITY
+BIXN39.SA	Ishares Global Tech ETF	EQUITY
+BIAU39.SA	Ishares Gold Trust	EQUITY
+3067.HK	iShares Hang Seng TECH ETF	ETF
+HYG	iShares iBoxx $ High Yield Corporate Bond ETF	ETF
+LQD	iShares iBoxx $ Investment Grade Corporate Bond ETF	ETF
+BRAX11.SA	iShares IBrX-Índice Brasil (IBrX-100) Index Fund	EQUITY
+ECOO11.SA	iShares Índice Carbono Eficiente (ICO2) Brasil - Fundo de Índice	EQUITY
+EWZ	iShares Inc iShares MSCI Brazil	ETF
+BCHI39.SA	Ishares Msci China Etf	EQUITY
+BEEM39.SA	Ishares Msci Emerging Markets ETF	EQUITY
+EEM	iShares MSCI Emerging Markets ETF	ETF
+BEZU39.SA	Ishares Msci Eurozone ETF	EQUITY
+BEWG39.SA	Ishares Msci Germany ETF	EQUITY
+BEWJ39.SA	Ishares Msci Japan Etf	EQUITY
+BEWU39.SA	Ishares Msci United Kingdom Etf	EQUITY
+BUSM39.SA	Ishares Msci Usa Min Vol Factor ETF	EQUITY
+BIBB39.SA	Ishares Nasdaq Biotechnology Etf	EQUITY
+IWM	iShares Russell 2000 ETF	ETF
+IVVB11.SA	iShares S&P 500 Fundo de Investimento - Investimento No Exterior	EQUITY
+BDVY39.SA	Ishares Select Dividend Etf	EQUITY
+SLV	iShares Silver Trust	ETF
+SMAL11.SA	iShares BM&FBovespa Small Cap Fundo de Índice	EQUITY
+BFXI39.SA	iShares Trust - iShares China Large-Cap ETF	EQUITY
+BGWH39.SA	iShares Trust - iShares Core Dividend Growth ETF	EQUITY
+BUSR39.SA	iShares Trust - iShares Core U.S. REIT ETF	EQUITY
+BSUS39.SA	iShares Trust - iShares ESG MSCI USA Leaders ETF	EQUITY
+BIEV39.SA	iShares Trust - iShares Europe ETF	EQUITY
+BGRT39.SA	iShares Trust - iShares Global REIT ETF	EQUITY
+BEFG39.SA	iShares Trust - iShares MSCI EAFE Growth ETF	EQUITY
+BFAV39.SA	iShares Trust - iShares MSCI EAFE Min Vol Factor ETF	EQUITY
+BEFV39.SA	iShares Trust - iShares MSCI EAFE Value ETF	EQUITY
+BMTU39.SA	iShares Trust - iShares MSCI USA Momentum Factor ETF	EQUITY
+BQUA39.SA	iShares Trust - iShares MSCI USA Quality Factor ETF	EQUITY
+BVLU39.SA	iShares Trust - iShares MSCI USA Value Factor ETF	EQUITY
+BIWF39.SA	iShares Trust - iShares Russell 1000 Growth ETF	EQUITY
+BOEF39.SA	iShares Trust - iShares S&P 100 ETF	EQUITY
+BIVW39.SA	iShares Trust - iShares S&P 500 Growth ETF	EQUITY
+BIVE39.SA	iShares Trust - iShares S&P 500 Value ETF	EQUITY
+BIYE39.SA	iShares Trust - iShares U.S. Energy ETF	EQUITY
+BIHI39.SA	iShares Trust - iShares U.S. Medical Devices ETF	EQUITY
+BEGU39.SA	Ishares Trust Ishares Esg Aware Msci Usa ETF	EQUITY
+BAER39.SA	Ishares Us Aerospace & Defense ETF	EQUITY
+BIYF39.SA	Ishares Us Financials Etf	EQUITY
+BIYW39.SA	Ishares US Technology ETF	EQUITY
+BEGE39.SA	iShares, Inc. - iShares ESG Aware MSCI EM ETF	EQUITY
+BEWA39.SA	iShares, Inc. - iShares MSCI Australia ETF	EQUITY
+BEWC39.SA	iShares, Inc. - iShares MSCI Canada ETF	EQUITY
+BEMV39.SA	iShares, Inc. - iShares MSCI Emerging Markets Min Vol Factor ETF	EQUITY
+BEWQ39.SA	iShares, Inc. - iShares MSCI France ETF	EQUITY
+BCWV39.SA	iShares, Inc. - iShares MSCI Global Min Vol Factor ETF	EQUITY
+BEWL39.SA	iShares, Inc. - iShares MSCI Switzerland ETF	EQUITY
+BURT39.SA	iShares, Inc. - iShares MSCI World ETF	EQUITY
+BOVV11.SA	It Now Ibovespa Fundo de Indice	EQUITY
+IMAB11.SA	It Now Id ETF Ima-B Fundo De Indice	EQUITY
+GOVE11.SA	It Now IGCT Index Fund	EQUITY
+B5P211.SA	It Now Ima-B5 P2 Fundo De Indice	EQUITY
+IB5M11.SA	It Now IMA-B5+ Fundo De Indice	EQUITY
+MATB11.SA	It Now IMAT Index Fund	EQUITY
+IRFM11.SA	It Now IRF - M P2 Fundo De Indice	EQUITY
+ISUS11.SA	It Now ISE Index Fund	EQUITY
+MILL11.SA	It Now Msci Usa Imi Millenials Select 50 Fundo De Indice	EQUITY
+TECK11.SA	It Now Nyse Fang+ Fundo De Indice	EQUITY
+SPXI11.SA	It Now S&P500 TRN Fundo de Índice	EQUITY
+SMAC11.SA	It Now Small Cap Fundo De Indice Fund	EQUITY
+RURA11.SA	Itau Asset Rural Fiagro - Imobiliario	EQUITY
+0P0000UCFY.SA	Itaú Carteira Private 176 FIM C Priv IE	MUTUALFUND
+IFRA11.SA	Itau FIC De Fundos De Investimento Em Direitos Creditorios De Infraestrutura	EQUITY
+TMPS11.SA	Itau Tempus Fundo De Investimento Imobiliario	EQUITY
+ITRI11.SA	Itau Total Return Fundo De Investimento Imobiliario	EQUITY
+ITUB4.SA	Itaú Unibanco Holding S.A.	EQUITY
+ITUB3.SA	Itaú Unibanco Holding S.A.	EQUITY
+ITSA4.SA	ITAUSA      PN      N1	EQUITY
+ITSA3.SA	ITAUSA      ON      N1	EQUITY
+^IVBX	IVBX2	INDEX
+JALL3.SA	JALLESMACHADON      NM	EQUITY
+^XDN	Japanese Yen Currency Index	INDEX
+JASC11.SA	Jasc Renda Varejo Essencial Fundo De Investimento Imobiliario - FII	EQUITY
+JBSS3.SA	JBS         ON      NM	EQUITY
+JDCO34.SA	JD COM      DRN	EQUITY
+J1EF34.SA	Jefferies Financial Group Inc.	EQUITY
+JFLL11.SA	JFL Living Fundo De Investimento Imobiliario	EQUITY
+JHSF3.SA	JHSF Participações S.A.	EQUITY
+00715L.TW	JKO S&P GSCI Brent Crude 2X Leveraged ER Futures ETF	ETF
+JFEN3.SA	João Fortes Engenharia S.A.	EQUITY
+JNJB34.SA	Johnson & Johnson	EQUITY
+JNJ	Johnson & Johnson	EQUITY
+JPM	JP Morgan Chase & Co.	EQUITY
+JPMC34.SA	JPMorgan Chase & Co.	EQUITY
+JPPC11.SA	JPP Capital Fundo Invest Imobiliario FII	EQUITY
+JPPA11.SA	JPP Capital Recebíveis Imobiliários Fundo de Investimento Imobiliário	EQUITY
+JSAF11.SA	Js Ativos Financeiros Fundo De Investimento Imobiliario	EQUITY
+JSRE11.SA	JS Real Estate multigestão - FII fund	EQUITY
+JSLG3.SA	JSL         ON      NM	EQUITY
+J1NP34.SA	Juniper Networks, Inc.	EQUITY
+CTKA4.SA	KARSTEN     PN	EQUITY
+K1BF34.SA	KB Financial Group Inc.	EQUITY
+K1EL34.SA	KELLANOVA   DRN	EQUITY
+KMPR34.SA	Kemper Corporation	EQUITY
+KEPL3.SA	KEPLER WEBERON      NM	EQUITY
+00945B.TW	KGI SECURITIES INVT TST CO LTD 	ETF
+00915.TW	KGI Taiwan Premium Selection High Dividend 30 ETF	ETF
+KISU11.SA	Kilima Fundo De Investimento Em Cotas De Fundos Imobiliarios Suno 30	EQUITY
+KIVO11.SA	Kilima Volkano Recebiveis Imobiliarios Fundo De Investimento Imobiliario	EQUITY
+KMBB34.SA	Kimberly-Clark Corporation	EQUITY
+KMB	Kimberly-Clark Corporation	EQUITY
+KMIC34.SA	Kinder Morgan, Inc.	EQUITY
+KCRE11.SA	Kinea Creditas Fundo De Investimento Imobiliario - FII	EQUITY
+KNCA11.SA	Kinea Credito Agro Fiagro-Imobiliario	EQUITY
+KFOF11.SA	Kinea Fundo Fundos De Investimento Imobiliario FII	EQUITY
+KNHF11.SA	Kinea Hedge Fund Fundo De Investimento Imobiliario	EQUITY
+KNHY11.SA	Kinea High Yield Cri Fundo Investimento Imobiliario FII	EQUITY
+KNRE11.SA	Kinea II Real Estate Equity Fundo de Investimento Imobiliário	EQUITY
+KNIP11.SA	Kinea Indices Precos Fundo Investimento Imobiliario - FII	EQUITY
+KOPA11.SA	Kinea Oportunidades Agro I Fiagro-Imobiliario	EQUITY
+KORE11.SA	Kinea Oportunidades Real Estate Fundo De Investimento Imobiliario	EQUITY
+KNRI11.SA	Kinea Renda Imobiliária Fundo de Investimento Imobiliário	EQUITY
+KNCR11.SA	Kinea Rendimentos Imobiliários Fundo de Investimento Imobiliário - FII	EQUITY
+KNSC11.SA	Kinea Securities Fundo De Investimento Imobiliario – Fii	EQUITY
+K2CG34.SA	Kingsoft Cloud Holdings Limited	EQUITY
+K1LA34.SA	KLA CORP    DRN	EQUITY
+KLBN11.SA	KLABIN S/A  UNT     N2	EQUITY
+KLBN4.SA	KLABIN S/A  PN      N2	EQUITY
+KLBN3.SA	KLABIN S/A  ON      N2	EQUITY
+251340.KS	KODEX KOSDAQ150 INVERSE	ETF
+233740.KS	KODEX KOSDAQ150 LEVERAGE	ETF
+122630.KS	KODEX LEVERAGE	ETF
+PHGN34.SA	Koninklijke Philips N.V.	EQUITY
+KRSA3.SA	Kora Saúde Participações S.A.	EQUITY
+^KS11	KOSPI Composite Index	INDEX
+L1HX34.SA	L3Harris Technologies, Inc.	EQUITY
+L1RC34.SA	Lam Research Corporation	EQUITY
+LAVV3.SA	Lavvi Empreendimentos Imobiliários S.A.	EQUITY
+LASC11.SA	Legatus Shoppings Fundo De Investimento Imobiliario - FII	EQUITY
+L1EG34.SA	Leggett & Platt, Incorporated	EQUITY
+L1DO34.SA	Leidos Holdings, Inc.	EQUITY
+L1EN34.SA	Lennar Corporation	EQUITY
+LSAG11.SA	Leste Fundo De Investimento Nas Cadeias Produtivas Agroindustriais - Fiagro - Imobiliario	EQUITY
+LSPA11.SA	Leste Riva Equity Preferencial I Fundo De Investimento Imobiliario	EQUITY
+LBRD34.SA	Liberty Broadband Corporation	EQUITY
+LIFE11.SA	Life Capital Partners Fundo De Investimentos Imobiliarios	EQUITY
+LIGT3.SA	LIGHT S/A   ON  ES  NM	EQUITY
+L1NC34.SA	Lincoln National Corporation	EQUITY
+L1YV34.SA	Live Nation Entertainment, Inc.	EQUITY
+LVTC3.SA	Livetech da Bahia Indústria e Comércio S.A.	EQUITY
+L1KQ34.SA	LKQ CORP    DRN	EQUITY
+L1YG34.SA	Lloyds Banking Group plc	EQUITY
+RENT3.SA	Localiza Rent a Car S.A.	EQUITY
+LWSA3.SA	Locaweb Serviços de Internet S.A.	EQUITY
+LMTB34.SA	Lockheed Martin Corporation	EQUITY
+LFTT11.SA	Loft II Fundo De Investimento Imobiliario	EQUITY
+LOGG3.SA	LOG Commercial Properties e Participações S.A.	EQUITY
+LOGN3.SA	Log-In Logística Intermodal S.A.	EQUITY
+LJQQ3.SA	QUERO,QUERO ON      NM	EQUITY
+LREN3.SA	LOJAS RENNERON      NM	EQUITY
+LOWC34.SA	Lowe's Companies, Inc.	EQUITY
+L2PL34.SA	LPL Financial Holdings Inc.	EQUITY
+LPSB3.SA	LPS Brasil - Consultoria de Imóveis S.A.	EQUITY
+L1UL34.SA	Lululemon Athletica Inc.	EQUITY
+L1MN34.SA	Lumen Technologies, Inc.	EQUITY
+L2AZ34.SA	Luminar Technologies, Inc.	EQUITY
+LUPA3.SA	LUPATECH    ON      NM	EQUITY
+L1YB34.SA	LyondellBasell Industries N.V.	EQUITY
+MDIA3.SA	M. Dias Branco S.A. Indústria e Comércio de Alimentos	EQUITY
+MACY34.SA	MACY S      DRN	EQUITY
+MGLU3.SA	MAGAZ LUIZA ON      NM	EQUITY
+LEVE3.SA	METAL LEVE  ON      NM	EQUITY
+MALL11.SA	Malls Brasil Fundo Investimento Imobiliario	EQUITY
+MANA11.SA	Manati Capital Hedge Fund Fundo De Investimento Imobiliario	EQUITY
+MGEL4.SA	Mangels Industrial S.A.	EQUITY
+ESTR4.SA	Manufatura de Brinquedos Estrela S.A.	EQUITY
+M1RO34.SA	Marathon Oil Corporation	EQUITY
+M1PC34.SA	Marathon Petroleum Corporation	EQUITY
+POMO4.SA	MARCOPOLO   PN      N2	EQUITY
+POMO3.SA	MARCOPOLO   ON      N2	EQUITY
+MRFG3.SA	Marfrig Global Foods S.A.	EQUITY
+AMAR3.SA	LOJAS MARISAON      NM	EQUITY
+MKLC34.SA	Markel Group Inc.	EQUITY
+M1KT34.SA	MarketAxess Holdings Inc.	EQUITY
+M1TT34.SA	Marriott International, Inc.	EQUITY
+M2RV34.SA	Marvell Technology, Inc.	EQUITY
+MSCD34.SA	Mastercard Incorporated	EQUITY
+MA	Mastercard Incorporated	EQUITY
+M1TC34.SA	Match Group, Inc.	EQUITY
+MXRF11.SA	Maxi Renda Fundo De Investimento Imobiliaro - FII	EQUITY
+M1KC34.SA	McCormick & Company, Incorporated	EQUITY
+MCDC34.SA	McDonald's Corporation	EQUITY
+MCD	McDonald's Corporation	EQUITY
+M1CK34.SA	McKesson Corporation	EQUITY
+M2PW34.SA	Medical Properties Trust, Inc.	EQUITY
+MDTC34.SA	MEDTRONIC   DRN	EQUITY
+M1LC34.SA	Melco Resorts & Entertainment Limited	EQUITY
+CASH3.SA	MELIUZ      ON      NM	EQUITY
+MELK3.SA	Melnick Desenvolvimento Imobiliário S.A.	EQUITY
+MELI34.SA	MercadoLibre, Inc.	EQUITY
+MRCK34.SA	Merck & Co., Inc.	EQUITY
+0P0000U9WU.SA	Mercury Liz Timercado FIM C Priv RL	MUTUALFUND
+MFII11.SA	Mérito Desenvolvimento Imobiliário I FII - Fundo de Investimento Imobiliário	EQUITY
+MFCR11.SA	Merito Recebiveis Imobiliarios Fii Fundo De Investimento	EQUITY
+^MERV	MERVAL	INDEX
+M1TA34.SA	Meta Platforms, Inc.	EQUITY
+META	Meta Platforms, Inc.	EQUITY
+FRIO3.SA	Metalfrio Solutions S.A.	EQUITY
+GOAU3.SA	Metalurgica Gerdau S.A.	EQUITY
+RSUL4.SA	Metalúrgica Riosulense S.A.	EQUITY
+MTSA4.SA	METISA Metalúrgica Timboense S.A.	EQUITY
+METB34.SA	METLIFE INC DRN	EQUITY
+M1GM34.SA	MGM Resorts International	EQUITY
+MUTC34.SA	Micron Technology, Inc.	EQUITY
+MSFT34.SA	Microsoft Corporation	EQUITY
+MSFT	Microsoft Corporation	EQUITY
+M2ST34.SA	MicroStrategy Incorporated	EQUITY
+M1AA34.SA	Mid-America Apartment Communities, Inc.	EQUITY
+MILS3.SA	Mills Locação, Serviços e Logística S.A.	EQUITY
+BEEF3.SA	MINERVA     ON  ATZ NM	EQUITY
+MNPR3.SA	Minupar Participações S.A.	EQUITY
+FIXA11.SA	Mirae Asset Renda Fixa Pre Fundo De Indice	EQUITY
+MTRE3.SA	Mitre Realty Empreendimentos e Participações S.A.	EQUITY
+M1UF34.SA	Mitsubishi UFJ Financial Group, Inc.	EQUITY
+MBLY3.SA	MOBLY       ON  ES  NM	EQUITY
+M1RN34.SA	MODERNA INC DRN	EQUITY
+SNLG11.SA	Mogno Logistica Fundo De Investimento Imobiliario	EQUITY
+M1HK34.SA	Mohawk Industries, Inc.	EQUITY
+MDLZ34.SA	Mondelez International, Inc.	EQUITY
+MDLZ	Mondelez International, Inc.	EQUITY
+M1DB34.SA	MONGODB INC DRN	EQUITY
+M2PR34.SA	Monolithic Power Systems, Inc.	EQUITY
+M1NS34.SA	Monster Beverage Corporation	EQUITY
+MOAR3.SA	Monteiro Aranha S.A.	EQUITY
+MCOR34.SA	Moody's Corporation	EQUITY
+MSBR34.SA	MORGAN STAN DRN ED	EQUITY
+MS	Morgan Stanley	EQUITY
+MSI	Motorola Solutions, Inc.	EQUITY
+MDNE3.SA	Moura Dubeux Engenharia S.A.	EQUITY
+MOVI3.SA	Movida Participações S.A.	EQUITY
+M2PM34.SA	MP Materials Corp.	EQUITY
+ESPA3.SA	ESPACOLASER ON      NM	EQUITY
+MRVE3.SA	MRV Engenharia e Participações S.A.	EQUITY
+M1SC34.SA	MSCI INC    DRN	EQUITY
+SHOP11.SA	Multi Shoppings Fundo Investimento Imobiliario Fii	EQUITY
+DRIT11.SA	Multigestao Renda Comercial Fundo De Investimento Imobiliario - FII	EQUITY
+MLAS3.SA	Multilaser Industrial S.A.	EQUITY
+MULT3.SA	Multiplan Empreendimentos Imobiliários S.A.	EQUITY
+MNDL3.SA	Mundial S.A. - Produtos de Consumo	EQUITY
+^IXIC	NASDAQ Composite	INDEX
+N1DA34.SA	NASDAQ INC  DRN	EQUITY
+NDAQ	Nasdaq, Inc.	EQUITY
+N1GG34.SA	National Grid plc	EQUITY
+NG=F	Natural Gas Dec 24	FUTURE
+N1WG34.SA	NatWest Group plc	EQUITY
+NCRI11.SA	Navi Credito Imobiliario - Fundo De Investimento Imobiliario	EQUITY
+NAVT11.SA	Navi Imobiliario Total Return Fundos De Investimento Imobiliario	EQUITY
+APTO11.SA	Navi Residencial Fundo De Investimento Imobiliario	EQUITY
+NEOE3.SA	NEOENERGIA  ON      NM	EQUITY
+NGRD3.SA	Neogrid Participações S.A.	EQUITY
+N1TA34.SA	NETAPP INC  DRN	EQUITY
+NETE34.SA	NETEASE     DRN	EQUITY
+NFLX34.SA	NETFLIX     DRN	EQUITY
+NFLX	Netflix, Inc.	EQUITY
+N1BI34.SA	Neurocrine Biosciences, Inc.	EQUITY
+E1DU34.SA	New Oriental Education & Technology Group Inc.	EQUITY
+N1WL34.SA	Newell Brands Inc.	EQUITY
+N1EM34.SA	Newmont Corporation	EQUITY
+NEWL11.SA	Newport Logastica Fundo De Investimento Imobiliario	EQUITY
+NEXP3.SA	Nexpe Participações S.A.	EQUITY
+1357.T	NEXT FUNDS Nikkei 225 Double Inverse Index ETF	ETF
+NEXT34.SA	NextEra Energy, Inc.	EQUITY
+N1IC34.SA	NICE LTD    DRN	EQUITY
+NIKE34.SA	NIKE        DRN	EQUITY
+NKE	Nike, Inc.	EQUITY
+^N225	Nikkei 225	INDEX
+1360.T	SIMPLEX ASSET MANAGEMENT CO LTD	ETF
+1579.T	SIMPLEX ASSET MANAGEMENT CO LTD	ETF
+NOKI34.SA	NOKIA CORP  DRN	EQUITY
+NMRH34.SA	Nomura Holdings, Inc.	EQUITY
+NORD3.SA	Nordon Indústrias Metalúrgicas S/A	EQUITY
+J1WN34.SA	NORDSTROM INDRN	EQUITY
+NOCG34.SA	Northrop Grumman Corporation	EQUITY
+N1CL34.SA	Norwegian Cruise Line Holdings Ltd.	EQUITY
+N1VS34.SA	NOVARTIS AG DRN	EQUITY
+N1VO34.SA	Novo Nordisk A/S	EQUITY
+N2VC34.SA	NovoCure Limited	EQUITY
+N1RG34.SA	NRG ENERGY IDRN ED	EQUITY
+ROXO34.SA	Nu Holdings Ltd.	EQUITY
+NSDV11.SA	Nu Ibov Smart Dividendos Fundo De Indice	EQUITY
+NDIV11.SA	Nu Renda Ibov Smart Dividendos Fundo De Indice	EQUITY
+N1UE34.SA	Nucor Corporation	EQUITY
+N2TN34.SA	NUTANIX     DRN	EQUITY
+NUTR3.SA	Nutriplant Indústria e Comércio S/A	EQUITY
+BTEK11.SA	Nvesto S&P Biotechnology Selection Industry Etf FI De Indice - Investimento No Exterior	EQUITY
+NVDC34.SA	NVIDIA Corporation	EQUITY
+NVDA	NVIDIA Corporation	EQUITY
+N1VR34.SA	NVR INC     DRN	EQUITY
+N1XP34.SA	NXP Semiconductors N.V.	EQUITY
+^XAX	NYSE AMEX COMPOSITE INDEX	INDEX
+^NYA	NYSE COMPOSITE (DJ)	INDEX
+NZDUSD=X	NZD/USD	CURRENCY
+OXYP34.SA	Occidental Petroleum Corporation	EQUITY
+OPCT3.SA	OceanPact Serviços Marítimos S.A.	EQUITY
+OCRE11.SA	Octo Fundo De Investimento Imobiliario	EQUITY
+ODPV3.SA	ODONTOPREV  ON      NM	EQUITY
+OIBR3.SA	OI          ON      N1	EQUITY
+OIBR4.SA	OI          PN      N1	EQUITY
+O1KT34.SA	OKTA INC    DRN	EQUITY
+O2HI34.SA	Omega Healthcare Investors, Inc.	EQUITY
+O1MC34.SA	Omnicom Group Inc.	EQUITY
+O2NS34.SA	ON Semiconductor Corporation	EQUITY
+ONCO3.SA	Oncoclínicas do Brasil Serviços Médicos S.A.	EQUITY
+FTCE11.SA	Opportunity Fundo de Investimento Imobiliario	EQUITY
+ORCL34.SA	Oracle Corporation	EQUITY
+ORCL	Oracle Corporation	EQUITY
+OGIN11.SA	Orama Fundo De Investimento Em Cotas De Fundos Incentivados De Investimento Em Infraestrutura Renda	EQUITY
+ORLY34.SA	O'Reilly Automotive, Inc.	EQUITY
+ORVR3.SA	Orizon Valorização de Resíduos S.A.	EQUITY
+OSXB3.SA	OSX BRASIL  ON      NM	EQUITY
+O1TI34.SA	Otis Worldwide Corporation	EQUITY
+OIAG11.SA	Ourinvest Innovation - Fiagro Imobiliario	EQUITY
+OUJP11.SA	Ourinvest Jpp Fundo Investimento Imobiliario - Fii	EQUITY
+OFSA3.SA	Ouro Fino Saúde Animal Participações S.A.	EQUITY
+PDTC3.SA	PADTEC      ON      NM	EQUITY
+PAGS34.SA	PagSeguro Digital Ltd.	EQUITY
+P2LT34.SA	Palantir Technologies Inc.	EQUITY
+P2AN34.SA	Palo Alto Networks, Inc.	EQUITY
+PATI3.SA	Panatlântica S.A.	EQUITY
+PATI4.SA	Panatlântica S.A.	EQUITY
+PNCR11.SA	Panorama Credito Residencial Fundo De Investimento Imobiliario	EQUITY
+PMIS11.SA	Paramis Hedge Fund Fundo De Investimento Imobiliario - Fii	EQUITY
+C1BS34.SA	Paramount Global	EQUITY
+PMAM3.SA	PARANAPANEMAON      NM	EQUITY
+P1HC34.SA	Parker-Hannifin Corporation	EQUITY
+PQDP11.SA	Parque Dom Pedro Shopping Center Fund	EQUITY
+PATC11.SA	Patria Edificios Corporativos Fundo Investimento Imobiliario Fii	EQUITY
+PICE11.SA	Patria Infraestrutura Energia Core Fundo De Investimento Em Participacoes Em Infraestrutura	EQUITY
+P2AX34.SA	Patria Investments Limited	EQUITY
+PATL11.SA	Patria Logistica Fundo De Investimento Imobiliario	EQUITY
+P1AY34.SA	PAYCHEX INC DRN	EQUITY
+P1YC34.SA	Paycom Software, Inc.	EQUITY
+PYPL34.SA	PayPal Holdings, Inc.	EQUITY
+PTBL3.SA	PORTOBELLO  ON      NM	EQUITY
+P1DD34.SA	PDD Holdings Inc.	EQUITY
+PDGR3.SA	PDG Realty S.A. Empreendimentos e Participações	EQUITY
+OULG11.SA	Pedra Dourada Fundo De Investimento Imobiliário - FII	EQUITY
+PEPB34.SA	PEPSICO INC DRN	EQUITY
+PEP	Pepsico, Inc.	EQUITY
+PEMA11.SA	Performa Real Estate Fundo De Investimento Imobiliario	EQUITY
+PRSN11.SA	Personale I Fundo Invest Imobiliario	EQUITY
+T1LK34.SA	Perusahaan Perseroan (Persero) PT Telekomunikasi Indonesia Tbk	EQUITY
+PETZ3.SA	Pet Center Comércio e Participações S.A.	EQUITY
+PETR3.SA	Petróleo Brasileiro S.A. - Petrobras	EQUITY
+PETR4.SA	Petróleo Brasileiro S.A. - Petrobras	EQUITY
+RECV3.SA	PETRORECSA  ON      NM	EQUITY
+PTNT4.SA	Pettenati S.A. Industria Têxtil	EQUITY
+PTNT3.SA	Pettenati S.A. Industria Têxtil	EQUITY
+PFIZ34.SA	PFIZER      DRN	EQUITY
+PFE	Pfizer, Inc.	EQUITY
+PM	Philip Morris International Inc.	EQUITY
+PHMO34.SA	Philip Morris International Inc.	EQUITY
+P1SX34.SA	PHILLIPS 66 DRN	EQUITY
+P2IN34.SA	PINTERESTINCDRN	EQUITY
+PLPL3.SA	Plano & Plano Desenvolvimento Imobiliário S.A.	EQUITY
+PLAS3.SA	Plascar Participações Industriais S.A.	EQUITY
+PLCR11.SA	Plural Recebiveis Imobiliarios Fundo De Investimento Imobiliario	EQUITY
+PLRI11.SA	Polo Fundo de Investimento Imobiliario – FII Recebiveis Imobiliarios IMO - Cotas Fund	EQUITY
+PORD11.SA	Polo Fundo de Investimento Imobiliário - Recebíveis Imobiliários II - FII	EQUITY
+PSSA3.SA	PORTO SEGUROON      NM	EQUITY
+PSVM11.SA	Porto Sudeste VM SA	EQUITY
+POSI3.SA	Positivo Tecnologia S.A.	EQUITY
+PPLA11.SA	PPLA Participations Ltd.	EQUITY
+SI=F	Silver Dec 24	FUTURE
+0P0001N3L8.SA	Principal Glb Propty Secs I Hdg Acc BRL	MUTUALFUND
+0P0000Z26Z.SA	Principal Glbl High Yield I Hdg Acc BRL	MUTUALFUND
+PRNR3.SA	Priner Serviços Industriais S.A.	EQUITY
+PRIO3.SA	PETRORIO    ON      NM	EQUITY
+PPEI11.SA	Prisma Proton Energia Fundo De Investimento Em Participacoes Em Infraestrutura	EQUITY
+PG	Procter & Gamble Company (The)	EQUITY
+PFRM3.SA	Profarma Distribuidora de Produtos Farmacêuticos S.A.	EQUITY
+P1LD34.SA	PROLOGIS INCDRN	EQUITY
+BITO	ProShares Bitcoin ETF	ETF
+SH	ProShares Short S&P500	ETF
+BITI	ProShares Short Bitcoin ETF	ETF
+BOIL	ProShares Ultra Bloomberg Natural Gas	ETF
+TQQQ	ProShares UltraPro QQQ	ETF
+SDOW	ProShares UltraPro Short Dow30	ETF
+SQQQ	ProShares UltraPro Short QQQ	ETF
+P1DT34.SA	Prudential Financial, Inc.	EQUITY
+P1SA34.SA	PUBLIC STORADRN	EQUITY
+P2ST34.SA	Pure Storage, Inc.	EQUITY
+QDFI11.SA	Qr Bloomberg Defi Fundo De Indice - Investimento No Exterior	EQUITY
+QETH11.SA	Qr Cme Cf Ether Reference Rate Fundo De Indice Investimento No Exterior	EQUITY
+QCOM34.SA	QUALCOMM Incorporated	EQUITY
+QCOM	QUALCOMM Incorporated	EQUITY
+QUAL3.SA	Qualicorp Consultoria e Corretora de Seguros S.A.	EQUITY
+Q1UA34.SA	Quanta Services, Inc.	EQUITY
+Q2SC34.SA	QuantumScape Corporation	EQUITY
+QAGR11.SA	Quasar Agro - Fundo De Investimento Imobiliario	EQUITY
+0P0000UEZA.SA	FUNDO DE INVESTIMENTO EM AÇÕE	MUTUALFUND
+RADL3.SA	RAIADROGASILON      NM	EQUITY
+RAIZ4.SA	RAIZEN      PN      N2	EQUITY
+RZZR11.SA	Raizz Renda Logistica Fundo de Investimento Imobiliario	EQUITY
+RAPT3.SA	Randon S.A. Implementos e Participações	EQUITY
+RAPT4.SA	Randon S.A. Implementos e Participações	EQUITY
+PQAG11.SA	Rb Capital Anhanguera Fundo De Investimento Imobiliario	EQUITY
+RBIR11.SA	Rb Capital Desenvolvimento Residencial IV Fundo De Investimento Imobiliario - FII	EQUITY
+RBDS11.SA	RB Capital Development Residential Real Estate Investment Fund II	EQUITY
+RBLG11.SA	Rb Capital Logastico Fundo De Investimento Imobiliario Fund	EQUITY
+RRCI11.SA	RB Capital Recebaveis Imobiliarios Fundo De Investimento Imobiliario FII	EQUITY
+FIIP11.SA	RB Capital Renda I Fundo de Investimento Imobiliário - FII	EQUITY
+RBRD11.SA	RB Capital Renda II Fundo de Investimento Imobiliário - FII	EQUITY
+RBTS11.SA	Rb Capital Tfo Situs Fundo Investimento Imobiliario Fii	EQUITY
+RBRX11.SA	Rbr Alpha Plus Multiestrategia Real Estate Fundo De Investimento Imobiliario	EQUITY
+RCFF11.SA	Rbr Desenvolvimento Comercial Feeder Fof Fundo De Investimento Imobiliario	EQUITY
+RBRL11.SA	FII RBR LOG CI	EQUITY
+RPRI11.SA	RBR Premium Recebiveis Imobiliarios Fundo De Investimento Imobiliario	EQUITY
+FIIB11.SA	Real Estate Investment Fund Industry in Brazil	EQUITY
+RINV11.SA	Real Investor Fundo De Investimento Imobiliario	EQUITY
+R1IN34.SA	Realty Income Corporation	EQUITY
+RCSL3.SA	RECRUSUL    ON	EQUITY
+RCSL4.SA	RECRUSUL    PN	EQUITY
+RDOR3.SA	Rede D'Or São Luiz S.A.	EQUITY
+REDE3.SA	Rede Energia Participações S.A.	EQUITY
+R2DF34.SA	Redfin Corporation	EQUITY
+RPMG3.SA	Refinaria de Petróleos de Manguinhos S.A.	EQUITY
+REGN34.SA	Regeneron Pharmaceuticals, Inc.	EQUITY
+R1EL34.SA	RELX PLC    DRN	EQUITY
+NEWU11.SA	Renda de Escritorios Fundo de Investimento Imobiliario - Cotas Fundo	EQUITY
+RNEW11.SA	RENOVA      UNT     N2	EQUITY
+RNEW4.SA	RENOVA      PN      N2	EQUITY
+RNEW3.SA	RENOVA      ON      N2	EQUITY
+R1MD34.SA	RESMED INC  DRN	EQUITY
+R2HH34.SA	RH          DRN	EQUITY
+R2NG34.SA	RingCentral, Inc.	EQUITY
+RBVO11.SA	Rio Bravo Credito - Imobiliario II Fundo Invest Imobiliario FII Fund	EQUITY
+RBHY11.SA	Rio Bravo Credito Imobiliario High Yield Fundo De Investimento Imobiliario - FII	EQUITY
+RBHG11.SA	Rio Bravo Credito Imobiliario IV Fundo De Investimento Imobiliario - FII	EQUITY
+RBIF11.SA	Rio Bravo Esg FICFI Em Infraestrutura Renda Fixa Credito Privado	EQUITY
+RBFF11.SA	Rio Bravo Ifix Fundo De Fundos Investimento Imobiliario - FII	EQUITY
+RBRS11.SA	Rio Bravo Renda Residencial Fundo De Investimentos Imobiliario	EQUITY
+GEPA3.SA	Rio Paranapanema Energia S.A.	EQUITY
+GEPA4.SA	Rio Paranapanema Energia S.A.	EQUITY
+RIOT34.SA	RIO TINTO   DRN	EQUITY
+RZAK11.SA	Riza Akin Fundo De Investimento Imobiliario – FII	EQUITY
+RDNI3.SA	RNI Negócios Imobiliários S.A.	EQUITY
+R2BL34.SA	Roblox Corporation	EQUITY
+R1KU34.SA	ROKU INC    DRN	EQUITY
+ROMI3.SA	ROMI        ON      NM	EQUITY
+ROST34.SA	Ross Stores, Inc.	EQUITY
+RSID3.SA	ROSSI RESID ON      NM	EQUITY
+R1CL34.SA	Royal Caribbean Cruises Ltd.	EQUITY
+RYTT34.SA	RAYTHEONTECHDRN	EQUITY
+RAIL3.SA	RUMO S.A.   ON      NM	EQUITY
+^RUT	Russell 2000	INDEX
+R1YA34.SA	Ryanair Holdings plc	EQUITY
+^GSPC	S&P 500	INDEX
+^BSESN	S&P BSE SENSEX	INDEX
+SPGI34.SA	SP GLOBAL   DRN	EQUITY
+^AXJO	S&P/ASX 200 [XJO]	INDEX
+^NZ50	S&P/NZX 50 INDEX GROSS ( GROSS 	INDEX
+^GSPTSE	S&P/TSX Composite index	INDEX
+ELAS11.SA	Safra ETF Mulheres Na Lideranca Fundo De Indice De Acoes	EQUITY
+BOVS11.SA	Safra Ibovespa Fundo De Indice	EQUITY
+SSFO34.SA	Salesforce, Inc.	EQUITY
+CRM	Salesforce, Inc.	EQUITY
+252670.KS	Samsung Kodex F Kospi 200 Inverse2x ETF	ETF
+114800.KS	Samsung Kodex Inverse ETF - Equity-Derivatives	ETF
+SNSY5.SA	SANSUY      PNA	EQUITY
+SNSY3.SA	SANSUY      ON	EQUITY
+SADI11.SA	Santander Papeis Imobiliarios Cdi Fundo De Investimento Imobiliario	EQUITY
+SARE11.SA	Santander Renda De Alugueis Fundo Investimento Imobiliarios	EQUITY
+SAPI11.SA	Santander Títulos Imobiliarios Fundo De Investimento Imobiliario	EQUITY
+STBP3.SA	Santos Brasil Participações S.A.	EQUITY
+SCAR3.SA	São Carlos Empreendimentos e Participações S.A.	EQUITY
+SMTO3.SA	SAO MARTINHOON      NM	EQUITY
+AHEB3.SA	São Paulo Turismo S.A.	EQUITY
+SAPP34.SA	SAP SE      DRN	EQUITY
+S1RP34.SA	Sarepta Therapeutics, Inc.	EQUITY
+SLBG34.SA	Schlumberger Limited	EQUITY
+SHUL4.SA	SCHULZ      PN	EQUITY
+SCPF11.SA	Scp Fundo De Investimento NPV	EQUITY
+TRBL11.SA	SDI Logística Rio - Fundo de Investimento Imobiliário - FII	EQUITY
+TEPP11.SA	SDI Properties Fundo De Investimento Imobiliario	EQUITY
+S2EA34.SA	SEA LTD     DRN	EQUITY
+S1TX34.SA	Seagate Technology Holdings plc	EQUITY
+STX	Seagate Technology Holdings PLC	EQUITY
+S1RE34.SA	SEMPRA      DRN	EQUITY
+ASAI3.SA	Sendas Distribuidora S.A.	EQUITY
+SEQR11.SA	Sequoia III Renda Imobiliaria - Fundo De Investimento Imobiliaria	EQUITY
+SEQL3.SA	Sequoia Logística e Transportes S.A.	EQUITY
+SEER3.SA	SER EDUCA   ON      NM	EQUITY
+SRNA3.SA	SERENA      ON      NM	EQUITY
+N1OW34.SA	ServiceNow, Inc.	EQUITY
+IAGR11.SA	Sfi Investimentos Do Agronegocio - Fiagro Imobiliario	EQUITY
+S2HO34.SA	SHOPIFY INC DRN	EQUITY
+S1BS34.SA	Sibanye Stillwater Limited	EQUITY
+S2GM34.SA	Sigma Lithium Corporation	EQUITY
+SIMN34.SA	Simon Property Group, Inc.	EQUITY
+SIMH3.SA	SIMPAR      ON      NM	EQUITY
+00887.TWO	SinoPac Global High Quality ETF - SinoPac China CSI Technology 50 ETF	ETF
+SJAU11.SA	Sj Au Logistica Fundo De Investimento Imobiliario	EQUITY
+S1KM34.SA	SK Telecom Co., Ltd.	EQUITY
+S1LG34.SA	SL Green Realty Corp.	EQUITY
+SLCE3.SA	SLC AGRICOLAON      NM	EQUITY
+SMFT3.SA	Smartfit Escola de Ginástica e Dança S.A.	EQUITY
+S2MA34.SA	SMARTSHEET  DRN	EQUITY
+S2NA34.SA	SNAP INC    DRN	EQUITY
+S2NW34.SA	SNOWFLAKE   DRN	EQUITY
+S2CH34.SA	Sociedad Química y Minera de Chile S.A.	EQUITY
+SOL-USD	Solana USD	CRYPTOCURRENCY
+S2ED34.SA	SolarEdge Technologies, Inc.	EQUITY
+SNEC34.SA	Sony Group Corporation	EQUITY
+SPTW11.SA	Sp Downtown Fundo de Investimento Imobiliário - FII	EQUITY
+CRAA11.SA	Sparta Fiagro Fundo De Investimento Nas Cadeias Produtivas Agroindustriais - Imobiliario	EQUITY
+CDII11.SA	Sparta Infra Cdi Fd De Invest Em Cotas De Fd Incentivados De Inv Em Infraestrutura Renda Fixa Cr Pri	EQUITY
+JURO11.SA	Sparta Infra Fundo Investimento Cotas Fundos Incentivados Investimento Infraestrutura Renda Fi Cr Pr	EQUITY
+BIL	SPDR Bloomberg 1-3 Month T-Bill ETF	ETF
+SPY	SPDR S&P 500 ETF Trust	ETF
+S1PO34.SA	Spotify Technology S.A.	EQUITY
+S2FM34.SA	Sprouts Farmers Market, Inc.	EQUITY
+S1SN34.SA	SS&C Technologies Holdings, Inc.	EQUITY
+000001.SS	SSE Composite Index	INDEX
+S2TA34.SA	STAG Industrial, Inc.	EQUITY
+S1WK34.SA	Stanley Black & Decker, Inc.	EQUITY
+SWK	Stanley Black & Decker, Inc.	EQUITY
+SBUB34.SA	Starbucks Corporation	EQUITY
+SBUX	Starbucks Corporation	EQUITY
+S2TW34.SA	Starwood Property Trust, Inc.	EQUITY
+^STI	STI Index	INDEX
+STMN34.SA	STMicroelectronics N.V.	EQUITY
+STOC31.SA	STONE CO    DR1	EQUITY
+L2RN34.SA	STRIDE INC  DRN	EQUITY
+S1YK34.SA	Stryker Corporation	EQUITY
+S1MF34.SA	Sumitomo Mitsui Financial Group, Inc.	EQUITY
+S2UI34.SA	Sun Communities, Inc.	EQUITY
+SNAG11.SA	Suno Agro - Fiagro-Imobiliario	EQUITY
+SNFF11.SA	Suno Fundo De Fundos De Investimento Imobiliario	EQUITY
+SNID11.SA	Suno Infra Debentures FICFI De Investimento Em Infraestrutura Renda Fixa Credito Privado	EQUITY
+SNME11.SA	Suno Multiestrategia Fundo De Investimento Imobiliario	EQUITY
+SNCI11.SA	Suno Recebiveis Imobiliarios Fundo De Investimento Imobiliario	EQUITY
+CACR11.SA	Supernova Fundo De Investimento Imobiliario - Recebiveis Imobiliarios	EQUITY
+SUZB3.SA	SUZANO S.A. ON      NM	EQUITY
+SYNE3.SA	SYN PROP TECON      NM	EQUITY
+S1YF34.SA	Synchrony Financial	EQUITY
+S1NP34.SA	SYNOPSYS INCDRN	EQUITY
+T1RO34.SA	T. Rowe Price Group, Inc.	EQUITY
+SHOW3.SA	T4F Entretenimento S.A.	EQUITY
+^TA125.TA	TA-125	INDEX
+TSMC34.SA	Taiwan Semiconductor Manufacturing Company Limited	EQUITY
+TAKP34.SA	Takeda Pharmaceutical Company Limited	EQUITY
+T1TW34.SA	Take-Two Interactive Software, Inc.	EQUITY
+T1AL34.SA	TAL Education Group	EQUITY
+T2ND34.SA	Tandem Diabetes Care, Inc.	EQUITY
+TPRY34.SA	TAPESTRY INCDRN	EQUITY
+TGTB34.SA	Target Corporation	EQUITY
+TASA4.SA	TAURUS ARMASPN      N2	EQUITY
+TASA3.SA	TAURUS ARMASON      N2	EQUITY
+TRAD3.SA	TC          ON      NM	EQUITY
+T1EC34.SA	TECHNIPFMC PDRN	EQUITY
+TECN3.SA	TECHNOS     ON      NM	EQUITY
+TCSA3.SA	TECNISA     ON      NM	EQUITY
+TGMA3.SA	Tegma Gestão Logística S.A.	EQUITY
+TEKA3.SA	Teka Tecelagem Kuehnrich S.A.	EQUITY
+T2DH34.SA	Teladoc Health, Inc.	EQUITY
+TELB4.SA	Telecomunicações Brasileiras S.A. - Telebras	EQUITY
+TELB3.SA	Telecomunicações Brasileiras S.A. - Telebras	EQUITY
+E1RI34.SA	Telefonaktiebolaget LM Ericsson (publ)	EQUITY
+VIVT3.SA	Telefônica Brasil S.A.	EQUITY
+TLNC34.SA	Telefónica, S.A.	EQUITY
+T1SS34.SA	TENARIS SA  DRN	EQUITY
+T2ER34.SA	TERADYNE INCDRN	EQUITY
+TXSA34.SA	TERNIUMSA   DRN	EQUITY
+LAND3.SA	Terra Santa Propriedades Agrícolas S.A.	EQUITY
+TSLA	Tesla, Inc.	EQUITY
+TSLA34.SA	TESLA INC   DRN	EQUITY
+USDT-USD	Tether USDt USD	CRYPTOCURRENCY
+T1EV34.SA	Teva Pharmaceutical Industries Limited	EQUITY
+TEXA34.SA	Texas Instruments Incorporated	EQUITY
+TXN	Texas Instruments Incorporated	EQUITY
+TXRX4.SA	Têxtil Renauxview S.A.	EQUITY
+T1XT34.SA	TEXTRON INC DRN	EQUITY
+A1ES34.SA	The AES Corporation	EQUITY
+A1TT34.SA	The Allstate Corporation	EQUITY
+BONY34.SA	The Bank of New York Mellon Corporation	EQUITY
+BOEI34.SA	The Boeing Company	EQUITY
+SCHW34.SA	The Charles Schwab Corporation	EQUITY
+C1IC34.SA	CIGNA GROUP DRN	EQUITY
+COCA34.SA	The Coca-Cola Company	EQUITY
+C1OO34.SA	The Cooper Companies, Inc.	EQUITY
+ELCI34.SA	The Estée Lauder Companies Inc.	EQUITY
+XLF	The Financial Select Sector SPDR Fund	ETF
+GSGI34.SA	The Goldman Sachs Group, Inc.	EQUITY
+HSHY34.SA	The Hershey Company	EQUITY
+HSY	The Hershey Company	EQUITY
+HOME34.SA	The Home Depot, Inc.	EQUITY
+I1PH34.SA	The Interpublic Group of Companies, Inc.	EQUITY
+KHCB34.SA	The Kraft Heinz Company	EQUITY
+MOSC34.SA	The Mosaic Company	EQUITY
+PGCO34.SA	The Procter & Gamble Company	EQUITY
+P1GR34.SA	The Progressive Corporation	EQUITY
+S1HW34.SA	The Sherwin-Williams Company	EQUITY
+T1SO34.SA	The Southern Company	EQUITY
+TJXC34.SA	The TJX Companies, Inc.	EQUITY
+T2TD34.SA	The Trade Desk, Inc.	EQUITY
+TRVC34.SA	The Travelers Companies, Inc.	EQUITY
+XLU	The Utilities Select Sector SPDR Fund	ETF
+DISB34.SA	The Walt Disney Company	EQUITY
+DIS	Walt Disney Company (The)	EQUITY
+WUNI34.SA	The Western Union Company	EQUITY
+W1MB34.SA	The Williams Companies, Inc.	EQUITY
+TMOS34.SA	Thermo Fisher Scientific Inc.	EQUITY
+TIMS3.SA	TIM         ON      NM	EQUITY
+TJKB11.SA	Tjk Renda Imobiliaria Fundo De Investimento Imobiliario	EQUITY
+T1MU34.SA	T-Mobile US, Inc.	EQUITY
+^JN0U.JO	Top 40 USD Net TRI Index	INDEX
+TORD11.SA	Tordesilhas Ei Fundo De Investimento Imobiliario	EQUITY
+TOTS3.SA	TOTVS       ON      NM	EQUITY
+TMCO34.SA	Toyota Motor Corporation	EQUITY
+TFCO4.SA	TRACK FIELD PN      N2	EQUITY
+2800.HK	Tracker Fund Of Hong Kong	ETF
+T1SC34.SA	Tractor Supply Company	EQUITY
+T1DG34.SA	TransDigm Group Incorporated	EQUITY
+TAEE11.SA	Transmissora Aliança de Energia Elétrica S.A.	EQUITY
+TAEE4.SA	Transmissora Aliança de Energia Elétrica S.A.	EQUITY
+TAEE3.SA	Transmissora Aliança de Energia Elétrica S.A.	EQUITY
+RIGG34.SA	TRANSOCEAN  DRN	EQUITY
+^TYX	Treasury Yield 30 Years	INDEX
+^FVX	Treasury Yield 5 Years	INDEX
+BOVX11.SA	Trend ETF Ibovespa Fundo De Indice	EQUITY
+XFIX11.SA	TREND IFIX,LCI	EQUITY
+GOLD11.SA	Trend Etf Lbma Ouro Fundo Investimento Cotas De Fundo De Andice Investimento Exterior	EQUITY
+ACWI11.SA	Trend Etf Msci Acwi Fundo De Indice	EQUITY
+XINA11.SA	Trend Etf Msci China Fundo De Indice	EQUITY
+ESGD11.SA	Trend Etf Msci Eafe Esg Fundo De Investimento De Indice - Investimento No Exterior	EQUITY
+ESGE11.SA	Trend Etf Msci Emerging Markets Esg Fundo De Investimento De Indice Investimento No Exterior	EQUITY
+EURP11.SA	Trend ETF MSCI Europa Fundo De Andice	EQUITY
+NASD11.SA	Trend Etf Nasdaq 100 Fundo De Investimento De Indice - Investimento No Exterior	EQUITY
+USAL11.SA	Trend Etf Crsp Us Large Cap Fiim Ie	EQUITY
+TTEN3.SA	Três Tentos Agroindustrial S/A	EQUITY
+LUXM4.SA	Trevisa Investimentos S.A.	EQUITY
+T2RE34.SA	Trex Company, Inc.	EQUITY
+CRIP34.SA	Trip.com Group Limited	EQUITY
+T1RI34.SA	Tripadvisor, Inc.	EQUITY
+TRIS3.SA	TRISUL      ON      NM	EQUITY
+TPIS3.SA	Triunfo Participações e Investimentos S.A.	EQUITY
+CRPG5.SA	Tronox Pigmentos do Brasil S.A.	EQUITY
+CRPG6.SA	Tronox Pigmentos do Brasil S.A.	EQUITY
+B1BT34.SA	Truist Financial Corporation	EQUITY
+TRXB11.SA	Trx Real Estate II Fundo De Investimento Imobiliario - Fii	EQUITY
+TRXF11.SA	TRX Renda Fundo Investimento Imobiliario	EQUITY
+^TWII	TSEC CAPITALIZATION WEIGHTED ST	INDEX
+TUPY3.SA	TUPY        ON      NM	EQUITY
+T1WL34.SA	TWILIO INC  DRN	EQUITY
+T2YL34.SA	Tyler Technologies, Inc.	EQUITY
+TSNF34.SA	Tyson Foods, Inc.	EQUITY
+USBC34.SA	US BANCORP  DRN	EQUITY
+U1BE34.SA	Uber Technologies, Inc.	EQUITY
+UBSG34.SA	UBS GROUP   DRN	EQUITY
+P2AT34.SA	UIPATH INC  DRN	EQUITY
+U1LT34.SA	Ulta Beauty, Inc.	EQUITY
+UGPA3.SA	Ultrapar Participações S.A.	EQUITY
+UCAS3.SA	Unicasa Indústria de Móveis S.A.	EQUITY
+FIQE3.SA	Unifique Telecomunicações S.A.	EQUITY
+ULEV34.SA	UNILEVER    DRN	EQUITY
+UPAC34.SA	Union Pacific Corporation	EQUITY
+UNIP3.SA	Unipar Carbocloro S.A.	EQUITY
+UNIP5.SA	Unipar Carbocloro S.A.	EQUITY
+UNIP6.SA	Unipar Carbocloro S.A.	EQUITY
+00939.TW	UPAMC Taiwan High Dividend Momentum ETF	ETF
+FLMA11.SA	Unitas DTVM S.A.	EQUITY
+U1AL34.SA	United Airlines Holdings, Inc.	EQUITY
+UPSS34.SA	United Parcel Service, Inc.	EQUITY
+U1RI34.SA	United Rentals, Inc.	EQUITY
+USSX34.SA	United States Steel Corporation	EQUITY
+U2TH34.SA	United Therapeutics Corporation	EQUITY
+UNHH34.SA	UnitedHealth Group Incorporated	EQUITY
+U2ST34.SA	Unity Software Inc.	EQUITY
+U1NM34.SA	UNUM GROUP  DRN ED	EQUITY
+00918.TW	UOB Taiwan High Dividend Recovery ETF	ETF
+U2PS34.SA	Upstart Holdings, Inc.	EQUITY
+U2PW34.SA	UPWORK INC  DRN	EQUITY
+URPR11.SA	Urca Prime Renda Fundo De Investimento Imobiliario - FII	EQUITY
+DX-Y.NYB	ICE US Dollar Index - Index - C	INDEX
+CNY=X	USD/CNY	CURRENCY
+USDEUR=X	USD/EUR	CURRENCY
+HKD=X	USD/HKD	CURRENCY
+IDR=X	USD/IDR	CURRENCY
+INR=X	USD/INR	CURRENCY
+JPY=X	USD/JPY	CURRENCY
+MXN=X	USD/MXN	CURRENCY
+MYR=X	USD/MYR	CURRENCY
+PHP=X	USD/PHP	CURRENCY
+RUB=X	USD/RUB	CURRENCY
+SGD=X	USD/SGD	CURRENCY
+THB=X	USD/THB	CURRENCY
+ZAR=X	USD/ZAR	CURRENCY
+USIM5.SA	Usinas Siderúrgicas de Minas Gerais S.A.	EQUITY
+USIM3.SA	Usinas Siderúrgicas de Minas Gerais S.A.	EQUITY
+VFCO34.SA	V.F. Corporation	EQUITY
+VVCR11.SA	V2 Recebíveis Imobiliários Fundo de Investimento Imobiliário	EQUITY
+VVRI11.SA	V2 Renda Imobiliaria Fundo De Investimento Imobiliario - FII	EQUITY
+VALE3.SA	VALE        ON      NM	EQUITY
+VLOE34.SA	Valero Energy Corporation	EQUITY
+VLID3.SA	VALID       ON      NM	EQUITY
+VLYB34.SA	Valley National Bancorp	EQUITY
+VGIA11.SA	Valora Cra Fundo De Investimento In Agroindustrial Production Chains - Fiagro-Imobiliário	EQUITY
+VGIP11.SA	Valora Cri Indice De Preco Fundo De Investimento Imobiliario	EQUITY
+VGHF11.SA	Valora Hedge Fund Fundo De Investimento Imobiliario - Fii	EQUITY
+VGIR11.SA	Valora Re III Fundo De Investimento Imobiliario	EQUITY
+VGRI11.SA	Valora Renda Imobiliaria Fundo De Investimento Imobiliario - Responsabilidade Limitada	EQUITY
+VAMO3.SA	Vamos Locação de Caminhões, Máquinas e Equipamentos S.A.	EQUITY
+GDX	VanEck Gold Miners ETF	ETF
+VTI	Vanguard Total Stock Market Index Fund ETF Shares	ETF
+EVBI11.SA	Vbi Consumo Essencial Fundo De Investimento Imobiliarios	EQUITY
+RVBI11.SA	Vbr Reits Fof Fundo De Investimento Imobiliario	EQUITY
+VCRA11.SA	Vectis Datagro Credito Agronegocio - FI Nas Cadeias Produtivas Agroindustriais - Imobiliario	EQUITY
+VCJR11.SA	Vectis Juros Real Fundo De Investimento Imobiliario - Fii	EQUITY
+VCRR11.SA	Vectis Renda Residencial Fundo De Investimento Imobiliario	EQUITY
+V2EE34.SA	Veeva Systems Inc.	EQUITY
+V1TA34.SA	VENTAS INC  DRN	EQUITY
+VRSN34.SA	VERISIGN INCDRN	EQUITY
+VERZ34.SA	Verizon Communications Inc.	EQUITY
+VSLH11.SA	Versalhes Recebiveis Imobiliarios - Fundo De Investimento Imobiliario	EQUITY
+VRTX34.SA	Vertex Pharmaceuticals Incorporated	EQUITY
+VSTE3.SA	VESTE       ON      NM	EQUITY
+VBBR3.SA	VIBRA       ON      NM	EQUITY
+FIVN11.SA	Vida Nova Fundo Investimento Immobiliere	EQUITY
+V2ME34.SA	VIMEO INC   DRN	EQUITY
+VINO11.SA	Vinci Corporate Fundo De Investimento Imobiliario	EQUITY
+VCRI11.SA	Vinci Credit Securities Fundo De Investimento Imobiliario	EQUITY
+VIUR11.SA	Vinci Imoveis Urbanos Fundo De Investimento Imobiliario	EQUITY
+VIFI11.SA	Vinci Instrumentos Financeiros Fundo De Investimento Imobiliario	EQUITY
+VILG11.SA	Vinci Logistica Fundo Investimento Imobiliario FII	EQUITY
+VISC11.SA	Vinci Shopping Centers Fundo Investimento Imobiliario - Fii	EQUITY
+V1IP34.SA	Vipshop Holdings Limited	EQUITY
+VISA34.SA	VISA INC    DRN	EQUITY
+VITT3.SA	VITTIA      ON  EJ  NM	EQUITY
+VIVA3.SA	Vivara Participações S.A.	EQUITY
+VIVR3.SA	Viver Incorporadora e Construtora S.A.	EQUITY
+V1OD34.SA	Vodafone Group Public Limited Company	EQUITY
+V1NO34.SA	Vornado Realty Trust	EQUITY
+VOTS11.SA	Votorantim Securities Master Fundo Investimento Imobiliario Fii	EQUITY
+VULC3.SA	VULCABRAS   ON      NM	EQUITY
+V1MC34.SA	Vulcan Materials Company	EQUITY
+VXXV11.SA	VX XVI - Fundo De Investimento Imobiliario	EQUITY
+W1RB34.SA	W. R. Berkley Corporation	EQUITY
+G1WW34.SA	W.W. Grainger, Inc.	EQUITY
+WGBA34.SA	Walgreens Boots Alliance, Inc.	EQUITY
+WALM34.SA	WAL MART    DRN	EQUITY
+WMT	Walmart Inc.	EQUITY
+W1BD34.SA	Warner Bros. Discovery, Inc.	EQUITY
+W1MG34.SA	Warner Music Group Corp.	EQUITY
+WSEC11.SA	Warren Securities Fundo De Investimento Imobiliario - FII	EQUITY
+W1MC34.SA	Waste Management, Inc.	EQUITY
+W2YF34.SA	WAYFAIR INC DRN	EQUITY
+W1EC34.SA	WEC Energy Group, Inc.	EQUITY
+WEGE3.SA	WEG         ON      NM	EQUITY
+W1BO34.SA	Weibo Corporation	EQUITY
+WFCO34.SA	Wells Fargo & Company	EQUITY
+WFC	Wells Fargo & Company	EQUITY
+W1EL34.SA	WELLTOWER INDRN	EQUITY
+W2ST34.SA	West Pharmaceutical Services, Inc.	EQUITY
+WDC	Western Digital Corporation	EQUITY
+W1AB34.SA	Westinghouse Air Brake Technologies Corporation	EQUITY
+WEST3.SA	Westwing Comércio Varejista S.A.	EQUITY
+MWET4.SA	WETZEL S/A  PN	EQUITY
+W1YC34.SA	Weyerhaeuser Company	EQUITY
+WHGR11.SA	Whg Real Estate Fundo De Investimento Imobiliario – Fii	EQUITY
+WHRL3.SA	WHIRLPOOL   ON	EQUITY
+WHRL4.SA	WHIRLPOOL   PN	EQUITY
+PORT3.SA	WILSON SONS ON      NM	EQUITY
+W1IX34.SA	WIX.COM LTD DRN	EQUITY
+WIZC3.SA	Wiz Co Participações e Corretagem de Seguros S.A.	EQUITY
+WLMM4.SA	WLM Participações e Comércio de Máquinas e Veículos S.A.	EQUITY
+WLMM3.SA	WLM Participações e Comércio de Máquinas e Veículos S.A.	EQUITY
+W2OL34.SA	WOLFSPEED INDRN	EQUITY
+W1DA34.SA	WORKDAY INC DRN	EQUITY
+W1YN34.SA	Wynn Resorts, Limited	EQUITY
+XRXB34.SA	Xerox Holdings Corporation	EQUITY
+XPCM11.SA	XP Corporate Macaé Fundo de Investimento Imobiliário - FII	EQUITY
+XPCA11.SA	Xp Credito Agricola - Fundo De Investimento Nas Cadeias Produtivas - Fiagro - Imobiliario	EQUITY
+XPCI11.SA	Xp Credito Imobiliario ae Fundo De Investimento Imobiliario	EQUITY
+XPID11.SA	XP FIC De Fundos Incentivados De Investimento Em Infraestrutura Renda Fixa	EQUITY
+XPBR31.SA	XP INC      DR1	EQUITY
+XPIN11.SA	Xp Industrial Fundo Investimento Imobiliario	EQUITY
+XPIE11.SA	XP Infra Fund II Fundo De Investimento Em Participacoes Infraestrutura	EQUITY
+XPLG11.SA	Xp Log Fundo Investimento Imobiliario FII	EQUITY
+XPML11.SA	Xp Malls Fundo Investimentos Imobiliarios	EQUITY
+XPPR11.SA	Xp Properties Fundo De Investimento Imobiliario	EQUITY
+XPSF11.SA	XP Selection Fundo De Fundos De Investimento Imobiliario - FII	EQUITY
+VVCO11.SA	XTED - TRX Edificios Corporativos Fundo Invest Imobiliario FII Fund	EQUITY
+YDUQ3.SA	Yduqs Participações S.A.	EQUITY
+Y2PF34.SA	YPF Sociedad Anónima	EQUITY
+00632R.TW	Yuanta Daily Taiwan 50 Bear -1X ETF	ETF
+00680L.TW	Yuanta Daily U.S. Treasury 20+ Year Bond Bull 2X ETF	ETF
+00673R.TW	Yuanta S&P GSCI Crude Oil 1x Inverse ER Futures ETF	ETF
+00940.TW	Yuanta Taiwan Value High Dividend ETF	ETF
+00713.TW	Yuanta Taiwan High Dividend Low Volatility ETF	ETF
+00679B.TWO	Yuanta U.S. Treasury 20+ Year Bond ETF	ETF
+0056.TW	Yuanta/P-shares Taiwan Dividend Plus ETF	ETF
+0050.TW	Yuanta/P-shares Taiwan Top 50 ETF	ETF
+00637L.TW	YUANTA SECURITIES INV TRUST CO 	ETF
+ZAGH11.SA	Zagros Multiestrategia Fundo De Investimento Imobiliario	EQUITY
+ZAMP3.SA	ZAMP S.A.   ON	EQUITY
+ZAVI11.SA	Zavit Real Estate Fund Fundo De Investimento Imobiliario	EQUITY
+Z1BR34.SA	Zebra Technologies Corporation	EQUITY
+Z2LL34.SA	Zillow Group, Inc.	EQUITY
+Z1TS34.SA	ZOETIS INC  DRN ED	EQUITY
+Z1OM34.SA	Zoom Video Communications, Inc.	EQUITY
+Z2IT34.SA	ZoomInfo Technologies Inc.	EQUITY
+Z2SC34.SA	ZSCALER INC DRN	EQUITY
+Z1TO34.SA	ZTO Express (Cayman) Inc.	EQUITY

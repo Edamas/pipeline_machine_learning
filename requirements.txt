@@ -10,3 +10,4 @@ scikit-learn
 openpyxl
 statsmodels
 scipy
+graphviz

@@ -6,7 +6,7 @@ def send_to_analysis(new_series):
     Função para concatenar a série recebida com o dataframe da sessão, ou criar um novo.
     """
     # Obter ou inicializar o DataFrame na sessão
-    df = st.session_state.get('df_original', pd.DataFrame())
+    df = st.session_state.get('df_main', pd.DataFrame())
 
     # Identificar e converter o formato de índice de data em new_series
     if not pd.api.types.is_datetime64_any_dtype(new_series.index):
@@ -28,6 +28,12 @@ def send_to_analysis(new_series):
     df = df.sort_index().groupby(df.index).sum(min_count=1)
 
     # Atualizar o DataFrame na sessão
-    st.session_state['df_original'] = df
-    st.success("Dados enviados para análise com sucesso!")
-    return df[new_series.columns.intersection(df.columns)]
+    st.session_state['df_main'] = df
+
+    enviado = True
+    for column in new_series.columns:
+        if column not in st.session_state['df_main'].columns:
+            enviado = False
+    return enviado
+    # incluir mensagem
+    # mesclar com df_original
