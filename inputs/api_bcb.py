@@ -69,6 +69,7 @@ def precos_e_indices_gerais_inflacao():
     st.title('Fonte de Dados')
     st.header("Preços e Índices Gerais (Inflação)")
     metadados = pd.read_csv("inputs/metadados/precos_e_indices_gerais_inflacao.csv", sep='\t', encoding='utf-8')
+    api_bcb(metadados)
 
 def precos_e_indices_por_setor_inflacao():
     st.title('Fonte de Dados')

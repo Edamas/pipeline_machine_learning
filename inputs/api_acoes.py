@@ -115,11 +115,12 @@ def processar_tickers(tickers):
 
                 # Configuração da coluna de exibição
                 colunas = df_acao.columns.tolist()
+                
                 coluna_selecionada = st.radio(
                     f'Selecione a coluna para `{ticker}`',
                     options=colunas,
                     horizontal=True,
-                    index=min(4, len(colunas) - 1)
+                    index=colunas.index('Adj. Close') if 'Adj. Close' in colunas else (colunas.index('Close') if 'Close' in colunas else colunas.index('Volume'))
                 )
 
                 # Criação do nome da coluna com sufixo

@@ -194,7 +194,7 @@ def botoes():
     
     # Coluna 1: Toggle para usar intervalo de datas comum
     with col1:
-        comuns = st.toggle('Usar intervalo de datas comum')
+        comuns = st.toggle('Usar intervalo de datas comum', True)
         if comuns != st.session_state['ação']["comuns"]:
             st.session_state['ação']["comuns"] = comuns
             st.session_state['ação']["modificado"] = True
@@ -210,20 +210,12 @@ def botoes():
                 st.error(f"Erro ao aplicar alterações: {e}")
     
     # Coluna 3: Descartar alterações
-    with col3:
+    with col4:
         if st.button("🗑️ Descartar Alterações"):
             try:
                 resetar_dfs('descartar')
             except TypeError as e:
                 st.error(f"Erro ao descartar alterações: {e}")
-    
-    # Coluna 4: Restaurar Séries Aplicadas
-    with col4:
-        if st.button("⏮️ Restaurar Séries Aplicadas", help='Recupera o estado de df_original, descartando alterações'):
-            try:
-                resetar_dfs('restaurar')
-            except TypeError as e:
-                st.error(f"Erro ao restaurar séries: {e}")
     
     # Coluna 5: Resetar exceto df_main
     with col5:

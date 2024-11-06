@@ -288,6 +288,102 @@ def contas_nacionais_pib():
     df_metadados.set_index('Código Tabela', inplace=True)
     process(df_metadados)
 
+def educacao():
+    st.title('Fonte de Dados: IBGE')
+    st.header('Educação')
+    df_metadados = pd.read_excel('inputs/metadados/metadados_ibge.xlsx', sheet_name='Educação')
+    df_metadados.set_index('Código Tabela', inplace=True)
+    process(df_metadados)
+
+
+def trabalho_e_ocupacao():
+    st.title('Fonte de Dados: IBGE')
+    st.header('Trabalho e Ocupação')
+    df_metadados = pd.read_excel('inputs/metadados/metadados_ibge.xlsx', sheet_name='Trabalho e Ocupação')
+    df_metadados.set_index('Código Tabela', inplace=True)
+    process(df_metadados)
+
+
+def rendimento():
+    st.title('Fonte de Dados: IBGE')
+    st.header('Rendimento')
+    df_metadados = pd.read_excel('inputs/metadados/metadados_ibge.xlsx', sheet_name='Rendimento')
+    df_metadados.set_index('Código Tabela', inplace=True)
+    process(df_metadados)
+
+
+def pessoas_e_populacao():
+    st.title('Fonte de Dados: IBGE')
+    st.header('Pessoas e População')
+    df_metadados = pd.read_excel('inputs/metadados/metadados_ibge.xlsx', sheet_name='Pessoas e População')
+    df_metadados.set_index('Código Tabela', inplace=True)
+    process(df_metadados)
+
+
+def acesso_a_tecnologia():
+    st.title('Fonte de Dados: IBGE')
+    st.header('Acesso à Tecnologia')
+    df_metadados = pd.read_excel('inputs/metadados/metadados_ibge.xlsx', sheet_name='acesso_a_tecnologia')
+    df_metadados.set_index('Código Tabela', inplace=True)
+    process(df_metadados)
+
+
+def eventos_civis():
+    st.title('Fonte de Dados: IBGE')
+    st.header('Eventos Civis')
+    df_metadados = pd.read_excel('inputs/metadados/metadados_ibge.xlsx', sheet_name='Eventos Civis')
+    df_metadados.set_index('Código Tabela', inplace=True)
+    process(df_metadados)
+
+def domicilios():
+    st.title('Fonte de Dados: IBGE')
+    st.header('Domicílios')
+    df_metadados = pd.read_excel('inputs/metadados/metadados_ibge.xlsx', sheet_name='Domicílios')
+    df_metadados.set_index('Código Tabela', inplace=True)
+    process(df_metadados)
+
+def meio_ambiente_e_ODS():
+    st.title('Fonte de Dados: IBGE')
+    st.header('Meio Ambiente e ODS (`ONU`)')
+    df_metadados = pd.read_excel('inputs/metadados/metadados_ibge.xlsx', sheet_name='Meio Ambiente e ODS (ONU)')
+    df_metadados.set_index('Código Tabela', inplace=True)
+    process(df_metadados)
+
+def preco_custo_consumo_inflacao():
+    st.title('Fonte de Dados: IBGE')
+    st.header('Preço, Custo, Consumo, Inflação')
+    df_metadados = pd.read_excel('inputs/metadados/metadados_ibge.xlsx', sheet_name='Preço, Custo Consumo e Inflação')
+    df_metadados.set_index('Código Tabela', inplace=True)
+    process(df_metadados)
+
+def mercado_e_setor_privado():
+    st.title('Fonte de Dados: IBGE')
+    st.header('Mercado e Setor Privado')
+    df_metadados = pd.read_excel('inputs/metadados/metadados_ibge.xlsx', sheet_name='Mercado e Setor Privado')
+    df_metadados.set_index('Código Tabela', inplace=True)
+    process(df_metadados)
+
+def empresas():
+    st.title('Fonte de Dados: IBGE')
+    st.header('Empresas')
+    df_metadados = pd.read_excel('inputs/metadados/metadados_ibge.xlsx', sheet_name='Empresas')
+    df_metadados.set_index('Código Tabela', inplace=True)
+    process(df_metadados)
+
+def agropecuaria():
+    st.title('Fonte de Dados: IBGE')
+    st.header('Agropecuária')
+    df_metadados = pd.read_excel('inputs/metadados/metadados_ibge.xlsx', sheet_name='Agropecuária')
+    df_metadados.set_index('Código Tabela', inplace=True)
+    process(df_metadados)
+
+
+
+
+
+
+
+
 def process(df_metadados):
     st.session_state['Variavel_ibge_selecionada'] = None
     st.session_state['df_metadados'] = df_metadados.copy()
