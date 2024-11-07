@@ -67,7 +67,8 @@ def get_pages():
         
         '__________________________________': [],
         "2️⃣PROCESSAMENTO": [
-            # Ferramentas de análise omitidas conforme solicitado
+            st.Page(regression_page, title='Regressão', icon="📜", url_path="regression_page"),
+            
         ],
         '___________________________________': [],
         'Ajuda': [

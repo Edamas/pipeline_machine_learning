@@ -4,16 +4,6 @@ from streamlit import session_state as ss
 import numpy as np
 
 def cast_dtype_explicitly(serie, para_float=False):
-    """
-    Converte a Series para um tipo de dado compatível.
-    
-    Parâmetros:
-    - serie (pd.Series): A série a ser convertida.
-    - para_float (bool): Se True, converte a série para float, independentemente do tipo original.
-    
-    Retorna:
-    - pd.Series: A série com o dtype apropriado.
-    """
     if pd.api.types.is_float_dtype(serie) or pd.api.types.is_integer_dtype(serie):
         return serie.astype(float) if pd.api.types.is_integer_dtype(serie) else serie
     else:
@@ -45,6 +35,10 @@ def configuracoes_iniciais():
     ss['configuracoes'] = pd.DataFrame(columns=['funcao', 'nome', 'data_min', 'data_max', 'normalizar', 'preencher_nulos', 'media', 'visualizacao'])
 
 def series_manager():
+    # Inicializa as configurações se não estiverem definidas ou não forem DataFrame
+    if 'configuracoes' not in ss or not isinstance(ss['configuracoes'], pd.DataFrame):
+        configuracoes_iniciais()
+    
     st.markdown("### 📈 Gerenciamento de Séries Temporais")
     botoes()
 
@@ -108,8 +102,9 @@ def series_manager():
         
         serie = cast_dtype_explicitly(serie)
         serie = nulos(serie, data_min, data_max, metodo=config['preencher_nulos'])
-        serie = normalizacao(serie, data_min, data_max, normalizar=config['normalizar'])
         
+        serie = normalizacao(serie, data_min, data_max, normalizar=config['normalizar'])
+        st.write(serie)
 
         # Calcula a média e atualiza as configurações
         media = serie.loc[data_min:data_max].mean()
@@ -118,7 +113,7 @@ def series_manager():
         config['data_min'] = data_min
         config['data_max'] = data_max
         config_list.append(config)
-
+        df_editado[nome] = serie
         # Atualiza o df_editado para garantir que não tenha valores nulos
         # Converte a coluna para float, pois float aceita valores nulos (NaN)
         #df_editado.loc[:, nome] = df_editado[nome].astype('float64')  # Converte para float64 para aceitar valores nulos e garantir precisão
@@ -127,10 +122,10 @@ def series_manager():
 
     # Atualiza as configurações e df_editado no estado da sessão
     ss['configuracoes'] = pd.DataFrame(config_list)
+    #df_editado = df_editado[data_min:data_max]
     ss['df_editado'] = df_editado.dropna(how='all').fillna(0).infer_objects(copy=False).copy()  # Garante que df_editado está atualizado e sem nulos
 
     ss['ação']["recalcular"] = False
-
     # Exibe o data editor com configurações editáveis
     conf_editadas = st.data_editor(
         data=ss['configuracoes'].copy(),
@@ -142,6 +137,21 @@ def series_manager():
         key='conf_editadas',
         on_change=atualizar_configuracoes
     )
+
+def atualizar_configuracoes():
+    # Verifica se 'configuracoes' existe e é um DataFrame
+    if 'configuracoes' not in ss or not isinstance(ss['configuracoes'], pd.DataFrame):
+        configuracoes_iniciais()
+    
+    edited_rows = st.session_state['conf_editadas'].get("edited_rows", {})
+
+    for idx, alteracoes in edited_rows.items():
+        idx = int(idx)
+        for coluna, valor in alteracoes.items():
+            ss['configuracoes'].at[idx, coluna] = valor
+
+    ss['ação']["recalcular"] = True
+
 
 def atualizar_configuracoes():
     edited_rows = st.session_state['conf_editadas'].get("edited_rows", {})
@@ -162,7 +172,6 @@ def resetar_dfs(tipo='todos'):
     """
     if tipo == 'aplicar':
         st.session_state['df_main'] = st.session_state['df_editado'].copy()
-        st.session_state['aplicar'] = True
         st.success("Alterações aplicadas com sucesso!")
     elif tipo == 'descartar':
         st.session_state['df_editado'] = st.session_state['df_original'].copy()
@@ -185,8 +194,7 @@ def resetar_dfs(tipo='todos'):
         st.error("Tipo de reset desconhecido.")
     
     configuracoes_iniciais()
-    st.rerun()  # Use experimental_rerun se st.rerun não estiver disponível
-
+    st.rerun()  
 
 
 def botoes():
